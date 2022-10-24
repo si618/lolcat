@@ -16,7 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.12.1"/>
+    <PackageReference Include="BenchmarkDotNet" Version="0.13.2"/>
     <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.12.1"/>
     <PackageReference Include="Spectre.Console" Version="0.45.0"/>
   </ItemGroup>
