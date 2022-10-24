@@ -1,0 +1,45 @@
+name: build and test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_FRAMEWORK: net6.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+
+      - name: Run dotnet build
+        id: build
+        run: dotnet build -c release
+
+      - name: Run dotnet format
+        id: format
+        run: dotnet format --verbosity diagnostic --verify-no-changes --no-restore
+
+      - name: Run dotnet test
+        id: test
+        run: dotnet test -c release --no-restore
+
+#  benchmark:
+#    needs: [ build ]
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@main
+#
+#      - name: Run benchmarks
+#        id: run-benchmarks
+#        run: dotnet run --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj -c Release
+
+#  publish:

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>lolcat</PackageId>
+		<PackageIcon>Rainbow.png</PackageIcon>
+		<Product>lolcat</Product>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\assets\Rainbow.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	    <Link>Rainbow.png</Link>
+	  </None>
+	</ItemGroup>
+
+</Project>

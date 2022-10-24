@@ -1,0 +1,42 @@
+root = true
+
+[*]
+indent_style = tab
+trim_trailing_whitespace = true
+
+[{*.yml,*.props, *.*proj}]
+indent_size = 2
+
+[*.cs]
+indent_size = 4
+
+# CA1822: Mark members as static
+dotnet_diagnostic.ca1822.severity = silent
+
+csharp_style_namespace_declarations = file_scoped
+
+# Microsoft .NET properties
+csharp_new_line_before_members_in_object_initializers = false
+csharp_preferred_modifier_order = public, private, protected, internal, new, sealed, abstract, virtual, static, readonly, override, extern, unsafe, volatile, async:suggestion
+csharp_using_directive_placement = inside_namespace:silent
+dotnet_sort_system_directives_first = false
+
+# ReSharper properties
+resharper_blank_lines_after_block_statements = 0
+resharper_blank_lines_around_auto_property = 0
+resharper_blank_lines_around_local_method = 0
+resharper_braces_for_for = required
+resharper_braces_for_foreach = required
+resharper_braces_for_ifelse = required
+resharper_csharp_blank_lines_around_field = 0
+resharper_csharp_blank_lines_around_invocable = 0
+resharper_csharp_indent_invocation_pars = none
+resharper_csharp_insert_final_newline = true
+resharper_csharp_max_line_length = 100
+resharper_csharp_wrap_arguments_style = chop_if_long
+resharper_instance_members_qualify_declared_in = base_class
+resharper_parentheses_redundancy_style = remove
+resharper_place_expr_method_on_single_line = true
+resharper_remove_blank_lines_near_braces_in_declarations = false
+resharper_wrap_array_initializer_style = chop_if_long
+resharper_wrap_object_and_collection_initializer_style = wrap_if_long
