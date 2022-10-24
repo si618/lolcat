@@ -1,14 +1,14 @@
 <Project>
 
-	<Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')"/>
+  <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')"/>
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Authors>Simon McKenna</Authors>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Authors>Simon McKenna</Authors>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
 
 </Project>
