@@ -1,4 +1,4 @@
-name: build and test
+name: all the things
 
 on:
   push:
@@ -19,9 +19,9 @@ jobs:
       - name: 🚧 Checkout
         uses: actions/checkout@main
         with:
-          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work
 
-      - name: 🔨 Nerdbank.GitVersioning
+      - name: 🔨 Nerdbank GitVersioning
         uses: dotnet/nbgv@v0.4.0
 
       - name: 🏗️ Run dotnet build
@@ -42,6 +42,8 @@ jobs:
     steps:
       - name: 🚧 Checkout
         uses: actions/checkout@main
+        with:
+          fetch-depth: 0
 
       - name: ⚗ Run benchmarks
         id: run-benchmarks
@@ -55,7 +57,7 @@ jobs:
       - name: 🚧 Checkout
         uses: actions/checkout@main
         with:
-          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+          fetch-depth: 0
 
       - name: 📦️ Package
         run: dotnet pack -c release ./src/Lolcat/Lolcat.csproj
