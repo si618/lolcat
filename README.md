@@ -10,7 +10,7 @@
 
 ![The Rainbow](./assets/Nom.webp "The Rainbow")
 
-## Screenshot 📸
+## 📸 Screenshot
 
 ![Ouroboros](./assets/Ouroboros.webp "Ouroboros")
 
