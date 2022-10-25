@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AnsiRainbowEscaped" xml:space="preserve">
+        <value>&#x1B;[38;2;3;170;210;1mA&#x1B;[0m&#x1B;[38;2;2;174;206;1mn&#x1B;[0m&#x1B;[38;2;1;178;203;1ms&#x1B;[0m&#x1B;[38;2;1;182;199;1mi&#x1B;[0m&#x1B;[38;2;1;186;196;1mR&#x1B;[0m&#x1B;[38;2;1;190;192;1ma&#x1B;[0m&#x1B;[38;2;1;193;189;1mi&#x1B;[0m&#x1B;[38;2;1;197;185;1mn&#x1B;[0m&#x1B;[38;2;1;200;181;1mb&#x1B;[0m&#x1B;[38;2;1;204;177;1mo&#x1B;[0m&#x1B;[38;2;2;207;173;1mw&#x1B;[0m</value>
+    </data>
+    <data name="SpectreRainbowEscaped" xml:space="preserve">
+        <value>[rgb(3,170,210)]S[/][rgb(2,174,206)]p[/][rgb(1,178,203)]e[/][rgb(1,182,199)]c[/][rgb(1,186,196)]t[/][rgb(1,190,192)]r[/][rgb(1,193,189)]e[/][rgb(1,197,185)]R[/][rgb(1,200,181)]a[/][rgb(1,204,177)]i[/][rgb(2,207,173)]n[/][rgb(3,210,169)]b[/][rgb(4,214,165)]o[/][rgb(5,217,161)]w[/]</value>
+    </data>
+    <data name="AnsiRainbowText" xml:space="preserve">
+        <value>AnsiRainbow</value>
+    </data>
+    <data name="SpectreRainbowText" xml:space="preserve">
+        <value>SpectreRainbow</value>
+    </data>
+</root>
