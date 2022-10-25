@@ -18,9 +18,10 @@ jobs:
     steps:
       - name: 🚧 Checkout
         uses: actions/checkout@main
-        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
 
-      - name: Nerdbank.GitVersioning
+      - name: 🔨 Nerdbank.GitVersioning
         uses: dotnet/nbgv@v0.4.0
 
       - name: 🏗️ Run dotnet build
@@ -45,19 +46,20 @@ jobs:
 #      - name: ⚗ Run benchmarks
 #        id: run-benchmarks
 #        run: dotnet run -c release --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
-
+#
 #  publish:
 #    needs: [ build ]
 #    steps:
 #      - name: 🚧 Checkout
 #        if: ${{ github.event_name == 'push' }}
 #        uses: actions/checkout@main
-#        fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
-
+#        with:
+#          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+#
 #      - name: 📦️ Package
 #        if: ${{ github.event_name == 'push' }}
 #        run: dotnet pack -c release ./src/Lolcat/Lolat.csproj
-
+#
 #      - name: 🚀 Publish
 #        if: ${{ github.event_name == 'push' }}
 #        run: |
