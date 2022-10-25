@@ -4,6 +4,9 @@
     <PackageId>lolcat</PackageId>
     <PackageIcon>Rainbow.png</PackageIcon>
     <Product>lolcat</Product>
+    <Title>Rainbows and unicorns!</Title>
+    <Description>Add rainbow style to your dotnet console apps</Description>
+    <RepositoryUrl>https://github.com/si618/lolcat</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>

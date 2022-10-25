@@ -36,33 +36,30 @@ jobs:
         id: test
         run: dotnet test -c release --no-restore
 
-#  benchmark:
-#    needs: [ build ]
-#    runs-on: ubuntu-latest
-#    steps:
-#      - name: 🚧 Checkout
-#        uses: actions/checkout@main
-#
-#      - name: ⚗ Run benchmarks
-#        id: run-benchmarks
-#        run: dotnet run -c release --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
-#
-#  publish:
-#    needs: [ build ]
-#    steps:
-#      - name: 🚧 Checkout
-#        if: ${{ github.event_name == 'push' }}
-#        uses: actions/checkout@main
-#        with:
-#          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
-#
-#      - name: 📦️ Package
-#        if: ${{ github.event_name == 'push' }}
-#        run: dotnet pack -c release ./src/Lolcat/Lolat.csproj
-#
-#      - name: 🚀 Publish
-#        if: ${{ github.event_name == 'push' }}
-#        run: |
-#          dotnet nuget push ./src/Lolcat/bin/Release/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
-#        env:
-#          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
+  benchmark:
+    needs: [ build ]
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🚧 Checkout
+        uses: actions/checkout@main
+
+      - name: ⚗ Run benchmarks
+        id: run-benchmarks
+        run: dotnet run -c release --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
+
+  publish:
+    needs: [ build ]
+    if: ${{ github.event_name == 'push' }}
+    steps:
+      - name: 🚧 Checkout
+        uses: actions/checkout@main
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work.
+
+      - name: 📦️ Package
+        run: dotnet pack -c release ./src/Lolcat/Lolcat.csproj
+
+      - name: 🚀 Publish
+        run: dotnet nuget push ./src/Lolcat/**/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}
