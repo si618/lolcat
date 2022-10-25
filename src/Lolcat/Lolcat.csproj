@@ -1,7 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>lolcat</PackageId>
     <PackageIcon>Rainbow.png</PackageIcon>
     <Product>lolcat</Product>

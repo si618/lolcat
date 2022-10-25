@@ -6,21 +6,19 @@ public class Rainbow
     private const string AnsiFormat = "{0}[38;2;{1};{2};{3};1m{4}{0}[0m";
     private const string SpectreFormat = "[rgb({0},{1},{2})]{3}[/]";
 
+    public RainbowStyle Style { get; set; }
+
     public Rainbow(RainbowStyle? style = null)
     {
         Style = style ?? new RainbowStyle();
     }
 
-    public RainbowStyle Style { get; }
-
     /// <summary>
-    /// Convert <paramref name="text" /> to a rainbow.
+    /// Convert <paramref name="text" /> to a rainbow using defined <see cref="Style"/>
     /// </summary>
     public string Convert(string text)
     {
-        var random = Style.Seed.HasValue
-            ? new Random(Style.Seed.Value)
-            : new Random();
+        var random = Style.Seed == 0 ? new Random() : new Random(Style.Seed);
         var seed = random.Next(255);
         var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
         var output = new StringBuilder();
@@ -32,6 +30,7 @@ public class Rainbow
             var length = line.Length;
             if (length == 0 && output.Length > 0)
             {
+                // Empty line
                 output.AppendLine();
                 continue;
             }
@@ -66,6 +65,6 @@ public class Rainbow
             output.AppendLine();
         }
 
-        return output.ToString();
+        return output.ToString().TrimEnd(Environment.NewLine.ToCharArray());
     }
 }

@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{F7A39F4E
 		.github\dependabot.yml = .github\dependabot.yml
 		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 		.gitignore = .gitignore
+		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lolcat.Benchmarks", "tests\Lolcat.Benchmarks\Lolcat.Benchmarks.csproj", "{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B}"
@@ -28,6 +29,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{401A9B09-7863-4EF9-8555-2879DE297DAC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9FAD3B1D-75DC-4737-9908-92627E6EE45B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lolcat.Demo", "src\Lolcat.Demo\Lolcat.Demo.csproj", "{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +50,15 @@ Global
 		{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9B21394F-17B9-4474-A711-A8CBBF718B25} = {401A9B09-7863-4EF9-8555-2879DE297DAC}
 		{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B} = {9FAD3B1D-75DC-4737-9908-92627E6EE45B}
 		{D8A017AF-8833-436D-B0C9-E328FE0CF150} = {9FAD3B1D-75DC-4737-9908-92627E6EE45B}
+		{87DD5DBD-A21B-4310-B635-72F8DBEEA3B3} = {401A9B09-7863-4EF9-8555-2879DE297DAC}
 	EndGlobalSection
 EndGlobal

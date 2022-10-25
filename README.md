@@ -1,6 +1,6 @@
 ## lolcat ✨
 
-C# library implementation of [lolcat](https://github.com/busyloop/lolcat)
+.NET implementation of [lolcat](https://github.com/busyloop/lolcat)
 
 ## What? 🧐
 
@@ -10,28 +10,38 @@ C# library implementation of [lolcat](https://github.com/busyloop/lolcat)
 
 ## Kudos 🍻
 
-Ported with thanks from the [Powershell implementation](https://github.com/andot/lolcat)
+Ported with thanks from the [PowerShell module](https://github.com/andot/lolcat) implementation
 
-## Installation 👷
+## Installation 🚧
 
 ```csharp
 > dotnet add package lolcat
+> dotnet add package Spectre.Console
 
 // Console app with top-level statements
 using Lolcat;
 using Spectre.Console;
 
-// Ansi output
-var text = "Somewhere over the rainbow...";
-var style = new RainbowStyle(EscapeSequence.Ansi);
-var rainbow = new Rainbow(style);
-var ansi = rainbow.Convert(text);
-Console.Write(ansi);
+AnsiConsole.Clear();
+
+// Ansi output is the default escape sequence
+var text = "Someday we'll find it, the rainbow connection";
+var style = new RainbowStyle();
+var lolcat = new Rainbow(style);
+var ansi = lolcat.Convert(text);
+Console.WriteLine(ansi);
 
 // Spectre.Console output
-lolcat.Style.EscapeSequence = EscapeSequence.Spectre;
-var spectre = rainbow.Convert(text);
-AnsiConsole.Markup(spectre);
+text = "The lovers, the dreamers and me";
+lolcat.Style = style with
+{
+    EscapeSequence = EscapeSequence.Spectre,
+    Frequency = 1,
+    Spread = 5,
+    Seed = 42
+};
+var spectre = lolcat.Convert(text);
+AnsiConsole.MarkupLine(spectre);
 ```
 
 ## Build 🏗️
@@ -53,11 +63,12 @@ Cloning into 'lolcat'...
 ## Test 🧪
 
 ```bash
-> dotnet test --no-restore
+> dotnet test
 ```
 
 ## Benchmark ⚗️
 
 ```bash
-> dotnet run --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj -c release
+> cd ./tests/Lolcat.Benchmarks
+> dotnet run -c release
 ```
