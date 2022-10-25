@@ -45,7 +45,7 @@ jobs:
 
       - name: ⚗ Run benchmarks
         id: run-benchmarks
-        run: dotnet run -c release --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
+        run: dotnet run -c release --project ./src/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
 
   publish:
     if: ${{ github.event_name == 'push' }}
