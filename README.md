@@ -12,6 +12,8 @@
 
 ## Screenshot 📸
 
+![Ouroboros](./assets/Ouroboros.webp "Ouroboros")
+
 ## Kudos 🍻
 
 Ported with thanks from the [PowerShell module](https://github.com/andot/lolcat) implementation

@@ -21,3 +21,8 @@ lolcat.Style = style with
 };
 var spectre = lolcat.Convert(text);
 AnsiConsole.MarkupLine(spectre);
+
+// Readme screenshot
+//Console.Clear();
+//lolcat.Style = new RainbowStyle();
+//Console.WriteLine(lolcat.Convert(File.ReadAllText("./Program.cs")));
