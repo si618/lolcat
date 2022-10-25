@@ -1,5 +1,7 @@
 ## lolcat ✨
 
+[![build and test](https://github.com/si618/lolcat/actions/workflows/workflow.yml/badge.svg)](https://github.com/si618/lolcat/actions/workflows/workflow.yml)
+
 .NET implementation of [lolcat](https://github.com/busyloop/lolcat)
 
 ## What? 🧐
