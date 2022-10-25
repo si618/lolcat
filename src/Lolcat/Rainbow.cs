@@ -23,8 +23,9 @@ public class Rainbow
         var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
         var output = new StringBuilder();
 
-        foreach (var line in lines)
+        for (var i = 0; i < lines.Length; i++)
         {
+            var line = lines[i];
             seed++;
 
             var length = line.Length;
@@ -37,15 +38,15 @@ public class Rainbow
 
             var s = seed;
 
-            for (var i = 0; i < length; i++)
+            for (var j = 0; j < length; j++)
             {
-                var n = s + i / Style.Spread;
-                var c = line[i];
+                var n = s + j / Style.Spread;
+                var c = line[j];
 
-                if (i < length - 1 && char.IsSurrogatePair(c, line[i + 1]))
+                if (j < length - 1 && char.IsSurrogatePair(c, line[j + 1]))
                 {
-                    c += line[i + 1];
-                    i++;
+                    c += line[j + 1];
+                    j++;
                 }
 
                 var red = (int)(Math.Sin(Style.Frequency * n) * 127 + 128);
@@ -62,9 +63,13 @@ public class Rainbow
                 }
             }
 
-            output.AppendLine();
+            // Don't append at the end
+            if (i + 1 < lines.Length)
+            {
+                output.AppendLine();
+            }
         }
 
-        return output.ToString().TrimEnd(Environment.NewLine.ToCharArray());
+        return output.ToString();
     }
 }
