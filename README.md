@@ -1,4 +1,4 @@
-## lolcat ✨
+## ✨ lolcat
 
 [![all the things](https://github.com/si618/lolcat/actions/workflows/workflow.yml/badge.svg)](https://github.com/si618/lolcat/actions/workflows/workflow.yml)
 [![NuGet](https://img.shields.io/nuget/v/lolcat.png)](https://www.nuget.org/packages/lolcat/)
@@ -6,7 +6,7 @@
 
 .NET implementation of [lolcat](https://github.com/busyloop/lolcat)
 
-## What? 🧐
+## 🧐 What?
 
 ![The Rainbow](./assets/Nom.webp "The Rainbow")
 
@@ -14,17 +14,17 @@
 
 ![Ouroboros](./assets/Ouroboros.webp "Ouroboros")
 
-## Kudos 🍻
+## 🍻 Kudos
 
 Ported with thanks from the [PowerShell module](https://github.com/andot/lolcat) implementation
 
-## Installation 🚧
+## 🚧 Installation
 
 ```bash
 > dotnet add package lolcat
 ```
 
-## Demo 🎉
+## 🎉 Demo
 
 [Code](src/Lolcat.Demo/Program.cs)
 
@@ -33,7 +33,7 @@ Ported with thanks from the [PowerShell module](https://github.com/andot/lolcat)
 > dotnet run
 ```
 
-## Build 🏗️
+## 🏗 Build️
 
 ```bash
 > dotnet --list-sdks
@@ -49,13 +49,13 @@ Cloning into 'lolcat'...
 > dotnet build
 ```
 
-## Test 🧪
+## 🧪 Test
 
 ```bash
 > dotnet test
 ```
 
-## Benchmark ⚗️
+## ⚗ Benchmark️
 
 ```bash
 > cd ./tests/Lolcat.Benchmarks
