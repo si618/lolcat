@@ -48,8 +48,9 @@ jobs:
         run: dotnet run -c release --project ./Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
 
   publish:
-    needs: [ build ]
     if: ${{ github.event_name == 'push' }}
+    needs: [ build ]
+    runs-on: ubuntu-latest
     steps:
       - name: 🚧 Checkout
         uses: actions/checkout@main
