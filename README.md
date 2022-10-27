@@ -56,7 +56,9 @@ Cloning into 'lolcat'...
 > dotnet test
 ```
 
-## ⚗ Benchmark️
+## ⚗ Benchmark
+
+[Github charts](https://si618.github.io/lolcat/dev/bench)
 
 ```bash
 > cd ./tests/Lolcat.Benchmarks
