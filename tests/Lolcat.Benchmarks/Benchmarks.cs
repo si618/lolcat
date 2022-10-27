@@ -27,15 +27,16 @@ public class Benchmarks
     {
         var set = new StringBuilder();
 
-        var chars = CollectionsMarshal.AsSpan(
-            Enumerable
-                .Range(48, 126)
-                .Select(i => (char)i)
-                .ToList());
+        var chars = CollectionsMarshal.AsSpan(Enumerable
+            .Range(65, 26)
+            .SelectMany(i => new[] { i, i + 32})
+            .OrderBy(i => i)
+            .Select(i => (char)i)
+            .ToList());
 
         for (var i = 0; i < count; i++)
         {
-            set.Append(chars);
+            set.Append(chars[..chars.Length]);
             set.AppendLine();
         }
 

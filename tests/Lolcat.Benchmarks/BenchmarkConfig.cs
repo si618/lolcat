@@ -1,19 +1,17 @@
 ﻿namespace Lolcat.Benchmarks;
 
-using BenchmarkDotNet.Columns;
-using BenchmarkDotNet.Configs;
-using BenchmarkDotNet.Diagnosers;
-using BenchmarkDotNet.Environments;
-using BenchmarkDotNet.Jobs;
+using BenchmarkDotNet.Exporters.Json;
 
 public sealed class BenchmarkConfig : ManualConfig
 {
     public BenchmarkConfig()
     {
+        AddColumn(StatisticColumn.OperationsPerSecond);
+
         AddDiagnoser(MemoryDiagnoser.Default);
 
-        AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+        AddExporter(new JsonExporter());
 
-        AddColumn(StatisticColumn.OperationsPerSecond);
+        AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
     }
 }
