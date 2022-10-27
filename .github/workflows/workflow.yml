@@ -56,7 +56,7 @@ jobs:
         with:
           name: Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.Benchmarks-report.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
 
