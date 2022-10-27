@@ -29,7 +29,7 @@ public class Benchmarks
 
         var chars = CollectionsMarshal.AsSpan(Enumerable
             .Range(65, 26)
-            .SelectMany(i => new[] { i, i + 32})
+            .SelectMany(i => new[] { i, i + 32 })
             .OrderBy(i => i)
             .Select(i => (char)i)
             .ToList());
