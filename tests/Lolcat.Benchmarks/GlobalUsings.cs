@@ -8,3 +8,4 @@ global using BenchmarkDotNet.Running;
 global using Lolcat.Benchmarks;
 global using System.Runtime.InteropServices;
 global using System.Text;
+global using System.Text.Json.Nodes;

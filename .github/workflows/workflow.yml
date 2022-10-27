@@ -49,14 +49,14 @@ jobs:
         id: run-benchmarks
         run: dotnet run -c release --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
 
-      - name: Store benchmark results
+      - name: 🚚 Store benchmarks
         id: store-benchmarks
         if: ${{ github.event_name == 'push' }}
         uses: benchmark-action/github-action-benchmark@v1.14.0
         with:
           name: Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.Benchmarks-report.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
 
