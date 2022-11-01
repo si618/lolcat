@@ -5,7 +5,9 @@
 [![NuGet](https://img.shields.io/nuget/dt/lolcat.png)](https://www.nuget.org/stats/packages/lolcat?groupby=ClientName)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](LICENSE)
 
-.NET implementation of [lolcat](https://github.com/busyloop/lolcat)
+.NET [lolcat](https://github.com/busyloop/lolcat) library
+
+Ported with thanks from [PowerShell module](https://github.com/andot/lolcat) implementation
 
 ## 🧐 What?
 
@@ -14,10 +16,6 @@
 ## 📸 Screenshot
 
 ![Ouroboros](./assets/Ouroboros.webp "Ouroboros")
-
-## 🍻 Kudos
-
-Ported with thanks from the [PowerShell module](https://github.com/andot/lolcat) implementation
 
 ## 🚧 Installation
 
