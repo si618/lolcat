@@ -6,19 +6,24 @@ public class Rainbow
     private const string AnsiFormat = "{0}[38;2;{1};{2};{3};1m{4}{0}[0m";
     private const string SpectreFormat = "[rgb({0},{1},{2})]{3}[/]";
 
-    public RainbowStyle Style { get; set; }
+    public RainbowStyle RainbowStyle { get; set; }
 
-    public Rainbow(RainbowStyle? style = null)
+    public Rainbow(RainbowStyle? rainbowStyle = null)
     {
-        Style = style ?? new RainbowStyle();
+        RainbowStyle = rainbowStyle ?? new RainbowStyle();
+
+        if (RainbowStyle.Enabled)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     /// <summary>
-    /// Convert <paramref name="text" /> to a rainbow using defined <see cref="Style"/>
+    /// Convert <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
     /// </summary>
     public string Convert(string text)
     {
-        var random = Style.Seed == 0 ? new Random() : new Random(Style.Seed);
+        var random = RainbowStyle.Seed == 0 ? new Random() : new Random(RainbowStyle.Seed);
         var seed = random.Next(255);
         var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
         var output = new StringBuilder();
@@ -40,7 +45,7 @@ public class Rainbow
 
             for (var j = 0; j < length; j++)
             {
-                var n = s + j / Style.Spread;
+                var n = s + j / RainbowStyle.Spread;
                 var c = line[j];
 
                 if (j < length - 1 && char.IsSurrogatePair(c, line[j + 1]))
@@ -49,11 +54,11 @@ public class Rainbow
                     j++;
                 }
 
-                var red = (int)(Math.Sin(Style.Frequency * n) * 127 + 128);
-                var green = (int)(Math.Sin(Style.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
-                var blue = (int)(Math.Sin(Style.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
+                var red = (int)(Math.Sin(RainbowStyle.Frequency * n) * 127 + 128);
+                var green = (int)(Math.Sin(RainbowStyle.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
+                var blue = (int)(Math.Sin(RainbowStyle.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
 
-                if (Style.EscapeSequence == EscapeSequence.Ansi)
+                if (RainbowStyle.EscapeSequence == EscapeSequence.Ansi)
                 {
                     output.AppendFormat(AnsiFormat, Escape, red, green, blue, c);
                 }

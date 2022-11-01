@@ -12,7 +12,7 @@ Console.WriteLine(ansi);
 
 // Spectre.Console output
 text = "The lovers, the dreamers and me";
-lolcat.Style = style with
+lolcat.RainbowStyle = style with
 {
     EscapeSequence = EscapeSequence.Spectre,
     Frequency = 1,

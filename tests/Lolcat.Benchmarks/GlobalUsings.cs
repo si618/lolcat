@@ -6,6 +6,7 @@ global using BenchmarkDotNet.Environments;
 global using BenchmarkDotNet.Jobs;
 global using BenchmarkDotNet.Running;
 global using Lolcat.Benchmarks;
+global using Spectre.Console;
 global using System.Runtime.InteropServices;
 global using System.Text;
 global using System.Text.Json.Nodes;

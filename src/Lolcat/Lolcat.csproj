@@ -10,8 +10,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\assets\Rainbow.png" Pack="true" PackagePath="\" Link="Rainbow.png"/>
-    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+    <None Include="..\..\assets\Rainbow.png" Pack="true" PackagePath="\" Link="Rainbow.png" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <PropertyGroup>
