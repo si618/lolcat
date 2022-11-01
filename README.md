@@ -23,15 +23,6 @@ Ported with thanks from [PowerShell module](https://github.com/andot/lolcat) imp
 > dotnet add package lolcat
 ```
 
-## 🎉 Demo
-
-[Code](src/Lolcat.Demo/Program.cs)
-
-```bash
-> cd ./src/Lolcat.Demo
-> dotnet run
-```
-
 ## 🏗 Build️
 
 ```bash
@@ -61,4 +52,16 @@ Cloning into 'lolcat'...
 ```bash
 > cd ./tests/Lolcat.Benchmarks
 > dotnet run -c release
+```
+
+## 🎉 Demo
+
+[Static](src/Lolcat.Demo/Program.cs) or [animated]([Code](src/Lolcat.Demo.Animated/Program.cs)
+)
+
+```bash
+> cd ./src/Lolcat.Demo
+> dotnet run
+> cd ../Lolcat.Demo.Animated
+> dotnet run
 ```

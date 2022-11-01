@@ -9,12 +9,12 @@ public class Benchmarks
     [Benchmark]
     [ArgumentsSource(nameof(TextToConvert))]
     // ReSharper disable once InconsistentNaming
-    public string ConvertToAnsi(string Text) => _ansiRainbow.Convert(Text);
+    public string ConvertToAnsi(string Text) => _ansiRainbow.Markup(Text);
 
     [Benchmark]
     [ArgumentsSource(nameof(TextToConvert))]
     // ReSharper disable once InconsistentNaming
-    public string ConvertToSpectre(string Text) => _spectreRainbow.Convert(Text);
+    public string ConvertToSpectre(string Text) => _spectreRainbow.Markup(Text);
 
     public IEnumerable<object> TextToConvert()
     {

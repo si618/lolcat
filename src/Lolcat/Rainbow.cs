@@ -1,5 +1,8 @@
 ﻿namespace Lolcat;
 
+using Spectre.Console;
+using System.Diagnostics;
+
 public class Rainbow
 {
     private const char Escape = (char)27;
@@ -11,17 +14,52 @@ public class Rainbow
     public Rainbow(RainbowStyle? rainbowStyle = null)
     {
         RainbowStyle = rainbowStyle ?? new RainbowStyle();
-
-        if (RainbowStyle.Enabled)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     /// <summary>
-    /// Convert <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
+    /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
     /// </summary>
-    public string Convert(string text)
+    public string Markup(string text)
+    {
+        return Lolcat(text);
+    }
+
+    /// <summary>
+    /// Animate <paramref name="text" /> as a rainbow using defined <see cref="RainbowStyle"/>
+    /// </summary>
+    public void Animate(string text)
+    {
+        if (!RainbowStyle.Animate)
+        {
+            return;
+        }
+
+        var lolcat = Lolcat(text);
+
+        var stopwatch = new Stopwatch();
+        stopwatch.Start();
+
+        // Try animating all at once but test line by line or maybe make it optional in style?
+        while (stopwatch.Elapsed <= RainbowStyle.Duration)
+        {
+            AnsiConsole.Clear();
+
+            if (RainbowStyle.EscapeSequence == EscapeSequence.Ansi)
+            {
+                Console.Write(lolcat);
+            }
+            else
+            {
+                AnsiConsole.Markup(lolcat);
+            }
+
+            Thread.Sleep((int)(1_000 / RainbowStyle.Speed));
+
+            lolcat = Lolcat(text);
+        }
+    }
+
+    private string Lolcat(string text)
     {
         var random = RainbowStyle.Seed == 0 ? new Random() : new Random(RainbowStyle.Seed);
         var seed = random.Next(255);
@@ -42,6 +80,10 @@ public class Rainbow
             }
 
             var s = seed;
+            if (RainbowStyle.Animate)
+            {
+                s += System.Convert.ToInt32(RainbowStyle.Spread);
+            }
 
             for (var j = 0; j < length; j++)
             {

@@ -8,7 +8,7 @@ public class RainbowTests
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: 42);
         var lolcat = new Rainbow(style);
 
-        var converted = lolcat.Convert(Resources.AnsiRainbowText);
+        var converted = lolcat.Markup(Resources.AnsiRainbowText);
 
         converted.Should().Be(Resources.AnsiRainbowEscaped);
     }
@@ -19,7 +19,7 @@ public class RainbowTests
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);
         var lolcat = new Rainbow(style);
 
-        var converted = lolcat.Convert(Resources.SpectreRainbowText);
+        var converted = lolcat.Markup(Resources.SpectreRainbowText);
 
         converted.Should().Be(Resources.SpectreRainbowEscaped);
     }

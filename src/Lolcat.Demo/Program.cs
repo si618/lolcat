@@ -7,7 +7,7 @@ AnsiConsole.Clear();
 var text = "Someday we'll find it, the rainbow connection";
 var style = new RainbowStyle();
 var lolcat = new Rainbow(style);
-var ansi = lolcat.Convert(text);
+var ansi = lolcat.Markup(text);
 Console.WriteLine(ansi);
 
 // Spectre.Console output
@@ -19,7 +19,7 @@ lolcat.RainbowStyle = style with
     Spread = 5,
     Seed = 42
 };
-var spectre = lolcat.Convert(text);
+var spectre = lolcat.Markup(text);
 AnsiConsole.MarkupLine(spectre);
 
 // Readme screenshot
