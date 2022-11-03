@@ -1,28 +1,37 @@
 ﻿namespace Lolcat;
 
-using Spectre.Console;
-using System.Diagnostics;
-
+/// <summary>
+/// Add rainbow style to text
+/// </summary>
 public class Rainbow
 {
     private const char Escape = (char)27;
-    private const string AnsiFormat = "{0}[38;2;{1};{2};{3};1m{4}{0}[0m";
-    private const string SpectreFormat = "[rgb({0},{1},{2})]{3}[/]";
+    private static readonly string Ansi = $"{Escape}[38;2;{{0}};{{1}};{{2}};1m{{3}}{Escape}[0m";
+    private const string Spectre = "[rgb({0},{1},{2})]{3}[/]";
+
+    private ILolcatConsole Console { get; }
 
     public RainbowStyle RainbowStyle { get; set; }
 
     public Rainbow(RainbowStyle? rainbowStyle = null)
     {
         RainbowStyle = rainbowStyle ?? new RainbowStyle();
+        Console = RainbowStyle.EscapeSequence == EscapeSequence.Ansi
+            ? new LolcatAnsiConsole()
+            : new LolcatSpectreConsole();
+    }
+
+    public Rainbow(ILolcatConsole console, RainbowStyle rainbowStyle)
+        : this(rainbowStyle)
+    {
+        Console = console;
     }
 
     /// <summary>
     /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
     /// </summary>
-    public string Markup(string text)
-    {
-        return Lolcat(text);
-    }
+    public string Markup(string text) =>
+        string.Join(Environment.NewLine, BuildText(text, RainbowStyle.Spread));
 
     /// <summary>
     /// Animate <paramref name="text" /> as a rainbow using defined <see cref="RainbowStyle"/>
@@ -34,87 +43,83 @@ public class Rainbow
             return;
         }
 
-        var lolcat = Lolcat(text);
+        var cursorVisible = Console.GetCursorVisibility();
+        Console.SetCursorVisibility(false);
+
+        Console.Clear();
 
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        // Try animating all at once but test line by line or maybe make it optional in style?
+        var seed = RainbowStyle.Seed;
+
         while (stopwatch.Elapsed <= RainbowStyle.Duration)
         {
-            AnsiConsole.Clear();
+            Console.MoveToTopRow();
 
-            if (RainbowStyle.EscapeSequence == EscapeSequence.Ansi)
+            foreach (var line in BuildText(text, seed))
             {
-                Console.Write(lolcat);
-            }
-            else
-            {
-                AnsiConsole.Markup(lolcat);
+                Console.MoveToStartOfLine();
+                Console.WriteLine(line);
             }
 
             Thread.Sleep((int)(1_000 / RainbowStyle.Speed));
 
-            lolcat = Lolcat(text);
+            seed += Convert.ToInt32(RainbowStyle.Spread);
         }
+
+        Console.SetCursorVisibility(cursorVisible);
     }
 
-    private string Lolcat(string text)
+    private string[] BuildText(string text, double seed)
     {
-        var random = RainbowStyle.Seed == 0 ? new Random() : new Random(RainbowStyle.Seed);
-        var seed = random.Next(255);
-        var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
-        var output = new StringBuilder();
+        var lines = CollectionsMarshal
+            .AsSpan(text.ReplaceLineEndings().Split(Environment.NewLine).ToList());
 
-        for (var i = 0; i < lines.Length; i++)
+        return BuildLines(lines, seed);
+    }
+
+    private string[] BuildLines(Span<string> lines, double seed)
+    {
+        var output = new List<string>();
+        var format = RainbowStyle.EscapeSequence == EscapeSequence.Ansi ? Ansi : Spectre;
+
+        foreach (var line in lines)
         {
-            var line = lines[i];
             seed++;
 
-            var length = line.Length;
-            if (length == 0 && output.Length > 0)
+            // No point building an empty line
+            if (line.Length == 0 && output.Count > 0)
             {
-                // Empty line
-                output.AppendLine();
                 continue;
             }
 
-            var s = seed;
-            if (RainbowStyle.Animate)
+            output.Add(BuildLine(line, format, seed + RainbowStyle.Spread));
+        }
+
+        return output.ToArray();
+    }
+
+    private string BuildLine(string line, string format, double seed)
+    {
+        var output = new StringBuilder();
+
+        for (var i = 0; i < line.Length; i++)
+        {
+            var n = (seed + i) / RainbowStyle.Spread;
+            var markup = line[i].ToString();
+
+            if (i + 1 < line.Length &&
+                char.IsSurrogatePair(line[i], line[i + 1]))
             {
-                s += System.Convert.ToInt32(RainbowStyle.Spread);
+                markup += line[++i].ToString();
             }
 
-            for (var j = 0; j < length; j++)
-            {
-                var n = s + j / RainbowStyle.Spread;
-                var c = line[j];
+            var red = (int)(Math.Sin(RainbowStyle.Frequency * n) * 127 + 128);
+            var green = (int)(Math.Sin(RainbowStyle.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
+            var blue = (int)(Math.Sin(RainbowStyle.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
 
-                if (j < length - 1 && char.IsSurrogatePair(c, line[j + 1]))
-                {
-                    c += line[j + 1];
-                    j++;
-                }
-
-                var red = (int)(Math.Sin(RainbowStyle.Frequency * n) * 127 + 128);
-                var green = (int)(Math.Sin(RainbowStyle.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
-                var blue = (int)(Math.Sin(RainbowStyle.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
-
-                if (RainbowStyle.EscapeSequence == EscapeSequence.Ansi)
-                {
-                    output.AppendFormat(AnsiFormat, Escape, red, green, blue, c);
-                }
-                else
-                {
-                    output.AppendFormat(SpectreFormat, red, green, blue, c);
-                }
-            }
-
-            // Don't append at the end
-            if (i + 1 < lines.Length)
-            {
-                output.AppendLine();
-            }
+            output.AppendFormat(format, red, green, blue, markup);
         }
 
         return output.ToString();

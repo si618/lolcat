@@ -18,16 +18,22 @@
     <resheader name="writer">
         <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
     </resheader>
-    <data name="AnsiRainbowEscaped" xml:space="preserve">
-        <value>&#x1B;[38;2;3;170;210;1mA&#x1B;[0m&#x1B;[38;2;2;174;206;1mn&#x1B;[0m&#x1B;[38;2;1;178;203;1ms&#x1B;[0m&#x1B;[38;2;1;182;199;1mi&#x1B;[0m&#x1B;[38;2;1;186;196;1mR&#x1B;[0m&#x1B;[38;2;1;190;192;1ma&#x1B;[0m&#x1B;[38;2;1;193;189;1mi&#x1B;[0m&#x1B;[38;2;1;197;185;1mn&#x1B;[0m&#x1B;[38;2;1;200;181;1mb&#x1B;[0m&#x1B;[38;2;1;204;177;1mo&#x1B;[0m&#x1B;[38;2;2;207;173;1mw&#x1B;[0m</value>
+    <data name="AnsiMarkup" xml:space="preserve">
+        <value>&#x1B;[38;2;58;254;71;1mA&#x1B;[0m&#x1B;[38;2;61;254;67;1mn&#x1B;[0m&#x1B;[38;2;65;254;63;1ms&#x1B;[0m&#x1B;[38;2;68;254;60;1mi&#x1B;[0m&#x1B;[38;2;72;254;56;1mR&#x1B;[0m&#x1B;[38;2;76;254;53;1ma&#x1B;[0m&#x1B;[38;2;80;253;49;1mi&#x1B;[0m&#x1B;[38;2;84;253;46;1mn&#x1B;[0m&#x1B;[38;2;88;252;43;1mb&#x1B;[0m&#x1B;[38;2;92;251;40;1mo&#x1B;[0m&#x1B;[38;2;96;250;37;1mw&#x1B;[0m</value>
     </data>
-    <data name="SpectreRainbowEscaped" xml:space="preserve">
-        <value>[rgb(3,170,210)]S[/][rgb(2,174,206)]p[/][rgb(1,178,203)]e[/][rgb(1,182,199)]c[/][rgb(1,186,196)]t[/][rgb(1,190,192)]r[/][rgb(1,193,189)]e[/][rgb(1,197,185)]R[/][rgb(1,200,181)]a[/][rgb(1,204,177)]i[/][rgb(2,207,173)]n[/][rgb(3,210,169)]b[/][rgb(4,214,165)]o[/][rgb(5,217,161)]w[/]</value>
+    <data name="SpectreMarkup" xml:space="preserve">
+        <value>[rgb(58,254,71)]S[/][rgb(61,254,67)]p[/][rgb(65,254,63)]e[/][rgb(68,254,60)]c[/][rgb(72,254,56)]t[/][rgb(76,254,53)]r[/][rgb(80,253,49)]e[/][rgb(84,253,46)]R[/][rgb(88,252,43)]a[/][rgb(92,251,40)]i[/][rgb(96,250,37)]n[/][rgb(100,249,34)]b[/][rgb(104,247,31)]o[/][rgb(109,246,28)]w[/]</value>
     </data>
-    <data name="AnsiRainbowText" xml:space="preserve">
+    <data name="AnsiText" xml:space="preserve">
         <value>AnsiRainbow</value>
     </data>
-    <data name="SpectreRainbowText" xml:space="preserve">
+    <data name="SpectreText" xml:space="preserve">
         <value>SpectreRainbow</value>
+    </data>
+    <data name="EmojiText" xml:space="preserve">
+        <value>🌈🦄</value>
+    </data>
+    <data name="EmojiMarkup" xml:space="preserve">
+        <value>[rgb(58,254,71)]🌈[/][rgb(65,254,63)]🦄[/]</value>
     </data>
 </root>

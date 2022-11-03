@@ -3,16 +3,18 @@ using Spectre.Console;
 
 AnsiConsole.Clear();
 
-// Ansi output is the default escape sequence
 var text = "Someday we'll find it, the rainbow connection";
-var style = new RainbowStyle();
-var lolcat = new Rainbow(style);
-var ansi = lolcat.Markup(text);
-Console.WriteLine(ansi);
 
-// Spectre.Console output
+// Ansi is the default escape sequence
+var ansi = new RainbowStyle();
+var lolcat = new Rainbow(ansi);
+var markup = lolcat.Markup(text);
+Console.WriteLine(markup);
+
 text = "The lovers, the dreamers and me";
-lolcat.RainbowStyle = style with
+
+// Spectre.Console escape sequence is also available
+lolcat.RainbowStyle = ansi with
 {
     EscapeSequence = EscapeSequence.Spectre,
     Frequency = 1,
@@ -22,7 +24,8 @@ lolcat.RainbowStyle = style with
 var spectre = lolcat.Markup(text);
 AnsiConsole.MarkupLine(spectre);
 
-// Readme screenshot
-//Console.Clear();
-//lolcat.Style = new RainbowStyle();
-//Console.WriteLine(lolcat.Convert(File.ReadAllText("./Program.cs")));
+// Ouroboros 😎
+AnsiConsole.Clear();
+lolcat.RainbowStyle = new RainbowStyle();
+markup = lolcat.Markup(File.ReadAllText("./Program.cs"));
+Console.WriteLine(markup);

@@ -14,14 +14,14 @@ public record RainbowStyle(
     double Frequency = .1,
     int Seed = 0,
     bool Animate = false,
-    TimeSpan Duration = default,
-    double Speed = 0)
+    TimeSpan? Duration = null,
+    double Speed = 20D)
 {
     public EscapeSequence EscapeSequence { get; init; } = EscapeSequence;
-    public double Spread { get; init; } = Spread.ThrowIfOutOfRange(1, 100);
-    public double Frequency { get; init; } = Frequency.ThrowIfOutOfRange(0.001, 1);
+    public double Spread { get; init; } = Spread.ThrowIfOutOfRange(1D, 100D);
+    public double Frequency { get; init; } = Frequency.ThrowIfOutOfRange(0.001D, 1D);
     public int Seed { get; init; } = Seed;
-    public bool Animate { get; init; } = Animate;
-    public TimeSpan Duration { get; init; } = Duration == default ? TimeSpan.FromSeconds(12) : Duration;
-    public double Speed { get; init; } = Speed <= 0 ? 0.1 : Speed;
+    public bool Animate { get; } = Animate;
+    public TimeSpan? Duration { get; } = Duration ?? TimeSpan.FromSeconds(12);
+    public double Speed { get; } = Speed.ThrowIfZeroOrLess();
 }

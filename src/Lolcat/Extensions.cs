@@ -1,6 +1,6 @@
 ﻿namespace Lolcat;
 
-public static class Extensions
+internal static class Extensions
 {
     // ReSharper disable once RedundantNullableFlowAttribute
     public static double ThrowIfOutOfRange([NotNull] this double argument, double min, double max,
@@ -17,4 +17,17 @@ public static class Extensions
 
         throw new ArgumentOutOfRangeException(paramName, argument, message);
     }
+
+    // ReSharper disable once RedundantNullableFlowAttribute
+    public static double ThrowIfZeroOrLess([NotNull] this double argument,
+        [CallerArgumentExpression("argument")] string? paramName = null)
+    {
+        if (argument > 0)
+        {
+            return argument;
+        }
+
+        throw new ArgumentOutOfRangeException(paramName, argument, "Zero or less");
+    }
+
 }

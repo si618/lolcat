@@ -50,10 +50,10 @@ public class RainbowStyleTests
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedTooLow()
+    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedIsZero()
     {
-        var ctor = () => new RainbowStyle(Speed: 0);
-        var message = $"Less than min '{0.1D}' (Parameter 'Speed ?? 20'){NL}Actual value was {0D}.{NL}";
+        var ctor = () => new RainbowStyle(Speed: 0D);
+        var message = $"Zero or less (Parameter 'Speed'){NL}Actual value was 0.{NL}";
 
         ctor.Should()
             .Throw<ArgumentOutOfRangeException>()
@@ -61,13 +61,29 @@ public class RainbowStyleTests
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedTooHigh()
+    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedIsLessThanZero()
     {
-        var ctor = () => new RainbowStyle(Speed: 101);
-        var message = $"Greater than max '{100}' (Parameter 'Speed ?? 20'){NL}Actual value was {101M}.{NL}";
+        var ctor = () => new RainbowStyle(Speed: -1D);
+        var message = $"Zero or less (Parameter 'Speed'){NL}Actual value was -1.{NL}";
 
         ctor.Should()
             .Throw<ArgumentOutOfRangeException>()
             .WithMessage(message);
+    }
+
+    [Fact]
+    public void Ctor_SetsDurationToTwelveSeconds_WhenNoDurationSpecified()
+    {
+        var style = new RainbowStyle();
+
+        style.Duration.Should().Be(TimeSpan.FromSeconds(12));
+    }
+
+    [Fact]
+    public void Ctor_SetsSpeedToTwenty_WhenNoSpeedSpecified()
+    {
+        var style = new RainbowStyle();
+
+        style.Speed.Should().Be(20);
     }
 }

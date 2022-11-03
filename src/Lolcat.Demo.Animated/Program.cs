@@ -1,18 +1,16 @@
-﻿using Lolcat;
-
-const string text =
-@"Someday we'll find it, the rainbow connection
-The lovers, the dreamers and me";
+﻿var random = new Random();
 
 var style = new RainbowStyle(
     EscapeSequence.Spectre,
-    Spread: 1,
-    Frequency: .5,
+    Spread: random.Next(1, 8),
+    Frequency: random.NextDouble(),
     Seed: 42,
     Animate: true,
     Duration: TimeSpan.FromSeconds(8),
-    Speed: 2);
+    Speed: random.Next(10, 30));
 
 var lolcat = new Rainbow(style);
 
-lolcat.Animate(args.Length == 1 ? args[0] : text);
+lolcat.Animate(args.Length > 0
+    ? string.Join(Environment.NewLine, args)
+    : DateTime.Now.Ticks % 2 == 0 ? Resources.Alien : Resources.Unicorn);
