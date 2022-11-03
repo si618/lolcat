@@ -49,6 +49,17 @@ public class RainbowTests
     }
 
     [Fact]
+    public void Markup_EmptyLinesRemain_AfterInvoking()
+    {
+        var lolcat = new Rainbow();
+        var text = Environment.NewLine + Environment.NewLine;
+
+        var markup = lolcat.Markup(text);
+
+        markup.Should().Be(text);
+    }
+
+    [Fact]
     public void MarkupLine_AddsCurrentLineTerminator_ToMarkup()
     {
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);

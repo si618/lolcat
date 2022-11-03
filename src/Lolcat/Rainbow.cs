@@ -105,6 +105,7 @@ public class Rainbow
             // No point building an empty line
             if (line.Length == 0 && output.Count > 0)
             {
+                output.Add(string.Empty);
                 continue;
             }
 
