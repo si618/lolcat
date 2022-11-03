@@ -78,9 +78,7 @@ public class Rainbow
 
     private double GetStartingSeed()
     {
-        var random = RainbowStyle.Seed == 0
-            ? new Random()
-            : new Random(RainbowStyle.Seed);
+        var random = RainbowStyle.Seed == 0 ? new Random() : new Random(RainbowStyle.Seed);
 
         return RainbowStyle.Seed == 0 ? random.Next(0, 255) : Convert.ToDouble(RainbowStyle.Seed);
 
