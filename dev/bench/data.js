@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1667471407403,
+  "lastUpdate": 1667473105997,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -120,6 +120,66 @@ window.BENCHMARK_DATA = {
             "value": 1978071.3661024305,
             "unit": "ns",
             "range": "± 41731.742058631426"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "388672f27a88b235bac66f2da0030f9a4763f878",
+          "message": "Add MarkupLine method",
+          "timestamp": "2022-11-03T21:24:39+10:30",
+          "tree_id": "18097144a28f86197957659caecfe89560cd8e44",
+          "url": "https://github.com/si618/lolcat/commit/388672f27a88b235bac66f2da0030f9a4763f878"
+        },
+        "date": 1667473105612,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 24615.93778889974,
+            "unit": "ns",
+            "range": "± 384.26376196237663"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 191110.71505533854,
+            "unit": "ns",
+            "range": "± 2678.069387584596"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1969689.95625,
+            "unit": "ns",
+            "range": "± 26798.42336278811"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 24527.57663167318,
+            "unit": "ns",
+            "range": "± 201.39446417337837"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 185369.88653971354,
+            "unit": "ns",
+            "range": "± 1411.248621369643"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1894830.027734375,
+            "unit": "ns",
+            "range": "± 9481.056138637437"
           }
         ]
       }
