@@ -5,17 +5,17 @@
 [![NuGet](https://img.shields.io/nuget/dt/lolcat.png)](https://www.nuget.org/stats/packages/lolcat?groupby=ClientName)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](LICENSE)
 
-[lolcat](https://github.com/busyloop/lolcat) dotnet library ported from [powershell module](https://github.com/andot/lolcat) 🙇‍
+[lolcat](https://github.com/busyloop/lolcat) dotnet library inspired by [powershell module](https://github.com/andot/lolcat) 🙇‍
 
 ## 🧐 What?
 
-![The Rainbow](./assets/Nom.webp "The Rainbow")
+![The Rainbow](https://raw.githubusercontent.com/si618/lolcat/main/assets/Nom.webp "The Rainbow")
 
 ## 📸 Screenshots
 
-![Ouroboros](./assets/Ouroboros.webp "Ouroboros")
+![Ouroboros](https://raw.githubusercontent.com/si618/lolcat/main/assets/Ouroboros.webp "Ouroboros")
 
-![AlienIsBeautiful](./assets/AlienIsBeautiful.gif "Alien is beautiful")
+![AlienIsBeautiful](https://raw.githubusercontent.com/si618/lolcat/main/assets/AlienIsBeautiful.gif "Alien is beautiful")
 
 ## 🚧 Installation
 
@@ -56,7 +56,7 @@ Cloning into 'lolcat'...
 
 ## 🎉 Demo
 
-[Static](src/Lolcat.Demo/Program.cs) or [animated](src/Lolcat.Demo.Animated/Program.cs)
+[Static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) or [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs)
 
 ```bash
 > cd ./src/Lolcat.Demo
