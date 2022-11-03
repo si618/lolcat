@@ -58,6 +58,6 @@ public class RainbowTests
 
         var animate = () => lolcat.Animate(Resources.AnsiText);
 
-        animate.ExecutionTime().Should().BeCloseTo(duration, 50.Milliseconds());
+        animate.ExecutionTime().Should().BeCloseTo(duration, 100.Milliseconds());
     }
 }
