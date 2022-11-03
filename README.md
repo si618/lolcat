@@ -1,4 +1,4 @@
-## 🌈 lolcat 🦄
+# 🌈 lolcat 🦄
 
 [![all the things](https://github.com/si618/lolcat/actions/workflows/workflow.yml/badge.svg)](https://github.com/si618/lolcat/actions/workflows/workflow.yml)
 [![NuGet](https://img.shields.io/nuget/v/lolcat.png)](https://www.nuget.org/packages/lolcat)
@@ -47,7 +47,7 @@ Cloning into 'lolcat'...
 
 ## ⚗ Benchmark
 
-[Github charts](https://si618.github.io/lolcat/dev/bench)
+[Benchmark charts](https://si618.github.io/lolcat/dev/bench)
 
 ```bash
 > cd ./tests/Lolcat.Benchmarks
@@ -56,7 +56,7 @@ Cloning into 'lolcat'...
 
 ## 🎉 Demos
 
-Code for [Static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
+Code for [static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
 
 ```bash
 > cd ./src/Lolcat.Demo
