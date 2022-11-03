@@ -60,7 +60,7 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [38;2;157;220;6;1mA[0m[38;2;161;217;5;1mn[0m[38;2;165;214;4;1ms[0m[38;2;169;211;3;1mi[0m[38;2;173;207;2;1mR[0m[38;2;177;204;1;1ma[0m[38;2;181;201;1;1mi[0m[38;2;185;197;1;1mn[0m[38;2;188;194;1;1mb[0m[38;2;192;190;1;1mo[0m[38;2;196;186;1;1mw[0m.
+        ///   Looks up a localized string similar to [38;2;254;68;60;1mA[0m[38;2;254;64;64;1mn[0m[38;2;254;61;67;1ms[0m[38;2;254;57;71;1mi[0m[38;2;254;54;75;1mR[0m[38;2;253;50;79;1ma[0m[38;2;253;47;83;1mi[0m[38;2;252;44;87;1mn[0m[38;2;251;41;91;1mb[0m[38;2;250;38;95;1mo[0m[38;2;249;35;99;1mw[0m.
         /// </summary>
         internal static string AnsiMarkup {
             get {
@@ -78,7 +78,7 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [rgb(157,220,6)]🌈[/][rgb(165,214,4)]🦄[/].
+        ///   Looks up a localized string similar to [rgb(254,68,60)]🌈[/][rgb(254,61,67)]🦄[/].
         /// </summary>
         internal static string EmojiMarkup {
             get {
@@ -96,7 +96,7 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [rgb(157,220,6)]S[/][rgb(161,217,5)]p[/][rgb(165,214,4)]e[/][rgb(169,211,3)]c[/][rgb(173,207,2)]t[/][rgb(177,204,1)]r[/][rgb(181,201,1)]e[/][rgb(185,197,1)]R[/][rgb(188,194,1)]a[/][rgb(192,190,1)]i[/][rgb(196,186,1)]n[/][rgb(199,182,1)]b[/][rgb(203,179,1)]o[/][rgb(206,175,2)]w[/].
+        ///   Looks up a localized string similar to [rgb(254,68,60)]S[/][rgb(254,64,64)]p[/][rgb(254,61,67)]e[/][rgb(254,57,71)]c[/][rgb(254,54,75)]t[/][rgb(253,50,79)]r[/][rgb(253,47,83)]e[/][rgb(252,44,87)]R[/][rgb(251,41,91)]a[/][rgb(250,38,95)]i[/][rgb(249,35,99)]n[/][rgb(248,32,103)]b[/][rgb(246,29,107)]o[/][rgb(245,26,111)]w[/].
         /// </summary>
         internal static string SpectreMarkup {
             get {
