@@ -9,7 +9,7 @@
     <RepositoryUrl>https://github.com/si618/lolcat</RepositoryUrl>
     <Copyright>Simon McKenna</Copyright>
     <PackageProjectUrl>https://github.com/si618/lolcat</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/si618/lolcat/LICENSE</PackageLicenseUrl>
+    <PackageLicense>https://github.com/si618/lolcat/LICENSE</PackageLicense>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
