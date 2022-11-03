@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lolcat.Tests {
+namespace Lolcat.Demo.Animated {
     using System;
     
     
@@ -38,7 +38,7 @@ namespace Lolcat.Tests {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lolcat.Tests.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lolcat.Demo.Animated.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,56 +60,37 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [38;2;157;220;6;1mA[0m[38;2;161;217;5;1mn[0m[38;2;165;214;4;1ms[0m[38;2;169;211;3;1mi[0m[38;2;173;207;2;1mR[0m[38;2;177;204;1;1ma[0m[38;2;181;201;1;1mi[0m[38;2;185;197;1;1mn[0m[38;2;188;194;1;1mb[0m[38;2;192;190;1;1mo[0m[38;2;196;186;1;1mw[0m.
+        ///   Looks up a localized string similar to .     .       .  .   . .   .   . .    +  .
+        ///  .     .  :     .    .. :. .___---------___.
+        ///       .  .   .    .  :.:. _&quot;.^ .^ ^.  &apos;.. :&quot;-_. .
+        ///    .  :       .  .  .:../:            . .^  :.:\.
+        ///        .   . :: +. :.:/: .   .    .        . . .:\
+        /// .  :    .     . _ :::/:               .  ^ .  . .:\
+        ///  .. . .   . - : :.:./.                        .  .:\
+        ///  .      .     . :..|:                    .  .  ^. .:|
+        ///    .       . : : ..||        .                . . !:|
+        ///  .     . . . ::. ::\(                      [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string AnsiMarkup {
+        internal static string Alien {
             get {
-                return ResourceManager.GetString("AnsiMarkup", resourceCulture);
+                return ResourceManager.GetString("Alien", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AnsiRainbow.
+        ///   Looks up a localized string similar to                                ,|
+        ///                             //|                              ,|
+        ///                           //,/                             -~ |
+        ///                         // / |                         _-~   /  ,
+        ///                       /&apos;/ / /                       _-~   _/_-~ |
+        ///                      ( ( / /&apos;                   _ -~     _-~ ,/&apos;
+        ///                       \~\/&apos;/|             __--~~__--\ _-~  _/,
+        ///               ,,)))))));, \/~-_     __--~~  --~~  __/~  _-~ /
+        ///            _ [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string AnsiText {
+        internal static string Unicorn {
             get {
-                return ResourceManager.GetString("AnsiText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [rgb(157,220,6)]🌈[/][rgb(165,214,4)]🦄[/].
-        /// </summary>
-        internal static string EmojiMarkup {
-            get {
-                return ResourceManager.GetString("EmojiMarkup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 🌈🦄.
-        /// </summary>
-        internal static string EmojiText {
-            get {
-                return ResourceManager.GetString("EmojiText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [rgb(157,220,6)]S[/][rgb(161,217,5)]p[/][rgb(165,214,4)]e[/][rgb(169,211,3)]c[/][rgb(173,207,2)]t[/][rgb(177,204,1)]r[/][rgb(181,201,1)]e[/][rgb(185,197,1)]R[/][rgb(188,194,1)]a[/][rgb(192,190,1)]i[/][rgb(196,186,1)]n[/][rgb(199,182,1)]b[/][rgb(203,179,1)]o[/][rgb(206,175,2)]w[/].
-        /// </summary>
-        internal static string SpectreMarkup {
-            get {
-                return ResourceManager.GetString("SpectreMarkup", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to SpectreRainbow.
-        /// </summary>
-        internal static string SpectreText {
-            get {
-                return ResourceManager.GetString("SpectreText", resourceCulture);
+                return ResourceManager.GetString("Unicorn", resourceCulture);
             }
         }
     }

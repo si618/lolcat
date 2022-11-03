@@ -4,14 +4,22 @@
     <PackageId>lolcat</PackageId>
     <PackageIcon>Rainbow.png</PackageIcon>
     <Product>lolcat</Product>
-    <Title>Rainbows and unicorns!</Title>
-    <Description>Add rainbow style to your dotnet console apps</Description>
+    <Title>🌈 lolcat dotnet library 🦄</Title>
+    <Description>Add rainbow style to dotnet console apps</Description>
     <RepositoryUrl>https://github.com/si618/lolcat</RepositoryUrl>
+    <Copyright>Simon McKenna</Copyright>
+    <PackageProjectUrl>https://github.com/si618/lolcat</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/si618/lolcat/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
   <ItemGroup>
     <None Include="..\..\assets\Rainbow.png" Pack="true" PackagePath="\" Link="Rainbow.png" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Spectre.Console" Version="0.45.0" />
   </ItemGroup>
 
   <PropertyGroup>
