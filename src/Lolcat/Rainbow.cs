@@ -6,8 +6,8 @@
 public class Rainbow
 {
     private const char Escape = (char)27;
-    private static readonly string Ansi = $"{Escape}[38;2;{{0}};{{1}};{{2}};1m{{3}}{Escape}[0m";
     private const string Spectre = "[rgb({0},{1},{2})]{3}[/]";
+    private static readonly string Ansi = $"{Escape}[38;2;{{0}};{{1}};{{2}};1m{{3}}{Escape}[0m";
 
     private ILolcatConsole Console { get; }
 
@@ -31,7 +31,7 @@ public class Rainbow
     /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
     /// </summary>
     public string Markup(string text) =>
-        string.Join(Environment.NewLine, BuildText(text, RainbowStyle.Spread));
+        string.Join(Environment.NewLine, BuildText(text, GetStartingSeed()));
 
     /// <summary>
     /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>,
@@ -51,13 +51,12 @@ public class Rainbow
 
         var cursorVisible = Console.GetCursorVisibility();
         Console.SetCursorVisibility(false);
-
         Console.Clear();
 
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
-        var seed = RainbowStyle.Seed;
+        var seed = GetStartingSeed();
 
         while (stopwatch.Elapsed <= RainbowStyle.Duration)
         {
@@ -77,6 +76,15 @@ public class Rainbow
         Console.SetCursorVisibility(cursorVisible);
     }
 
+    private double GetStartingSeed()
+    {
+        var random = RainbowStyle.Seed == 0
+            ? new Random()
+            : new Random(RainbowStyle.Seed);
+
+        return RainbowStyle.Seed == 0 ? random.Next(0, 255) : Convert.ToDouble(RainbowStyle.Seed);
+
+    }
     private string[] BuildText(string text, double seed)
     {
         var lines = CollectionsMarshal
