@@ -56,7 +56,7 @@ Cloning into 'lolcat'...
 
 ## 🎉 Demo
 
-[Static](src/Lolcat.Demo/Program.cs) or [animated]([Code](src/Lolcat.Demo.Animated/Program.cs)
+[Static](src/Lolcat.Demo/Program.cs) or [animated]((src/Lolcat.Demo.Animated/Program.cs)
 )
 
 ```bash
