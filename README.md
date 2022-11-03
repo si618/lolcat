@@ -5,7 +5,7 @@
 [![NuGet](https://img.shields.io/nuget/dt/lolcat.png)](https://www.nuget.org/stats/packages/lolcat?groupby=ClientName)
 [![License](https://img.shields.io/badge/license-Apache_2.0-blue.svg)](LICENSE)
 
-[lolcat](https://github.com/busyloop/lolcat) dotnet library inspired by [powershell module](https://github.com/andot/lolcat) 🙇‍
+[lolcat](https://github.com/busyloop/lolcat) dotnet library inspired by the [lolcat powershell module](https://github.com/andot/lolcat) 🙇‍
 
 ## 🧐 What?
 
@@ -54,9 +54,9 @@ Cloning into 'lolcat'...
 > dotnet run -c release
 ```
 
-## 🎉 Demo
+## 🎉 Demos
 
-[Static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) or [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs)
+Code for [Static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
 
 ```bash
 > cd ./src/Lolcat.Demo
