@@ -70,7 +70,7 @@ public class Rainbow
 
             Thread.Sleep((int)(1_000 / RainbowStyle.Speed));
 
-            seed += Convert.ToInt32(RainbowStyle.Spread);
+            seed += RainbowStyle.Spread;
         }
 
         Console.SetCursorVisibility(cursorVisible);
