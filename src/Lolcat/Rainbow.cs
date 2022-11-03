@@ -34,6 +34,12 @@ public class Rainbow
         string.Join(Environment.NewLine, BuildText(text, RainbowStyle.Spread));
 
     /// <summary>
+    /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>,
+    /// follow by the current line terminator
+    /// </summary>
+    public string MarkupLine(string text) => Markup(text) + Environment.NewLine;
+
+    /// <summary>
     /// Animate <paramref name="text" /> as a rainbow using defined <see cref="RainbowStyle"/>
     /// </summary>
     public void Animate(string text)

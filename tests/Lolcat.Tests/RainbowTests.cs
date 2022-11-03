@@ -49,6 +49,17 @@ public class RainbowTests
     }
 
     [Fact]
+    public void MarkupLine_AddsCurrentLineTerminator_ToMarkup()
+    {
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);
+        var lolcat = new Rainbow(style);
+
+        var markup = lolcat.MarkupLine(Resources.EmojiText);
+
+        markup.Should().EndWith(Environment.NewLine);
+    }
+
+    [Fact]
     public void Animate_DurationMatchesSpecifiedValue_WithinMarginOfError()
     {
         var mockConsole = new Mock<ILolcatConsole>();
