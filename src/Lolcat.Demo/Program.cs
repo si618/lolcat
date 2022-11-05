@@ -14,19 +14,19 @@ Console.WriteLine(markup);
 text = "The lovers, the dreamers and me";
 
 // Spectre.Console escape sequence is also available
-lolcat.RainbowStyle = style with
+lolcat = new Rainbow(style with
 {
     EscapeSequence = EscapeSequence.Spectre,
     Frequency = 1,
     Spread = 5,
     Seed = 42
-};
+});
 var spectre = lolcat.Markup(text);
 AnsiConsole.MarkupLine(spectre);
 
 // Ouroboros 😎
-AnsiConsole.Clear();
-lolcat.RainbowStyle = new RainbowStyle();
-markup = lolcat.Markup(File.ReadAllText("./Program.cs"));
-Console.WriteLine(markup);
+//Console.Clear();
+//lolcat = new Rainbow();
+//markup = lolcat.Markup(File.ReadAllText("./Program.cs"));
+//Console.WriteLine(markup);
 

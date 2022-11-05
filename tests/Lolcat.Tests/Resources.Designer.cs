@@ -78,20 +78,47 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to [rgb(254,68,60)]🌈[/][rgb(254,61,67)]🦄[/].
+        ///   Looks up a localized string similar to [rgb(254,68,60)]🌈[/][rgb(254,61,67)] [/][rgb(254,57,71)]l[/][rgb(254,54,75)]o[/][rgb(253,50,79)]l[/][rgb(253,47,83)]c[/][rgb(252,44,87)]a[/][rgb(251,41,91)]t[/][rgb(250,38,95)] [/][rgb(249,35,99)]🦄[/]
+        ///
+        ///[rgb(254,61,67)]✨[/][rgb(254,57,71)]🎉[/][rgb(253,50,79)]🎊[/][rgb(252,44,87)]🐱[/][rgb(250,38,95)]‍[/][rgb(249,35,99)]🏍[/].
         /// </summary>
-        internal static string EmojiMarkup {
+        internal static string EmojiMultilineMarkup {
             get {
-                return ResourceManager.GetString("EmojiMarkup", resourceCulture);
+                return ResourceManager.GetString("EmojiMultilineMarkup", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 🌈🦄.
+        ///   Looks up a localized string similar to [rgb(254,68,60)]🌈[/]
+        ///
+        ///[rgb(254,61,67)]✨[/].
         /// </summary>
-        internal static string EmojiText {
+        internal static string EmojiMultilineMarkupWidth1 {
             get {
-                return ResourceManager.GetString("EmojiText", resourceCulture);
+                return ResourceManager.GetString("EmojiMultilineMarkupWidth1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 🌈 lolcat 🦄
+        ///
+        ///✨🎉🎊🐱‍🏍.
+        /// </summary>
+        internal static string EmojiMultilineText {
+            get {
+                return ResourceManager.GetString("EmojiMultilineText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Someday we&apos;ll find it, the rainbow connection
+        ///The lovers, the dreamers and me
+        ///
+        ///🌈 lolcat 🦄.
+        /// </summary>
+        internal static string SpectreFrameText {
+            get {
+                return ResourceManager.GetString("SpectreFrameText", resourceCulture);
             }
         }
         
@@ -101,6 +128,24 @@ namespace Lolcat.Tests {
         internal static string SpectreMarkup {
             get {
                 return ResourceManager.GetString("SpectreMarkup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [rgb(254,68,60)]S[/][rgb(254,64,64)]o[/][rgb(254,61,67)]m[/][rgb(254,57,71)]e[/][rgb(254,54,75)]d[/][rgb(253,50,79)]a[/][rgb(253,47,83)]y[/][rgb(252,44,87)] [/][rgb(251,41,91)]w[/][rgb(250,38,95)]e[/][rgb(249,35,99)]&apos;[/][rgb(248,32,103)]l[/][rgb(246,29,107)]l[/][rgb(245,26,111)] [/][rgb(243,24,116)]f[/][rgb(241,22,120)]i[/][rgb(239,19,124)]n[/][rgb(237,17,128)]d[/][rgb(235,15,132)] [/][rgb(233,13,137)]i[/][rgb(230,11,141)]t[/][rgb(228,10,145)],[/][rgb(225,8,149)] [/][rgb(222,7,153)]t[/][rgb(219,6,158)]h[/][ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SpectreMarkupFrame1 {
+            get {
+                return ResourceManager.GetString("SpectreMarkupFrame1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [rgb(254,57,71)]S[/][rgb(254,54,75)]o[/][rgb(253,50,79)]m[/][rgb(253,47,83)]e[/][rgb(252,44,87)]d[/][rgb(251,41,91)]a[/][rgb(250,38,95)]y[/][rgb(249,35,99)] [/][rgb(248,32,103)]w[/][rgb(246,29,107)]e[/][rgb(245,26,111)]&apos;[/][rgb(243,24,116)]l[/][rgb(241,22,120)]l[/][rgb(239,19,124)] [/][rgb(237,17,128)]f[/][rgb(235,15,132)]i[/][rgb(233,13,137)]n[/][rgb(230,11,141)]d[/][rgb(228,10,145)] [/][rgb(225,8,149)]i[/][rgb(222,7,153)]t[/][rgb(219,6,158)],[/][rgb(216,4,162)] [/][rgb(213,4,166)]t[/][rgb(210,3,170)]h[/][ [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string SpectreMarkupFrame2 {
+            get {
+                return ResourceManager.GetString("SpectreMarkupFrame2", resourceCulture);
             }
         }
         

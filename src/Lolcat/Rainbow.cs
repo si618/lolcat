@@ -1,70 +1,78 @@
 ﻿namespace Lolcat;
 
 /// <summary>
-/// Add rainbow style to text
+/// Class to convert plain text to static or animated rainbow
 /// </summary>
-public class Rainbow
+public sealed class Rainbow
 {
-    private const char Escape = (char)27;
-    private const string Spectre = "[rgb({0},{1},{2})]{3}[/]";
-    private static readonly string Ansi = $"{Escape}[38;2;{{0}};{{1}};{{2}};1m{{3}}{Escape}[0m";
-
-    private ILolcatConsole Console { get; }
-
-    public RainbowStyle RainbowStyle { get; set; }
-
     public Rainbow(RainbowStyle? rainbowStyle = null)
     {
         RainbowStyle = rainbowStyle ?? new RainbowStyle();
         Console = RainbowStyle.EscapeSequence == EscapeSequence.Ansi
-            ? new LolcatAnsiConsole()
-            : new LolcatSpectreConsole();
+            ? new SystemConsole()
+            : new SpectreConsole();
     }
 
-    public Rainbow(ILolcatConsole console, RainbowStyle rainbowStyle)
-        : this(rainbowStyle)
+    internal Rainbow(IConsole console, RainbowStyle? rainbowStyle = null) : this(rainbowStyle)
     {
         Console = console;
     }
 
-    /// <summary>
-    /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>
-    /// </summary>
-    public string Markup(string text) =>
-        string.Join(Environment.NewLine, BuildText(text, GetStartingSeed()));
+    public RainbowStyle RainbowStyle { get; }
 
     /// <summary>
-    /// Markup <paramref name="text" /> to a rainbow using defined <see cref="RainbowStyle"/>,
-    /// follow by the current line terminator
+    /// Markup <paramref name="text" /> to a rainbow using <see cref="RainbowStyle"/>
+    /// </summary>
+    public string Markup(string text, double seed)
+    {
+        _lines.Clear();
+        _lines.AddRange(text.ReplaceLineEndings().Split(Environment.NewLine));
+
+        BuildLines(seed);
+
+        return string.Join(Environment.NewLine, _lines);
+    }
+
+    /// <summary>
+    /// Markup <paramref name="text" /> to a rainbow using <see cref="RainbowStyle"/>
+    /// </summary>
+    public string Markup(string text) => Markup(text, GetStartingSeed());
+
+    /// <summary>
+    /// Markup <paramref name="text" /> to a rainbow using <see cref="RainbowStyle"/>,
+    /// followed by the current line terminator
     /// </summary>
     public string MarkupLine(string text) => Markup(text) + Environment.NewLine;
 
     /// <summary>
-    /// Animate <paramref name="text" /> as a rainbow using defined <see cref="RainbowStyle"/>
+    /// Animate <paramref name="text" /> as a rainbow using <see cref="RainbowStyle"/>
     /// </summary>
+    /// <param name="text">The text to animate</param>
     public void Animate(string text)
     {
-        if (!RainbowStyle.Animate)
-        {
-            return;
-        }
-
-        var cursorVisible = Console.GetCursorVisibility();
-        Console.SetCursorVisibility(false);
-        Console.Clear();
-
         var stopwatch = new Stopwatch();
         stopwatch.Start();
 
         var seed = GetStartingSeed();
+        var cursorTop = Console.GetCursorTop();
+        var cursorVisible = Console.GetCursorVisibility();
+        var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
+
+        Console.SetCursorVisibility(false);
 
         while (stopwatch.Elapsed <= RainbowStyle.Duration)
         {
-            Console.MoveToTopRow();
+            Console.MoveCursorToTop(cursorTop);
+            cursorTop = Console.GetCursorTop();
 
-            foreach (var line in BuildText(text, seed))
+            _lines.Clear();
+            _lines.AddRange(lines);
+
+            BuildLines(seed);
+
+            foreach (var line in _lines)
             {
-                Console.MoveToStartOfLine();
+                Console.MoveCursorToStartOfLine();
                 Console.WriteLine(line);
             }
 
@@ -76,65 +84,93 @@ public class Rainbow
         Console.SetCursorVisibility(cursorVisible);
     }
 
+    private IConsole Console { get; }
+
+    private readonly List<string> _lines = new();
+    private readonly StringBuilder _line = new();
+
     private double GetStartingSeed()
     {
-        var random = RainbowStyle.Seed == 0 ? new Random() : new Random(RainbowStyle.Seed);
+        var random = RainbowStyle.Seed == 0 ? new Random() : new Random((int)RainbowStyle.Seed);
 
         return RainbowStyle.Seed == 0 ? random.Next(0, 255) : Convert.ToDouble(RainbowStyle.Seed);
-
-    }
-    private string[] BuildText(string text, double seed)
-    {
-        var lines = CollectionsMarshal
-            .AsSpan(text.ReplaceLineEndings().Split(Environment.NewLine).ToList());
-
-        return BuildLines(lines, seed);
     }
 
-    private string[] BuildLines(Span<string> lines, double seed)
+    private void BuildLines(double seed)
     {
-        var output = new List<string>();
-        var format = RainbowStyle.EscapeSequence == EscapeSequence.Ansi ? Ansi : Spectre;
+        if (RainbowStyle.TrimWindowOverflow)
+        {
+            TrimLines();
+        }
 
-        foreach (var line in lines)
+        for (var i = 0; i < _lines.Count; i++)
         {
             seed++;
 
-            // No point building an empty line
-            if (line.Length == 0 && output.Count > 0)
-            {
-                output.Add(string.Empty);
-                continue;
-            }
+            // No point building an empty or blank line
+            if (string.IsNullOrWhiteSpace(_lines[i])) continue;
 
-            output.Add(BuildLine(line, format, seed + RainbowStyle.Spread));
+            BuildLine(_lines[i], seed + RainbowStyle.Spread);
+
+            _lines[i] = _line.ToString();
         }
-
-        return output.ToArray();
     }
 
-    private string BuildLine(string line, string format, double seed)
+    private void TrimLines()
     {
-        var output = new StringBuilder();
+        TrimLineHeight();
+        TrimLineWidth();
+    }
+
+    private void TrimLineHeight()
+    {
+        var availableHeight = Console.GetWindowHeight() - Console.GetCursorTop();
+        if (availableHeight < 1 || availableHeight >= _lines.Count) return;
+
+        availableHeight -= 1;
+        _lines.RemoveRange(availableHeight, _lines.Count - availableHeight);
+    }
+
+    private void TrimLineWidth()
+    {
+        var windowWidth = Console.GetWindowWidth() - 1;
+        if (windowWidth <= 0) return;
+
+        for (var i = 0; i < _lines.Count; i++)
+        {
+            var line = new StringBuilder(_lines[i]);
+
+            for (var j = line.Length - 1; j >= 0; j--)
+            {
+                var pair = j - 1 > 0 && char.IsSurrogatePair(line[j - 1], line[j]);
+
+                if (pair) j--;
+
+                line.Remove(j, pair ? 2 : 1);
+
+                if (line.Length - 1 <= windowWidth) break;
+            }
+
+            _lines[i] = line.ToString();
+        }
+    }
+
+    private void BuildLine(string line, double seed)
+    {
+        _line.Clear();
 
         for (var i = 0; i < line.Length; i++)
         {
             var n = (seed + i) / RainbowStyle.Spread;
-            var markup = line[i].ToString();
-
-            if (i + 1 < line.Length &&
-                char.IsSurrogatePair(line[i], line[i + 1]))
-            {
-                markup += line[++i].ToString();
-            }
 
             var red = (int)(Math.Sin(RainbowStyle.Frequency * n) * 127 + 128);
             var green = (int)(Math.Sin(RainbowStyle.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
             var blue = (int)(Math.Sin(RainbowStyle.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
 
-            output.AppendFormat(format, red, green, blue, markup);
-        }
+            var pair = i + 1 < line.Length && char.IsSurrogatePair(line[i], line[i + 1]);
+            var @char = pair ? line[i] + line[++i].ToString() : line[i].ToString();
 
-        return output.ToString();
+            _line.AppendFormat(Console.Format, red, green, blue, @char);
+        }
     }
 }

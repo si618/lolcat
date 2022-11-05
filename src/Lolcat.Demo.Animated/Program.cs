@@ -2,12 +2,11 @@
 
 var style = new RainbowStyle(
     EscapeSequence.Spectre,
-    Spread: random.Next(1, 8),
+    Spread: random.Next(1, 10),
     Frequency: random.NextDouble(),
     Seed: 42,
-    Animate: true,
-    Duration: TimeSpan.FromSeconds(8),
-    Speed: random.Next(10, 30));
+    Duration: TimeSpan.FromSeconds(42),
+    Speed: random.Next(10, 42));
 
 var lolcat = new Rainbow(style);
 
