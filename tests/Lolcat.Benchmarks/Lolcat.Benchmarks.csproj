@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Lolcat\Lolcat.csproj" />
+    <ProjectReference Include="..\Lolcat.Tests\Lolcat.Tests.csproj" />
   </ItemGroup>
 
 </Project>

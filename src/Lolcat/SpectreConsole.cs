@@ -6,6 +6,8 @@ internal sealed class SpectreConsole : IConsole
 
     public string Format { get; init; } = SpectreFormat;
 
+    public void Clear() => AnsiConsole.Clear();
+
     public int GetCursorTop() => Console.CursorTop;
 
     public bool GetCursorVisibility() => OperatingSystem.IsWindows() && Console.CursorVisible;
@@ -14,35 +16,48 @@ internal sealed class SpectreConsole : IConsole
 
     public int GetWindowWidth() => Console.WindowWidth;
 
-    public void MoveCursorToTop(int top)
+    public void MoveCursorToTopLeft(int top)
     {
         try
         {
-            Console.CursorTop = Console.BufferHeight > top ? top : Console.BufferHeight;
+            Console.SetCursorPosition(0, top);
         }
-        catch (ArgumentOutOfRangeException)
+        catch
         {
-            // Let the next update set cursor
+            // Window being resized; let the next update set cursor position
         }
     }
 
     public void MoveCursorToStartOfLine()
     {
-        if (Console.BufferWidth < 0)
-        {
-            return;
-        }
         try
         {
             Console.CursorLeft = 0;
         }
-        catch (ArgumentOutOfRangeException)
+        catch
         {
-            // Let the next update set cursor
+            // Window being resized; let the next update set cursor position
+        }
+    }
+
+    public void SetBufferSizeToCurrentWindow()
+    {
+        try
+        {
+            if (OperatingSystem.IsWindows())
+            {
+                Console.SetBufferSize(GetWindowWidth(), GetWindowHeight());
+            }
+        }
+        catch
+        {
+            // Window being resized; let the next update set cursor position
         }
     }
 
     public void SetCursorVisibility(bool visible) => Console.CursorVisible = visible;
 
-    public void WriteLine(string text) => Spectre.Console.AnsiConsole.MarkupLine(text);
+    public void Write(string text) => AnsiConsole.Markup(text);
+
+    public void WriteLine(string text) => AnsiConsole.MarkupLine(text);
 }

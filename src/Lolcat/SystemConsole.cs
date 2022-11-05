@@ -7,6 +7,8 @@ internal sealed class SystemConsole : IConsole
 
     public string Format { get; init; } = AnsiFormat;
 
+    public void Clear() => Console.Clear();
+
     public int GetCursorTop() => Console.CursorTop;
 
     public int GetWindowHeight() => Console.WindowHeight;
@@ -15,27 +17,48 @@ internal sealed class SystemConsole : IConsole
 
     public bool GetCursorVisibility() => OperatingSystem.IsWindows() && Console.CursorVisible;
 
-    public void MoveCursorToTop(int top) => Console.CursorTop = Console.BufferHeight > top
-        ? top
-        : Console.BufferHeight;
+    public void MoveCursorToTopLeft(int top)
+    {
+        try
+        {
+            Console.SetCursorPosition(0, top);
+        }
+        catch
+        {
+            // Window being resized; let the next update set cursor position
+        }
+    }
 
     public void MoveCursorToStartOfLine()
     {
-        if (Console.BufferWidth < 0)
-        {
-            return;
-        }
         try
         {
             Console.CursorLeft = 0;
         }
-        catch (ArgumentOutOfRangeException)
+        catch
         {
-            // Let the next update set cursor
+            // Window being resized; let the next update set cursor position
+        }
+    }
+
+    public void SetBufferSizeToCurrentWindow()
+    {
+        try
+        {
+            if (OperatingSystem.IsWindows())
+            {
+                Console.SetBufferSize(GetWindowWidth(), GetWindowHeight());
+            }
+        }
+        catch
+        {
+            // Window being resized; let the next update set cursor position
         }
     }
 
     public void SetCursorVisibility(bool visible) => Console.CursorVisible = visible;
+
+    public void Write(string text) => Console.Write(text);
 
     public void WriteLine(string text) => Console.WriteLine(text);
 }

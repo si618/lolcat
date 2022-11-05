@@ -29,5 +29,4 @@ internal static class Extensions
 
         throw new ArgumentOutOfRangeException(paramName, argument, "Zero or less");
     }
-
 }
