@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1667484172385,
+  "lastUpdate": 1667711534708,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -300,6 +300,66 @@ window.BENCHMARK_DATA = {
             "value": 2282129.9541666666,
             "unit": "ns",
             "range": "± 18428.84174747213"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a4891052a6ceee5ad4a2179e8d00e9e0ae741629",
+          "message": "Refactor animation (#8)\n\n* Refactor to support dynamic animation\r\n\r\n* Animation refactoring\r\n\r\n- Trim and pad out lines during animation (needs clear console to work reliably)\r\n- Separate out animation and its style into their own classes\r\n- Seal all classes unless needed\r\n- Create mock console for tests and benchmarks\r\n- Bump to 1.1\r\n\r\n* Missed one!\r\n\r\n* Tidy up\r\n\r\n* Fix linux line endings",
+          "timestamp": "2022-11-06T15:38:25+10:30",
+          "tree_id": "d1ec8f557393be84115afdc616e17f4ff4d550ca",
+          "url": "https://github.com/si618/lolcat/commit/a4891052a6ceee5ad4a2179e8d00e9e0ae741629"
+        },
+        "date": 1667711534148,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 25431.568581136067,
+            "unit": "ns",
+            "range": "± 228.43153231366006"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 176651.83556315105,
+            "unit": "ns",
+            "range": "± 477.5412358095951"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1858491.640234375,
+            "unit": "ns",
+            "range": "± 5555.884727337865"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 24757.177968343098,
+            "unit": "ns",
+            "range": "± 172.5451551023413"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 177021.33393205915,
+            "unit": "ns",
+            "range": "± 651.1242307971884"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1849102.8101283482,
+            "unit": "ns",
+            "range": "± 7784.60723601694"
           }
         ]
       }
