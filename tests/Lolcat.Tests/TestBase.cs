@@ -9,9 +9,9 @@ public abstract class TestBase
 
     protected MockConsole MockConsole { get; set; } = new();
 
-    protected string RemoveMarkupFromLine(string line)
+    protected string RemoveMarkupAndPadRight(string text)
     {
-        var cleaned = line.RemoveMarkup();
+        var cleaned = text.RemoveMarkup();
 
         if (string.IsNullOrEmpty(cleaned))
         {
@@ -22,9 +22,9 @@ public abstract class TestBase
         return cleaned;
     }
 
-    protected static int CountSurrogatePairs(string line)
+    protected static int CountSurrogatePairs(string text)
     {
-        var chars = line.ToCharArray();
+        var chars = text.ToCharArray();
 
         var pairs = chars
             .Where((c, i) => i + 1 < chars.Length &&

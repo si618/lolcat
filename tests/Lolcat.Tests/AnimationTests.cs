@@ -56,10 +56,8 @@ public class AnimationTests : TestBase
 
         animation.Rainbow.Lines.Should().AllSatisfy(line =>
         {
-            var cleaned = RemoveMarkupFromLine(line);
-            var pairs = CountSurrogatePairs(cleaned);
-            var expected = MockConsole.GetWindowWidth() + pairs;
-            //cleaned.Length.Should().Be(expected);
+            var cleaned = RemoveMarkupAndPadRight(line);
+            cleaned.Length.Should().Be(MockConsole.GetWindowWidth());
         });
     }
 
@@ -76,19 +74,8 @@ public class AnimationTests : TestBase
 
         animation.Rainbow.Lines.Should().AllSatisfy(line =>
         {
-            var cleaned = RemoveMarkupFromLine(line);
+            var cleaned = RemoveMarkupAndPadRight(line);
             cleaned.Length.Should().Be(MockConsole.GetWindowWidth());
         });
     }
-
-    [Fact]
-    public void Animate_WhenCursorTopChanges_AnimationStops()
-    {
-    }
-
-    [Fact]
-    public void Animate_WhenCursorTopDoesntChange_AnimationCompletes()
-    {
-    }
-
 }
