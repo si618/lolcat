@@ -1,16 +1,18 @@
 ﻿var random = new Random();
 
-var style = new RainbowStyle(
+var rainbowStyle = new RainbowStyle(
     EscapeSequence.Spectre,
-    Spread: random.Next(1, 8),
+    Spread: random.Next(1, 16),
     Frequency: random.NextDouble(),
-    Seed: 42,
-    Animate: true,
+    Seed: 42);
+
+var animationStyle = new AnimationStyle(
     Duration: TimeSpan.FromSeconds(8),
-    Speed: random.Next(10, 30));
+    Speed: random.Next(10, 42));
 
-var lolcat = new Rainbow(style);
+var rainbow = new Rainbow(rainbowStyle);
+var animation = new Animation(rainbow, animationStyle);
 
-lolcat.Animate(args.Length > 0
+animation.Animate(args.Length > 0
     ? string.Join(Environment.NewLine, args)
     : DateTime.Now.Ticks % 2 == 0 ? Resources.Alien : Resources.Unicorn);

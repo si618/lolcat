@@ -3,8 +3,9 @@
 [Config(typeof(BenchmarkConfig))]
 public class Benchmarks
 {
-    private readonly Rainbow _ansiRainbow = new();
-    private readonly Rainbow _spectreRainbow = new(new RainbowStyle(EscapeSequence.Spectre));
+    private readonly Rainbow _ansiRainbow = new(new MockConsole(), new RainbowStyle());
+    private readonly Rainbow _spectreRainbow =
+        new(new MockConsole(), new RainbowStyle(EscapeSequence.Spectre));
 
     [Benchmark]
     public string MarkupAsAnsi_Small() => _ansiRainbow.Markup(AsciiSet(1));

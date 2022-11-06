@@ -1,27 +1,24 @@
 namespace Lolcat.Tests;
 
-using FluentAssertions.Extensions;
-using Moq;
-
-public class RainbowTests
+public class RainbowTests : TestBase
 {
     [Fact]
     public void Ctor_WhenNoStyleIsPassed_CreatesDefault()
     {
         var style = new RainbowStyle();
 
-        var lolcat = new Rainbow();
+        var rainbow = new Rainbow();
 
-        lolcat.RainbowStyle.Should().Be(style);
+        rainbow.RainbowStyle.Should().Be(style);
     }
 
     [Fact]
     public void Markup_WithAnsiEscapeSequence_BuildsExpectedResult()
     {
-        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: 42);
-        var lolcat = new Rainbow(style);
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: Seed);
+        var rainbow = new Rainbow(style);
 
-        var markup = lolcat.Markup(Resources.AnsiText);
+        var markup = rainbow.Markup(Resources.AnsiText);
 
         markup.Should().Be(Resources.AnsiMarkup);
     }
@@ -29,57 +26,59 @@ public class RainbowTests
     [Fact]
     public void Markup_WithSpectreEscapeSequence_BuildsExpectedResult()
     {
-        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);
-        var lolcat = new Rainbow(style);
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
 
-        var markup = lolcat.Markup(Resources.SpectreText);
+        var markup = rainbow.Markup(Resources.SpectreText);
 
-        markup.Should().Be(Resources.SpectreMarkup);
+        markup.Should().Be(Resources.SpectreMarkup.ReplaceLineEndings());
     }
 
     [Fact]
     public void Markup_WithEmoji_JoinsSurrogatePairs()
     {
-        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);
-        var lolcat = new Rainbow(style);
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
 
-        var markup = lolcat.Markup(Resources.EmojiText);
+        var markup = rainbow.Markup(Resources.EmojiMultilineText);
 
-        markup.Should().Be(Resources.EmojiMarkup);
+        markup.Should().Be(Resources.EmojiMultilineMarkup.ReplaceLineEndings());
     }
 
     [Fact]
     public void Markup_EmptyLinesRemain_AfterInvoking()
     {
-        var lolcat = new Rainbow();
+        var rainbow = new Rainbow();
         var text = Environment.NewLine + Environment.NewLine;
 
-        var markup = lolcat.Markup(text);
+        var markup = rainbow.Markup(text);
 
         markup.Should().Be(text);
     }
 
     [Fact]
-    public void MarkupLine_AddsCurrentLineTerminator_ToMarkup()
+    public void Markup_WhenPassingSeed_BuildsExpectedFrames()
     {
-        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: 42);
-        var lolcat = new Rainbow(style);
+        var rainbow = new Rainbow(new RainbowStyle(EscapeSequence.Spectre, Seed: Seed));
+        var seed = rainbow.RainbowStyle.Seed;
 
-        var markup = lolcat.MarkupLine(Resources.EmojiText);
 
-        markup.Should().EndWith(Environment.NewLine);
+        var markupSeed1 = rainbow.Markup(Resources.SpectreFrameText, seed);
+        seed += rainbow.RainbowStyle.Spread;
+        var markupSeed2 = rainbow.Markup(Resources.SpectreFrameText, seed);
+
+        markupSeed1.Should().Be(Resources.SpectreMarkupSeed1.ReplaceLineEndings());
+        markupSeed2.Should().Be(Resources.SpectreMarkupSeed2.ReplaceLineEndings());
     }
 
     [Fact]
-    public void Animate_DurationMatchesSpecifiedValue_WithinMarginOfError()
+    public void MarkupLine_AddsCurrentLineTerminator_ToMarkup()
     {
-        var mockConsole = new Mock<ILolcatConsole>();
-        var duration = TimeSpan.FromMilliseconds(1_000);
-        var style = new RainbowStyle(Animate: true, Duration: duration);
-        var lolcat = new Rainbow(mockConsole.Object, style);
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
 
-        var animate = () => lolcat.Animate(Resources.AnsiText);
+        var markup = rainbow.MarkupLine(Resources.EmojiMultilineText);
 
-        animate.ExecutionTime().Should().BeCloseTo(duration, 100.Milliseconds());
+        markup.Should().EndWith(Environment.NewLine);
     }
 }
