@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1667979347069,
+  "lastUpdate": 1667980667988,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -516,6 +516,102 @@ window.BENCHMARK_DATA = {
             "value": 1640997.8055989584,
             "unit": "ns",
             "range": "± 11114.165412801638"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9bcdc40867279877aedf0a2a04425eb3d6d538e5",
+          "message": "Use setup-dotnet in publish and refactor for easier update next time (#11)",
+          "timestamp": "2022-11-09T18:21:34+10:30",
+          "tree_id": "b6ada96183a0e0bf52bbc3a66d0c04006b821ce6",
+          "url": "https://github.com/si618/lolcat/commit/9bcdc40867279877aedf0a2a04425eb3d6d538e5"
+        },
+        "date": 1667980667439,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 25212.900174822127,
+            "unit": "ns",
+            "range": "± 107.7125022738307"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 177897.38473307292,
+            "unit": "ns",
+            "range": "± 1547.7745497590406"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1920753.3264322917,
+            "unit": "ns",
+            "range": "± 16281.387064552353"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 25292.732161301832,
+            "unit": "ns",
+            "range": "± 93.4305215937364"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 178727.25782877606,
+            "unit": "ns",
+            "range": "± 876.1039632115209"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1919795.5595703125,
+            "unit": "ns",
+            "range": "± 27036.950390818438"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 22443.86471150716,
+            "unit": "ns",
+            "range": "± 182.67696268849676"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 151695.82708333334,
+            "unit": "ns",
+            "range": "± 1032.6623862525698"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1547468.2040364584,
+            "unit": "ns",
+            "range": "± 13612.34106097254"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 22480.694771321614,
+            "unit": "ns",
+            "range": "± 172.6496653472776"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 152136.07071940103,
+            "unit": "ns",
+            "range": "± 919.3628839465408"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1590368.1453125,
+            "unit": "ns",
+            "range": "± 24299.86709448659"
           }
         ]
       }
