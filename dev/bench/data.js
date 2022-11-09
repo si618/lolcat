@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1667711534708,
+  "lastUpdate": 1667977353669,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -360,6 +360,66 @@ window.BENCHMARK_DATA = {
             "value": 1849102.8101283482,
             "unit": "ns",
             "range": "± 7784.60723601694"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bf710e6d3b9077e5646bef571088a37677b71449",
+          "message": "Bump benchmark-action/github-action-benchmark from 1.14.0 to 1.15.0 (#9)\n\nBumps [benchmark-action/github-action-benchmark](https://github.com/benchmark-action/github-action-benchmark) from 1.14.0 to 1.15.0.\r\n- [Release notes](https://github.com/benchmark-action/github-action-benchmark/releases)\r\n- [Changelog](https://github.com/benchmark-action/github-action-benchmark/blob/master/CHANGELOG.md)\r\n- [Commits](https://github.com/benchmark-action/github-action-benchmark/compare/v1.14.0...v1.15.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: benchmark-action/github-action-benchmark\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2022-11-09T17:28:19+10:30",
+          "tree_id": "3b7b8207022386f9301b06c6932c0264819c5bfb",
+          "url": "https://github.com/si618/lolcat/commit/bf710e6d3b9077e5646bef571088a37677b71449"
+        },
+        "date": 1667977353336,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 30217.943145751953,
+            "unit": "ns",
+            "range": "± 294.58429816106946"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 217326.1508300781,
+            "unit": "ns",
+            "range": "± 1587.4047777539959"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2236576.1121961805,
+            "unit": "ns",
+            "range": "± 47177.94691733303"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 29586.866736627395,
+            "unit": "ns",
+            "range": "± 901.4357199085131"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 218605.57464825665,
+            "unit": "ns",
+            "range": "± 9210.364401810006"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2204115.0723470054,
+            "unit": "ns",
+            "range": "± 86312.09175635259"
           }
         ]
       }
