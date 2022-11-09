@@ -46,6 +46,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 🔨 Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
       - name: ⚗ Run benchmarks
         id: run-benchmarks
         run: dotnet run -f net7.0 -c release --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
