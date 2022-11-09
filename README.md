@@ -27,7 +27,7 @@
 
 ```bash
 > dotnet --list-sdks
-6.0.402 [/usr/share/dotnet/sdk]
+7.0.100 [/usr/share/dotnet/sdk]
 
 > git --version
 git version 2.37.3
@@ -59,7 +59,7 @@ Cloning into 'lolcat'...
 Code for [static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
 
 ```bash
-> cd ./src/Lolcat.Demo
+> cd ../src/Lolcat.Demo
 > dotnet run
 > cd ../Lolcat.Demo.Animated
 > dotnet run

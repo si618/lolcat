@@ -10,7 +10,6 @@ env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  DOTNET_FRAMEWORK: net6.0
 
 jobs:
   build:
@@ -20,6 +19,11 @@ jobs:
         uses: actions/checkout@main
         with:
           fetch-depth: 0 # avoid shallow clone so nbgv can do its work
+
+      - name: 🔨 Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
 
       - name: 🏗️ Run dotnet build
         id: build
@@ -42,9 +46,14 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: 🔨 Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 7.0.x
+
       - name: ⚗ Run benchmarks
         id: run-benchmarks
-        run: dotnet run -c release --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
+        run: dotnet run -f net7.0 -c release --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
 
       - name: 🚚 Store benchmarks
         id: store-benchmarks

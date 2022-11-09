@@ -1,7 +1,5 @@
 ﻿namespace Lolcat.Benchmarks;
 
-using BenchmarkDotNet.Exporters.Json;
-
 public sealed class BenchmarkConfig : ManualConfig
 {
     public BenchmarkConfig()
@@ -13,5 +11,6 @@ public sealed class BenchmarkConfig : ManualConfig
         AddExporter(new JsonExporter());
 
         AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
+        AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
     }
 }
