@@ -10,9 +10,12 @@ var animationStyle = new AnimationStyle(
     Duration: TimeSpan.FromSeconds(8),
     Speed: random.Next(10, 42));
 
-var rainbow = new Rainbow(rainbowStyle);
-var animation = new Animation(rainbow, animationStyle);
-
-animation.Animate(args.Length > 0
+var text = args.Length > 0
     ? string.Join(Environment.NewLine, args)
-    : DateTime.Now.Ticks % 2 == 0 ? Resources.Alien : Resources.Unicorn);
+    : DateTime.Now.Ticks % 2 == 0
+        ? Resources.Alien
+        : Resources.Unicorn;
+
+var rainbow = new Rainbow(rainbowStyle);
+
+rainbow.Animate(text, animationStyle);
