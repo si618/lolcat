@@ -30,7 +30,7 @@
 7.0.100 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.37.3
+git version 2.38.1
 
 > git clone https://github.com/si618/lolcat.git
 Cloning into 'lolcat'...
@@ -51,7 +51,7 @@ Cloning into 'lolcat'...
 
 ```bash
 > cd ./tests/Lolcat.Benchmarks
-> dotnet run -c release
+> dotnet run -c release -f net7.0
 ```
 
 ## 🎉 Demos
