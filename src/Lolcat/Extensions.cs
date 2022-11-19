@@ -19,14 +19,14 @@ internal static class Extensions
     }
 
     // ReSharper disable once RedundantNullableFlowAttribute
-    public static double ThrowIfZeroOrLess([NotNull] this double argument,
+    public static int ThrowIfLessThanOne([NotNull] this int argument,
         [CallerArgumentExpression("argument")] string? paramName = null)
     {
-        if (argument > 0)
+        if (argument >= 1)
         {
             return argument;
         }
 
-        throw new ArgumentOutOfRangeException(paramName, argument, "Zero or less");
+        throw new ArgumentOutOfRangeException(paramName, argument, "Less than 1");
     }
 }

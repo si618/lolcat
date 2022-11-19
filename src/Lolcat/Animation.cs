@@ -5,6 +5,11 @@
 /// </summary>
 public sealed class Animation
 {
+    public Animation(AnimationStyle? style = null)
+        : this(new Rainbow(), style)
+    {
+    }
+
     public Animation(Rainbow? rainbow = null, AnimationStyle? style = null)
     {
         Rainbow = rainbow ?? new Rainbow();
@@ -52,8 +57,14 @@ public sealed class Animation
         {
             var currentWidth = console.GetWindowWidth();
             var currentHeight = console.GetWindowHeight();
+
             if (currentWidth != width || currentHeight != height)
             {
+                if (AnimationStyle.StopOnResize)
+                {
+                    break;
+                }
+
                 width = currentWidth;
                 height = currentHeight;
 
@@ -84,8 +95,11 @@ public sealed class Animation
         Rainbow.Lines.Clear();
         Rainbow.Lines.AddRange(lines);
 
-        AdjustLineHeight(cursorTop);
-        AdjustLineWidth();
+        if (AnimationStyle.PadToWindowSize)
+        {
+            AdjustLineHeight(cursorTop);
+            AdjustLineWidth();
+        }
 
         Rainbow.BuildLines(Seed);
 

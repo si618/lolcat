@@ -5,7 +5,7 @@ public class AnimationTests : TestBase
     [Fact]
     public void Animate_DurationMatchesSpecifiedValue_WithinMarginOfError()
     {
-        var duration = TimeSpan.FromMilliseconds(1_000);
+        var duration = 1_000.Milliseconds();
         var style = new AnimationStyle(Duration: duration);
         var rainbow = new Rainbow(MockConsole);
         var animation = new Animation(rainbow, style);
@@ -20,7 +20,7 @@ public class AnimationTests : TestBase
     {
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowHeight: 1);
         var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        var duration = TimeSpan.FromMilliseconds(10);
+        var duration = 10.Milliseconds();
         var style = new AnimationStyle(Duration: duration);
         var animation = new Animation(rainbow, style);
 
@@ -34,7 +34,7 @@ public class AnimationTests : TestBase
     {
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowHeight: 10);
         var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        var duration = TimeSpan.FromMilliseconds(10);
+        var duration = 10.Milliseconds();
         var style = new AnimationStyle(Duration: duration);
         var animation = new Animation(rainbow, style);
 
@@ -48,7 +48,7 @@ public class AnimationTests : TestBase
     {
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowWidth: 4);
         var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        var duration = TimeSpan.FromMilliseconds(10);
+        var duration = 10.Milliseconds();
         var style = new AnimationStyle(Duration: duration);
         var animation = new Animation(rainbow, style);
 
