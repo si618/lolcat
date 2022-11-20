@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1668833782827,
+  "lastUpdate": 1668910434711,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -708,6 +708,102 @@ window.BENCHMARK_DATA = {
             "value": 1922960.9597005208,
             "unit": "ns",
             "range": "± 35125.15905589302"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "7662e0c47baefc30ba6983ad38dd3c61f2062760",
+          "message": "Add helper methods and tidy up readme",
+          "timestamp": "2022-11-20T12:37:21+10:30",
+          "tree_id": "1413683f090c7e68285b045069a2e913ad5cbe17",
+          "url": "https://github.com/si618/lolcat/commit/7662e0c47baefc30ba6983ad38dd3c61f2062760"
+        },
+        "date": 1668910434130,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 30771.960693359375,
+            "unit": "ns",
+            "range": "± 184.12640490317258"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 222698.83780343193,
+            "unit": "ns",
+            "range": "± 837.3756881741604"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2368194.2014508927,
+            "unit": "ns",
+            "range": "± 6553.050502405521"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 30857.074002779445,
+            "unit": "ns",
+            "range": "± 137.5770554355957"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 222653.12412109374,
+            "unit": "ns",
+            "range": "± 885.797756985311"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2386918.609375,
+            "unit": "ns",
+            "range": "± 6070.13260524051"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 27328.016516549247,
+            "unit": "ns",
+            "range": "± 39.63348050222589"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 189917.20658365884,
+            "unit": "ns",
+            "range": "± 598.3443928362109"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2160122.2970377603,
+            "unit": "ns",
+            "range": "± 56051.36396230055"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 27141.48939259847,
+            "unit": "ns",
+            "range": "± 36.13699196195336"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 193722.8342956543,
+            "unit": "ns",
+            "range": "± 6425.274490225208"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2054839.7130208334,
+            "unit": "ns",
+            "range": "± 35404.251442028566"
           }
         ]
       }
