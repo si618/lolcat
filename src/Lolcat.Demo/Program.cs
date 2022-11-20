@@ -21,8 +21,7 @@ rainbow = new Rainbow(style with
     Spread = 5,
     Seed = 42
 });
-var spectre = rainbow.Markup(text);
-AnsiConsole.MarkupLine(spectre);
+rainbow.WriteLineWithMarkup(text);
 
 // Ouroboros 😎
 //Console.Clear();

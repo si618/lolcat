@@ -50,8 +50,7 @@ Cloning into 'lolcat'...
 [Benchmark charts](https://si618.github.io/lolcat/dev/bench)
 
 ```bash
-> cd ./tests/Lolcat.Benchmarks
-> dotnet run -c release -f net7.0
+> dotnet run --project ./tests/Lolcat.Benchmarks -c release -f net7.0
 ```
 
 ## 🎉 Demos
@@ -59,8 +58,6 @@ Cloning into 'lolcat'...
 Code for [static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
 
 ```bash
-> cd ../src/Lolcat.Demo
-> dotnet run
-> cd ../Lolcat.Demo.Animated
-> dotnet run
+> dotnet run --project ./src/Lolcat.Demo -f net7.0
+> dotnet run --project ./src/Lolcat.Demo.Animated -f net7.0
 ```

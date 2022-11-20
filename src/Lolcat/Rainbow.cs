@@ -49,6 +49,29 @@ public sealed class Rainbow
     /// </summary>
     public string MarkupLine(string text) => Markup(text) + Environment.NewLine;
 
+    /// <summary>
+    /// Write markup of <paramref name="text" /> to <see cref="Console"/>
+    /// </summary>
+    public void WriteWithMarkup(string text) => Console.Write(Markup(text));
+
+    /// <summary>
+    /// Write markup of <paramref name="text" /> to <see cref="Console"/>
+    /// </summary>
+    public void WriteWithMarkup(string text, double seed) => Console.Write(Markup(text, seed));
+
+    /// <summary>
+    /// Write markup of <paramref name="text" /> to <see cref="Console"/>, followed by the current
+    /// line terminator
+    /// </summary>
+    public void WriteLineWithMarkup(string text) => Console.WriteLine(Markup(text));
+
+    /// <summary>
+    /// Write markup of <paramref name="text" /> to <see cref="Console"/>, followed by the current
+    /// line terminator
+    /// </summary>
+    public void WriteLineWithMarkup(string text, double seed) =>
+        Console.WriteLine(Markup(text, seed));
+
     internal List<string> Lines { get; } = new();
     private StringBuilder Line { get; } = new();
 
