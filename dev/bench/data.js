@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1671752901391,
+  "lastUpdate": 1671753085063,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -900,6 +900,102 @@ window.BENCHMARK_DATA = {
             "value": 1497053.120718149,
             "unit": "ns",
             "range": "± 39682.97296482549"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ec78fb7006996e961fe20842e3e30df9f6c9a353",
+          "message": "Bump Microsoft.NET.Test.Sdk from 17.4.0 to 17.4.1 (#12)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.4.0 to 17.4.1.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.4.0...v17.4.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2022-12-23T10:14:56+10:30",
+          "tree_id": "3b4ba30d2c36e1e8a748aedc8eeeb1eb8a5a55e0",
+          "url": "https://github.com/si618/lolcat/commit/ec78fb7006996e961fe20842e3e30df9f6c9a353"
+        },
+        "date": 1671753084495,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 26177.08764430455,
+            "unit": "ns",
+            "range": "± 68.59753936462882"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 187977.17760416667,
+            "unit": "ns",
+            "range": "± 550.5086779275001"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2014661.150669643,
+            "unit": "ns",
+            "range": "± 7718.171701886951"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 26157.131225585938,
+            "unit": "ns",
+            "range": "± 80.12272083450493"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 187369.09567057292,
+            "unit": "ns",
+            "range": "± 615.7728841159461"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2034857.925,
+            "unit": "ns",
+            "range": "± 10600.541512620792"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 23079.73023869441,
+            "unit": "ns",
+            "range": "± 39.51637796154576"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 161052.37459309897,
+            "unit": "ns",
+            "range": "± 382.7579597735264"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1622618.598828125,
+            "unit": "ns",
+            "range": "± 6771.300850712634"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 23003.428725179037,
+            "unit": "ns",
+            "range": "± 58.44012991848651"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 159832.90729166666,
+            "unit": "ns",
+            "range": "± 295.16667404801245"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1662620.3854166667,
+            "unit": "ns",
+            "range": "± 6541.64517728114"
           }
         ]
       }
