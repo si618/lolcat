@@ -14,11 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\assets\Rainbow.png" Pack="true" PackagePath="\" Link="Rainbow.png" />
-    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Spectre.Console" Version="0.45.0" />
   </ItemGroup>
 
