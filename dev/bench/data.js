@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1673661776058,
+  "lastUpdate": 1673662368371,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -1188,6 +1188,102 @@ window.BENCHMARK_DATA = {
             "value": 1476301.9567708333,
             "unit": "ns",
             "range": "± 8875.120450372033"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "7976b9ee0ca129e06a9d9f0f8660377854826f92",
+          "message": "Revert \"Trim fat\"\n\nThis reverts commit e2a7ab14b9987005d701ff7dc29978156600de41.",
+          "timestamp": "2023-01-14T12:36:33+10:30",
+          "tree_id": "0f0a9d2b135030b94679c131dc3cda35678707da",
+          "url": "https://github.com/si618/lolcat/commit/7976b9ee0ca129e06a9d9f0f8660377854826f92"
+        },
+        "date": 1673662368087,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 25250.93903996394,
+            "unit": "ns",
+            "range": "± 110.61110438744574"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 179703.69985351563,
+            "unit": "ns",
+            "range": "± 1074.7163445182514"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1881380.8350360577,
+            "unit": "ns",
+            "range": "± 8064.8528609386485"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 25078.277522160457,
+            "unit": "ns",
+            "range": "± 139.21593552734714"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 179752.98540387835,
+            "unit": "ns",
+            "range": "± 913.8141463455269"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1878825.3856026786,
+            "unit": "ns",
+            "range": "± 9325.691634560935"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 21989.572875976562,
+            "unit": "ns",
+            "range": "± 217.42838043242492"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 152604.16446940103,
+            "unit": "ns",
+            "range": "± 1061.6672862965327"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1548106.859765625,
+            "unit": "ns",
+            "range": "± 7665.767347013397"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 22277.661383056642,
+            "unit": "ns",
+            "range": "± 253.78993392304173"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 152375.60531180244,
+            "unit": "ns",
+            "range": "± 755.690557403412"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1522440.378125,
+            "unit": "ns",
+            "range": "± 7652.325747464986"
           }
         ]
       }
