@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1673662368371,
+  "lastUpdate": 1674349921638,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -1284,6 +1284,102 @@ window.BENCHMARK_DATA = {
             "value": 1522440.378125,
             "unit": "ns",
             "range": "± 7652.325747464986"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "738f2d833767f593bc697f6ec05702ddc5383425",
+          "message": "Bump Spectre.Console from 0.45.0 to 0.46.0 (#17)\n\nBumps [Spectre.Console](https://github.com/spectreconsole/spectre.console) from 0.45.0 to 0.46.0.\r\n- [Release notes](https://github.com/spectreconsole/spectre.console/releases)\r\n- [Commits](https://github.com/spectreconsole/spectre.console/compare/0.45.0...0.46.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Spectre.Console\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-01-22T11:36:05+10:30",
+          "tree_id": "b7017355d8901d7d094ad780dc8d4275eca38bb2",
+          "url": "https://github.com/si618/lolcat/commit/738f2d833767f593bc697f6ec05702ddc5383425"
+        },
+        "date": 1674349920763,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 30853.612919398718,
+            "unit": "ns",
+            "range": "± 95.8569786760921"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 223581.58475167412,
+            "unit": "ns",
+            "range": "± 810.3200028287802"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2364250.0208333335,
+            "unit": "ns",
+            "range": "± 7631.724753999103"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 30666.782185872395,
+            "unit": "ns",
+            "range": "± 56.906213664003886"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 221001.59565429686,
+            "unit": "ns",
+            "range": "± 979.1137871783153"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2422626.96953125,
+            "unit": "ns",
+            "range": "± 16175.506147249884"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 26929.08481488909,
+            "unit": "ns",
+            "range": "± 43.989503159283665"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 189309.4085599459,
+            "unit": "ns",
+            "range": "± 562.3334376604689"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1952026.5778808594,
+            "unit": "ns",
+            "range": "± 37442.825815087315"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 27026.754018147785,
+            "unit": "ns",
+            "range": "± 45.45680672102449"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 188715.5111653646,
+            "unit": "ns",
+            "range": "± 681.2004556980391"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1952955.6785714286,
+            "unit": "ns",
+            "range": "± 20442.232407445317"
           }
         ]
       }
