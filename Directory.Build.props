@@ -5,7 +5,8 @@
     <Authors>Simon McKenna</Authors>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- Broken by dotnet format https://github.com/dotnet/format/issues/1800 -->
+    <!--<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>-->
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
