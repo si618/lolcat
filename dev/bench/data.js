@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1678688429141,
+  "lastUpdate": 1682585036235,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -2052,6 +2052,102 @@ window.BENCHMARK_DATA = {
             "value": 1758999.2283854166,
             "unit": "ns",
             "range": "± 9931.589131536228"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bd0a4113b5cc5b0b6b7c442f7d8c550e3ae63bc9",
+          "message": "Bump FluentAssertions from 6.10.0 to 6.11.0 (#24)\n\nBumps [FluentAssertions](https://github.com/fluentassertions/fluentassertions) from 6.10.0 to 6.11.0.\r\n- [Release notes](https://github.com/fluentassertions/fluentassertions/releases)\r\n- [Changelog](https://github.com/fluentassertions/fluentassertions/blob/develop/AcceptApiChanges.ps1)\r\n- [Commits](https://github.com/fluentassertions/fluentassertions/compare/6.10.0...6.11.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: FluentAssertions\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-04-27T18:07:28+09:30",
+          "tree_id": "265c003c03c7ff95ae7ee9930104fd53fba70172",
+          "url": "https://github.com/si618/lolcat/commit/bd0a4113b5cc5b0b6b7c442f7d8c550e3ae63bc9"
+        },
+        "date": 1682585035823,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 22116.41380896935,
+            "unit": "ns",
+            "range": "± 53.98329592750233"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 152910.86471354167,
+            "unit": "ns",
+            "range": "± 552.7189623232907"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1774915.7848958333,
+            "unit": "ns",
+            "range": "± 9010.518205118979"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 22415.721350097658,
+            "unit": "ns",
+            "range": "± 90.85477712260793"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 152922.3811360677,
+            "unit": "ns",
+            "range": "± 1157.2621621714006"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1755535.4294270833,
+            "unit": "ns",
+            "range": "± 7039.2839210832135"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 20361.257822672527,
+            "unit": "ns",
+            "range": "± 89.47089774657987"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 136000.3143391927,
+            "unit": "ns",
+            "range": "± 788.0975111296502"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1496964.2802734375,
+            "unit": "ns",
+            "range": "± 6010.264375738592"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 20256.487505231584,
+            "unit": "ns",
+            "range": "± 60.77228937728913"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 137017.48561197918,
+            "unit": "ns",
+            "range": "± 567.1909555021447"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1504135.5345052083,
+            "unit": "ns",
+            "range": "± 7841.378729463744"
           }
         ]
       }
