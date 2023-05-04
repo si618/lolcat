@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1682585036235,
+  "lastUpdate": 1683168660262,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -2148,6 +2148,102 @@ window.BENCHMARK_DATA = {
             "value": 1504135.5345052083,
             "unit": "ns",
             "range": "± 7841.378729463744"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3cf8ca6dce4b7e3bcbdeab78f347faa5d60596de",
+          "message": "Bump Nerdbank.GitVersioning from 3.5.119 to 3.6.128 (#25)\n\nBumps [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning) from 3.5.119 to 3.6.128.\r\n- [Release notes](https://github.com/dotnet/Nerdbank.GitVersioning/releases)\r\n- [Commits](https://github.com/dotnet/Nerdbank.GitVersioning/compare/v3.5.119...v3.6.128)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Nerdbank.GitVersioning\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-05-04T12:15:20+09:30",
+          "tree_id": "d9c050bb4f448c6260a79c432e7b14d5c3e10107",
+          "url": "https://github.com/si618/lolcat/commit/3cf8ca6dce4b7e3bcbdeab78f347faa5d60596de"
+        },
+        "date": 1683168659927,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 25337.6427734375,
+            "unit": "ns",
+            "range": "± 297.73626681619965"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 184428.21578776042,
+            "unit": "ns",
+            "range": "± 1460.6245351138502"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2016215.0006009615,
+            "unit": "ns",
+            "range": "± 7142.255844895007"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 24752.87978515625,
+            "unit": "ns",
+            "range": "± 218.40260724292955"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 175490.78046526227,
+            "unit": "ns",
+            "range": "± 680.4708965281752"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2016899.0165264423,
+            "unit": "ns",
+            "range": "± 7598.855422240523"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 21970.35644938151,
+            "unit": "ns",
+            "range": "± 93.10973132861767"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 153689.31101771764,
+            "unit": "ns",
+            "range": "± 731.6074273319988"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1612285.062220982,
+            "unit": "ns",
+            "range": "± 6072.112043725691"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 21772.016735839843,
+            "unit": "ns",
+            "range": "± 131.5791901169226"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 152136.55753580728,
+            "unit": "ns",
+            "range": "± 1464.023009688387"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1616615.1802455357,
+            "unit": "ns",
+            "range": "± 11248.384595992082"
           }
         ]
       }
