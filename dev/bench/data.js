@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1685531274210,
+  "lastUpdate": 1686128670444,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -2916,6 +2916,102 @@ window.BENCHMARK_DATA = {
             "value": 1660307.6442708333,
             "unit": "ns",
             "range": "± 20279.860377751964"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d22a53f6787fd8fdbbfb9970f3e5fc0716a9e694",
+          "message": "Bump Microsoft.NET.Test.Sdk from 17.6.0 to 17.6.1 (#33)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.6.0 to 17.6.1.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.6.0...v17.6.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-06-07T18:28:58+09:30",
+          "tree_id": "c1da57df7154af738c918941f1a6b0152bc15239",
+          "url": "https://github.com/si618/lolcat/commit/d22a53f6787fd8fdbbfb9970f3e5fc0716a9e694"
+        },
+        "date": 1686128669973,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 22103.238255092077,
+            "unit": "ns",
+            "range": "± 102.86984088905511"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 152945.6284667969,
+            "unit": "ns",
+            "range": "± 1363.2065986361467"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1796386.12109375,
+            "unit": "ns",
+            "range": "± 18871.09455193366"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 22126.883854166666,
+            "unit": "ns",
+            "range": "± 84.53195047978511"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 154561.21365792412,
+            "unit": "ns",
+            "range": "± 1313.0608982731305"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1806987.8842447917,
+            "unit": "ns",
+            "range": "± 20668.53760581414"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 20682.1346089681,
+            "unit": "ns",
+            "range": "± 85.7623965763525"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 139764.01442307694,
+            "unit": "ns",
+            "range": "± 764.6779592760449"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1516257.9058314732,
+            "unit": "ns",
+            "range": "± 12061.348833182348"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 20506.836665852865,
+            "unit": "ns",
+            "range": "± 180.86197429521292"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 137761.7689453125,
+            "unit": "ns",
+            "range": "± 1424.173396425058"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1517781.9764122595,
+            "unit": "ns",
+            "range": "± 14776.999324469265"
           }
         ]
       }
