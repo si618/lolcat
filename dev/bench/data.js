@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1686569639428,
+  "lastUpdate": 1688466077694,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -3108,6 +3108,102 @@ window.BENCHMARK_DATA = {
             "value": 2082538.8133680555,
             "unit": "ns",
             "range": "± 40548.31237343953"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f52e7ca3b3c5b5399e017fc6cc7862713a36f494",
+          "message": "Bump Microsoft.NET.Test.Sdk from 17.6.2 to 17.6.3 (#35)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.6.2 to 17.6.3.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.6.2...v17.6.3)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-07-04T19:44:34+09:30",
+          "tree_id": "819e7a5ae274c7780332f4ea01dc1b028434a618",
+          "url": "https://github.com/si618/lolcat/commit/f52e7ca3b3c5b5399e017fc6cc7862713a36f494"
+        },
+        "date": 1688466077089,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 26143.398474121095,
+            "unit": "ns",
+            "range": "± 479.16334858884113"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 188196.00698617788,
+            "unit": "ns",
+            "range": "± 2492.2526237561497"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2057618.618336397,
+            "unit": "ns",
+            "range": "± 40579.520289247084"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 25940.716023254394,
+            "unit": "ns",
+            "range": "± 527.0816680966934"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 186800.91090494793,
+            "unit": "ns",
+            "range": "± 3365.3908449087453"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2148327.626860119,
+            "unit": "ns",
+            "range": "± 72172.14113337765"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 24260.95388684954,
+            "unit": "ns",
+            "range": "± 694.4716177603146"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 164789.86723058365,
+            "unit": "ns",
+            "range": "± 3179.6810320804834"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1818625.8311197916,
+            "unit": "ns",
+            "range": "± 33183.42197417418"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 23768.541145833333,
+            "unit": "ns",
+            "range": "± 409.4052083491582"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 164603.0781424386,
+            "unit": "ns",
+            "range": "± 2728.010914888208"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1836659.1245492788,
+            "unit": "ns",
+            "range": "± 25069.48136540999"
           }
         ]
       }
