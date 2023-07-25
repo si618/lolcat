@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1690284352424,
+  "lastUpdate": 1690284545745,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -3492,6 +3492,102 @@ window.BENCHMARK_DATA = {
             "value": 1537426.0798828125,
             "unit": "ns",
             "range": "± 5859.308604272617"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d28815dd58158c5761246431a4ebfeba661a0bda",
+          "message": "Bump BenchmarkDotNet.Diagnostics.Windows from 0.13.5 to 0.13.6 (#39)\n\nBumps [BenchmarkDotNet.Diagnostics.Windows](https://github.com/dotnet/BenchmarkDotNet) from 0.13.5 to 0.13.6.\r\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\r\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.13.5...v0.13.6)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: BenchmarkDotNet.Diagnostics.Windows\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-07-25T20:53:03+09:30",
+          "tree_id": "9357a0161356802f3dd1418a56a68993c35b923a",
+          "url": "https://github.com/si618/lolcat/commit/d28815dd58158c5761246431a4ebfeba661a0bda"
+        },
+        "date": 1690284545257,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 32516.3635945638,
+            "unit": "ns",
+            "range": "± 418.4071102688637"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 236119.77869466145,
+            "unit": "ns",
+            "range": "± 2313.590042124869"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2657223.087760417,
+            "unit": "ns",
+            "range": "± 37536.22321360599"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 32577.728759765625,
+            "unit": "ns",
+            "range": "± 198.57559544386328"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 234830.2294921875,
+            "unit": "ns",
+            "range": "± 2039.7055653770344"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2673176.6109375,
+            "unit": "ns",
+            "range": "± 39457.736529263864"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 27991.256018066408,
+            "unit": "ns",
+            "range": "± 268.9538798247668"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 191182.89920247396,
+            "unit": "ns",
+            "range": "± 1655.2639464230717"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2100508.3155691964,
+            "unit": "ns",
+            "range": "± 34563.84455459668"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 27789.561020914713,
+            "unit": "ns",
+            "range": "± 293.71343068793453"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 198979.94306640624,
+            "unit": "ns",
+            "range": "± 1366.1852976409516"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2164478.08671875,
+            "unit": "ns",
+            "range": "± 31169.690342620772"
           }
         ]
       }
