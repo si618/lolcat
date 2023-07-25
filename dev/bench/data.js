@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1690284321117,
+  "lastUpdate": 1690284336322,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -3300,6 +3300,102 @@ window.BENCHMARK_DATA = {
             "value": 1539931.849888393,
             "unit": "ns",
             "range": "± 6063.387130240704"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b646e43124330179fba04444894c935bf7dc8a0d",
+          "message": "Bump benchmark-action/github-action-benchmark from 1.17.0 to 1.18.0 (#38)\n\nBumps [benchmark-action/github-action-benchmark](https://github.com/benchmark-action/github-action-benchmark) from 1.17.0 to 1.18.0.\r\n- [Release notes](https://github.com/benchmark-action/github-action-benchmark/releases)\r\n- [Changelog](https://github.com/benchmark-action/github-action-benchmark/blob/master/CHANGELOG.md)\r\n- [Commits](https://github.com/benchmark-action/github-action-benchmark/compare/v1.17.0...v1.18.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: benchmark-action/github-action-benchmark\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-07-25T20:49:45+09:30",
+          "tree_id": "64374a325b1ae785a9be53b85a916e7610028894",
+          "url": "https://github.com/si618/lolcat/commit/b646e43124330179fba04444894c935bf7dc8a0d"
+        },
+        "date": 1690284335423,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 27104.53303019206,
+            "unit": "ns",
+            "range": "± 215.22615003155292"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 196792.67551967077,
+            "unit": "ns",
+            "range": "± 778.5982699977643"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2252640.5369591345,
+            "unit": "ns",
+            "range": "± 12173.81358272955"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 27103.312654622398,
+            "unit": "ns",
+            "range": "± 174.88549926433865"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 197654.07908528644,
+            "unit": "ns",
+            "range": "± 1679.288947844759"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2239192.3627604167,
+            "unit": "ns",
+            "range": "± 18527.177581916825"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 23559.176515706382,
+            "unit": "ns",
+            "range": "± 91.45884187617072"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 161777.1586425781,
+            "unit": "ns",
+            "range": "± 1011.4305917129726"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1796915.7391183036,
+            "unit": "ns",
+            "range": "± 8913.506088338498"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 23794.0646484375,
+            "unit": "ns",
+            "range": "± 144.0417641884871"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 162408.71048177083,
+            "unit": "ns",
+            "range": "± 1392.5042071963162"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1801062.0595703125,
+            "unit": "ns",
+            "range": "± 16384.113839576858"
           }
         ]
       }
