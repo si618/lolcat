@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1688466077694,
+  "lastUpdate": 1690284321117,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -3204,6 +3204,102 @@ window.BENCHMARK_DATA = {
             "value": 1836659.1245492788,
             "unit": "ns",
             "range": "± 25069.48136540999"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5ac0cd56e8b000ca57f7fc9bcb0b3198cda12978",
+          "message": "Bump BenchmarkDotNet from 0.13.5 to 0.13.6 (#40)\n\nBumps [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) from 0.13.5 to 0.13.6.\r\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\r\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.13.5...v0.13.6)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: BenchmarkDotNet\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-07-25T20:49:28+09:30",
+          "tree_id": "29458cb0f4894add9851dee03cc74f0b43bb3b5c",
+          "url": "https://github.com/si618/lolcat/commit/5ac0cd56e8b000ca57f7fc9bcb0b3198cda12978"
+        },
+        "date": 1690284319765,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 22658.83487156459,
+            "unit": "ns",
+            "range": "± 61.93557536403133"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 157682.35740559894,
+            "unit": "ns",
+            "range": "± 601.7586967859698"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1800310.5345982143,
+            "unit": "ns",
+            "range": "± 7087.5627674989855"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 22425.418964092547,
+            "unit": "ns",
+            "range": "± 29.28554767852672"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 153665.4799241286,
+            "unit": "ns",
+            "range": "± 424.28545952779103"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1813756.0030048077,
+            "unit": "ns",
+            "range": "± 6870.654752125075"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 20937.90360514323,
+            "unit": "ns",
+            "range": "± 61.80357197829487"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 139635.7090250651,
+            "unit": "ns",
+            "range": "± 236.7156439001272"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1536751.6485770089,
+            "unit": "ns",
+            "range": "± 4741.024748201451"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 20996.744654728816,
+            "unit": "ns",
+            "range": "± 26.16193065803525"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 138767.65467247597,
+            "unit": "ns",
+            "range": "± 151.9846535123078"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1539931.849888393,
+            "unit": "ns",
+            "range": "± 6063.387130240704"
           }
         ]
       }
