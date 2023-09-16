@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1694431599543,
+  "lastUpdate": 1694852311208,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -4164,6 +4164,102 @@ window.BENCHMARK_DATA = {
             "value": 1550241.6543734681,
             "unit": "ns",
             "range": "± 62408.8205344177"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "9a3a29747ef9393fd2e4fdf0f0ffceda8fe2c5ce",
+          "message": "Update action",
+          "timestamp": "2023-09-16T17:41:39+09:30",
+          "tree_id": "0d2738b4528028b88457195dde0b3c854295c5b5",
+          "url": "https://github.com/si618/lolcat/commit/9a3a29747ef9393fd2e4fdf0f0ffceda8fe2c5ce"
+        },
+        "date": 1694852310643,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 26985.872823079426,
+            "unit": "ns",
+            "range": "± 104.28699700542019"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 198459.65989583332,
+            "unit": "ns",
+            "range": "± 1104.8468717710098"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2232187.7786458335,
+            "unit": "ns",
+            "range": "± 19355.55542461373"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 27122.895438058036,
+            "unit": "ns",
+            "range": "± 86.29196209968597"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 197697.1465983073,
+            "unit": "ns",
+            "range": "± 1075.264656146985"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2230704.7159598214,
+            "unit": "ns",
+            "range": "± 13681.216460733607"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 23766.337437220984,
+            "unit": "ns",
+            "range": "± 71.69645104022456"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 163230.97881208148,
+            "unit": "ns",
+            "range": "± 616.9492641613745"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1888234.6283854167,
+            "unit": "ns",
+            "range": "± 11175.707807544746"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 23529.041591389974,
+            "unit": "ns",
+            "range": "± 85.09712508286452"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 165336.18617466517,
+            "unit": "ns",
+            "range": "± 564.2779734967957"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1899558.996875,
+            "unit": "ns",
+            "range": "± 16531.826510350824"
           }
         ]
       }
