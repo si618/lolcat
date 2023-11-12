@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1698296203064,
+  "lastUpdate": 1699770016984,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -4740,6 +4740,102 @@ window.BENCHMARK_DATA = {
             "value": 2294210.2366832388,
             "unit": "ns",
             "range": "± 56291.65797829846"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e28ab31c361b8524f272c23022c84e30b3d88b0c",
+          "message": "Bump BenchmarkDotNet from 0.13.9 to 0.13.10 (#58)\n\nBumps [BenchmarkDotNet](https://github.com/dotnet/BenchmarkDotNet) from 0.13.9 to 0.13.10.\r\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\r\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.13.9...v0.13.10)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: BenchmarkDotNet\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-11-12T16:44:39+10:30",
+          "tree_id": "05f8ace82bfe5905ed60bb82e164e887393ef57b",
+          "url": "https://github.com/si618/lolcat/commit/e28ab31c361b8524f272c23022c84e30b3d88b0c"
+        },
+        "date": 1699770016289,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16740.0196861854,
+            "unit": "ns",
+            "range": "± 164.27688548900554"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 118567.04059709821,
+            "unit": "ns",
+            "range": "± 259.41659947885057"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1334482.1220703125,
+            "unit": "ns",
+            "range": "± 10652.93012122626"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16986.697513834635,
+            "unit": "ns",
+            "range": "± 63.14339794522355"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117053.76170247396,
+            "unit": "ns",
+            "range": "± 473.5391469175742"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1332077.3690104166,
+            "unit": "ns",
+            "range": "± 6541.372952785658"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16308.280104573567,
+            "unit": "ns",
+            "range": "± 125.9883885578723"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 112082.538835798,
+            "unit": "ns",
+            "range": "± 472.96141525787414"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1158403.4526742788,
+            "unit": "ns",
+            "range": "± 4262.782052457194"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15464.941836039225,
+            "unit": "ns",
+            "range": "± 29.457215034420305"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 106452.77233886719,
+            "unit": "ns",
+            "range": "± 449.7904768303696"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1160071.0018229166,
+            "unit": "ns",
+            "range": "± 7459.520930976095"
           }
         ]
       }
