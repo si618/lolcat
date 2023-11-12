@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1699770016984,
+  "lastUpdate": 1699770097312,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -4836,6 +4836,102 @@ window.BENCHMARK_DATA = {
             "value": 1160071.0018229166,
             "unit": "ns",
             "range": "± 7459.520930976095"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ed8bff53a09ae0d525965d058fda156c84440534",
+          "message": "Bump BenchmarkDotNet.Diagnostics.Windows from 0.13.9 to 0.13.10 (#57)\n\nBumps [BenchmarkDotNet.Diagnostics.Windows](https://github.com/dotnet/BenchmarkDotNet) from 0.13.9 to 0.13.10.\r\n- [Release notes](https://github.com/dotnet/BenchmarkDotNet/releases)\r\n- [Commits](https://github.com/dotnet/BenchmarkDotNet/compare/v0.13.9...v0.13.10)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: BenchmarkDotNet.Diagnostics.Windows\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>\r\nCo-authored-by: Simon McKenna <sshnug.si+github@gmail.com>",
+          "timestamp": "2023-11-12T16:45:25+10:30",
+          "tree_id": "2b9db7bd47234956c5fec2b5cc08747488514565",
+          "url": "https://github.com/si618/lolcat/commit/ed8bff53a09ae0d525965d058fda156c84440534"
+        },
+        "date": 1699770096541,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16855.41612830529,
+            "unit": "ns",
+            "range": "± 69.62209745822375"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117221.71115315755,
+            "unit": "ns",
+            "range": "± 356.42913955715824"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1409035.9415364584,
+            "unit": "ns",
+            "range": "± 13572.392314211434"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 17144.764040433445,
+            "unit": "ns",
+            "range": "± 57.7629130980078"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 119506.28104945591,
+            "unit": "ns",
+            "range": "± 174.3760778378668"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1421616.669170673,
+            "unit": "ns",
+            "range": "± 9530.475186891204"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15663.423990885416,
+            "unit": "ns",
+            "range": "± 11.24626297234051"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 108704.3461726262,
+            "unit": "ns",
+            "range": "± 584.6093752397161"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1213391.9189453125,
+            "unit": "ns",
+            "range": "± 6793.092707716264"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15901.824608435998,
+            "unit": "ns",
+            "range": "± 29.069072474864694"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 110317.14295247397,
+            "unit": "ns",
+            "range": "± 520.5967633153236"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1204785.7740384615,
+            "unit": "ns",
+            "range": "± 3144.527141764812"
           }
         ]
       }
