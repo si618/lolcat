@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1699770097312,
+  "lastUpdate": 1699770133929,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -4932,6 +4932,102 @@ window.BENCHMARK_DATA = {
             "value": 1204785.7740384615,
             "unit": "ns",
             "range": "± 3144.527141764812"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b7e4d86b178ddaac303e8935066b774528914ec4",
+          "message": "Bump xunit from 2.5.3 to 2.6.1 (#56)\n\nBumps [xunit](https://github.com/xunit/xunit) from 2.5.3 to 2.6.1.\r\n- [Commits](https://github.com/xunit/xunit/compare/2.5.3...2.6.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: xunit\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-11-12T16:45:34+10:30",
+          "tree_id": "a45a2d23864c60bc73d13a1eafca698a2324f882",
+          "url": "https://github.com/si618/lolcat/commit/b7e4d86b178ddaac303e8935066b774528914ec4"
+        },
+        "date": 1699770133195,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 33314.565209960936,
+            "unit": "ns",
+            "range": "± 135.48674983060906"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 243734.98447265624,
+            "unit": "ns",
+            "range": "± 1040.5912595939749"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2831142.648046875,
+            "unit": "ns",
+            "range": "± 8015.242651999989"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 33124.23832397461,
+            "unit": "ns",
+            "range": "± 151.40554473639233"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 244153.68810096153,
+            "unit": "ns",
+            "range": "± 605.0116451574316"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2825806.0440104166,
+            "unit": "ns",
+            "range": "± 5906.585773264051"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 28632.080939659707,
+            "unit": "ns",
+            "range": "± 77.76684280955185"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 200394.69474909856,
+            "unit": "ns",
+            "range": "± 1514.4733003091114"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 2233812.6234375,
+            "unit": "ns",
+            "range": "± 50515.767842377216"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 28974.068864088793,
+            "unit": "ns",
+            "range": "± 48.083131393935126"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 199648.30882161457,
+            "unit": "ns",
+            "range": "± 383.01792119902143"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 2211191.034137228,
+            "unit": "ns",
+            "range": "± 53915.36435344541"
           }
         ]
       }
