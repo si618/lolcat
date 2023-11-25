@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1699770133929,
+  "lastUpdate": 1700890707374,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -5028,6 +5028,102 @@ window.BENCHMARK_DATA = {
             "value": 2211191.034137228,
             "unit": "ns",
             "range": "± 53915.36435344541"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "75fa6f97064823a453c7dbfea77069d6c516cfb4",
+          "message": "Bump Microsoft.NET.Test.Sdk from 17.7.2 to 17.8.0 (#59)\n\nBumps [Microsoft.NET.Test.Sdk](https://github.com/microsoft/vstest) from 17.7.2 to 17.8.0.\r\n- [Release notes](https://github.com/microsoft/vstest/releases)\r\n- [Changelog](https://github.com/microsoft/vstest/blob/main/docs/releases.md)\r\n- [Commits](https://github.com/microsoft/vstest/compare/v17.7.2...v17.8.0)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Microsoft.NET.Test.Sdk\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-11-25T16:02:43+10:30",
+          "tree_id": "0f164c544225aaabe9350b54e6b26b122c3241bd",
+          "url": "https://github.com/si618/lolcat/commit/75fa6f97064823a453c7dbfea77069d6c516cfb4"
+        },
+        "date": 1700890707087,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16779.566641671317,
+            "unit": "ns",
+            "range": "± 125.50520596531597"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117388.54759870257,
+            "unit": "ns",
+            "range": "± 196.3258975951214"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1338539.5793805805,
+            "unit": "ns",
+            "range": "± 5087.160617550359"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16853.885965983074,
+            "unit": "ns",
+            "range": "± 42.14940836052335"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117981.95230538504,
+            "unit": "ns",
+            "range": "± 452.99353048165614"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1343075.1572916666,
+            "unit": "ns",
+            "range": "± 10307.963623833773"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16453.016017659505,
+            "unit": "ns",
+            "range": "± 120.63386456856495"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 106969.48883928571,
+            "unit": "ns",
+            "range": "± 383.51332303744283"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1187342.9006510417,
+            "unit": "ns",
+            "range": "± 7955.123734155706"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15504.355102539062,
+            "unit": "ns",
+            "range": "± 43.56231401671943"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107341.94709995815,
+            "unit": "ns",
+            "range": "± 576.2759569232193"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1158310.6103515625,
+            "unit": "ns",
+            "range": "± 6182.572101617845"
           }
         ]
       }
