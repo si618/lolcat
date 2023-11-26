@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1700891081352,
+  "lastUpdate": 1700965170139,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -5316,6 +5316,102 @@ window.BENCHMARK_DATA = {
             "value": 1156143.6151041666,
             "unit": "ns",
             "range": "± 3211.334932375116"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "1362eabe73d1ce591368915c3a186ae8dbfa1f79",
+          "message": "Update readme to dotnet 8",
+          "timestamp": "2023-11-26T12:41:36+10:30",
+          "tree_id": "1468759bfa85ec35087c9e20f89cb3e4a9fbfd1b",
+          "url": "https://github.com/si618/lolcat/commit/1362eabe73d1ce591368915c3a186ae8dbfa1f79"
+        },
+        "date": 1700965169446,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16768.08497721354,
+            "unit": "ns",
+            "range": "± 113.44631013591703"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 118031.70551757813,
+            "unit": "ns",
+            "range": "± 450.59930911811426"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1358952.9769810268,
+            "unit": "ns",
+            "range": "± 15818.460372988755"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16928.862158203126,
+            "unit": "ns",
+            "range": "± 71.67443556783506"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117267.32412109376,
+            "unit": "ns",
+            "range": "± 447.7889633696589"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1360823.1469350962,
+            "unit": "ns",
+            "range": "± 10869.43092503666"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15613.388690655049,
+            "unit": "ns",
+            "range": "± 22.4698482900975"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 106022.69496372768,
+            "unit": "ns",
+            "range": "± 448.3445453143052"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1165691.0552734374,
+            "unit": "ns",
+            "range": "± 6475.366465262442"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15791.038654872349,
+            "unit": "ns",
+            "range": "± 54.86408178680471"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 108351.38134765625,
+            "unit": "ns",
+            "range": "± 265.19968765026465"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1177221.81875,
+            "unit": "ns",
+            "range": "± 9773.02307489265"
           }
         ]
       }
