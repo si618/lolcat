@@ -27,10 +27,10 @@
 
 ```bash
 > dotnet --list-sdks
-7.0.100 [/usr/share/dotnet/sdk]
+8.0.100 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.38.1
+git version 2.43.0
 
 > git clone https://github.com/si618/lolcat.git
 Cloning into 'lolcat'...
@@ -50,7 +50,7 @@ Cloning into 'lolcat'...
 [Benchmark charts](https://si618.github.io/lolcat/dev/bench)
 
 ```bash
-> dotnet run --project ./tests/Lolcat.Benchmarks -c release -f net7.0
+> dotnet run --project ./tests/Lolcat.Benchmarks -c release -f net8.0
 ```
 
 ## 🎉 Demos
@@ -58,6 +58,6 @@ Cloning into 'lolcat'...
 Code for [static](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo/Program.cs) and [animated](https://github.com/si618/lolcat/blob/main/src/Lolcat.Demo.Animated/Program.cs) demos
 
 ```bash
-> dotnet run --project ./src/Lolcat.Demo -f net7.0
-> dotnet run --project ./src/Lolcat.Demo.Animated -f net7.0
+> dotnet run --project ./src/Lolcat.Demo -f net8.0
+> dotnet run --project ./src/Lolcat.Demo.Animated -f net8.0
 ```
