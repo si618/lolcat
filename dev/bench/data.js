@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1700965170139,
+  "lastUpdate": 1700968605275,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -5412,6 +5412,138 @@ window.BENCHMARK_DATA = {
             "value": 1177221.81875,
             "unit": "ns",
             "range": "± 9773.02307489265"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "distinct": true,
+          "id": "8d256e2b9257b56b890188027e1303a394e22cbc",
+          "message": "Add dotnet 8 to benchmark jobs",
+          "timestamp": "2023-11-26T13:38:19+10:30",
+          "tree_id": "462c7a2418e29c9ff04a7ca6ae09545070562f3f",
+          "url": "https://github.com/si618/lolcat/commit/8d256e2b9257b56b890188027e1303a394e22cbc"
+        },
+        "date": 1700968604615,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16927.538615926107,
+            "unit": "ns",
+            "range": "± 118.65369113256043"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117767.83682016227,
+            "unit": "ns",
+            "range": "± 353.42439146349204"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1362944.417689732,
+            "unit": "ns",
+            "range": "± 5151.223687072478"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16998.938219342912,
+            "unit": "ns",
+            "range": "± 51.464922041964606"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117951.01905110678,
+            "unit": "ns",
+            "range": "± 320.68954488521683"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1394291.2707868305,
+            "unit": "ns",
+            "range": "± 15348.619908616794"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16435.37651570638,
+            "unit": "ns",
+            "range": "± 107.28636057113478"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 110572.2161702474,
+            "unit": "ns",
+            "range": "± 768.2201110412332"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1172024.9260817308,
+            "unit": "ns",
+            "range": "± 1858.434091366911"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15624.091761997768,
+            "unit": "ns",
+            "range": "± 74.49369262194486"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107044.06508225661,
+            "unit": "ns",
+            "range": "± 169.765474508055"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1182639.1106770833,
+            "unit": "ns",
+            "range": "± 7306.618731296371"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13332.079581124442,
+            "unit": "ns",
+            "range": "± 42.81503968991022"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 101382.95132882254,
+            "unit": "ns",
+            "range": "± 392.9773814776065"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1126561.1918247768,
+            "unit": "ns",
+            "range": "± 2975.8062792163832"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13224.215745035808,
+            "unit": "ns",
+            "range": "± 43.94402738863746"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 100282.42077229818,
+            "unit": "ns",
+            "range": "± 327.10805952884687"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1123983.2543569712,
+            "unit": "ns",
+            "range": "± 2228.663837373129"
           }
         ]
       }
