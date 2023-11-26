@@ -12,5 +12,6 @@ public sealed class BenchmarkConfig : ManualConfig
 
         AddJob(Job.Default.WithRuntime(CoreRuntime.Core60));
         AddJob(Job.Default.WithRuntime(CoreRuntime.Core70));
+        AddJob(Job.Default.WithRuntime(CoreRuntime.Core80));
     }
 }
