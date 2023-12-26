@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1703553101900,
+  "lastUpdate": 1703554580588,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -6600,6 +6600,138 @@ window.BENCHMARK_DATA = {
             "value": 1059891.1796875,
             "unit": "ns",
             "range": "± 10402.670950568541"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d4c7f5383e44017247cbaaf1227b4132bf7078ab",
+          "message": "Bump xunit from 2.6.3 to 2.6.4 (#70)\n\nBumps [xunit](https://github.com/xunit/xunit) from 2.6.3 to 2.6.4.\r\n- [Commits](https://github.com/xunit/xunit/compare/2.6.3...2.6.4)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: xunit\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2023-12-26T11:54:41+10:30",
+          "tree_id": "dd161159dcd58688921a799d54dd45981579db37",
+          "url": "https://github.com/si618/lolcat/commit/d4c7f5383e44017247cbaaf1227b4132bf7078ab"
+        },
+        "date": 1703554579881,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 17032.64195251465,
+            "unit": "ns",
+            "range": "± 48.28099144319676"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117439.52478841147,
+            "unit": "ns",
+            "range": "± 443.53619761948227"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1421380.8477864584,
+            "unit": "ns",
+            "range": "± 6290.752514809102"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16881.606369018555,
+            "unit": "ns",
+            "range": "± 60.56111704276696"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 118668.34364827473,
+            "unit": "ns",
+            "range": "± 434.20119670420337"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1362109.3466796875,
+            "unit": "ns",
+            "range": "± 4968.1303017180135"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15632.255608694893,
+            "unit": "ns",
+            "range": "± 30.250980326804644"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 107868.67043631418,
+            "unit": "ns",
+            "range": "± 421.8181706681071"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1167786.8095052084,
+            "unit": "ns",
+            "range": "± 5698.471898368396"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15775.206658499581,
+            "unit": "ns",
+            "range": "± 34.119754388209"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107135.21171351841,
+            "unit": "ns",
+            "range": "± 416.71438587152954"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1180096.6614118305,
+            "unit": "ns",
+            "range": "± 6375.847212048363"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13177.679311899039,
+            "unit": "ns",
+            "range": "± 15.287633365959783"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 101224.42420372597,
+            "unit": "ns",
+            "range": "± 153.30988279726043"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1137954.3203125,
+            "unit": "ns",
+            "range": "± 8297.041517283536"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13434.695150522086,
+            "unit": "ns",
+            "range": "± 24.05180148646122"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 99471.56580403647,
+            "unit": "ns",
+            "range": "± 323.6366802344633"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1157813.258563702,
+            "unit": "ns",
+            "range": "± 5317.471008558894"
           }
         ]
       }
