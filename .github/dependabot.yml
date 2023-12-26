@@ -4,8 +4,15 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
   - package-ecosystem: "nuget"
     directory: "/"
     schedule:
       interval: "weekly"
+
+groups:
+  xunit:
+    patterns:
+    - "xunit*"
+  spectre:
+    patterns:
+    - "Spectre*"
