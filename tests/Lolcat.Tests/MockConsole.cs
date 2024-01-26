@@ -9,15 +9,16 @@ public sealed class MockConsole(
     int windowHeight = 25,
     int windowWidth = 80,
     int cursorTop = 0,
-    int cursorLeft = 0,
-    string text = "")
+    int cursorLeft = 0)
     : IConsole
 {
     public string Format { get; init; } = escapeSequence == EscapeSequence.Ansi
         ? SystemConsole.AnsiFormat
         : SpectreConsole.SpectreFormat;
 
-    public void Clear() => text = string.Empty;
+    public void Clear()
+    {
+    }
 
     public int GetCursorTop() => cursorTop;
 
@@ -43,7 +44,11 @@ public sealed class MockConsole(
 
     public void SetCursorVisibility(bool visible) => cursorVisibility = visible;
 
-    public void Write(string txt) => text = txt;
+    public void Write(string txt)
+    {
+    }
 
-    public void WriteLine(string txt) => text = txt + Environment.NewLine;
+    public void WriteLine(string txt)
+    {
+    }
 }
