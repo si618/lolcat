@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1706266674950,
+  "lastUpdate": 1706268626684,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -7392,6 +7392,138 @@ window.BENCHMARK_DATA = {
             "value": 1103379.82421875,
             "unit": "ns",
             "range": "± 4273.039585273323"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "da72afc5c1f02d488ec91a098974d8e23d982e90",
+          "message": "Organise packages (#79)\n\n* Remove unused code\r\n\r\n* Reorganise packages",
+          "timestamp": "2024-01-26T21:52:47+10:30",
+          "tree_id": "bb5c3788e8e7f957501a54530e9a8bc572cb67fe",
+          "url": "https://github.com/si618/lolcat/commit/da72afc5c1f02d488ec91a098974d8e23d982e90"
+        },
+        "date": 1706268626380,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16748.07550920759,
+            "unit": "ns",
+            "range": "± 76.82695309388903"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117772.29517540566,
+            "unit": "ns",
+            "range": "± 325.128168453636"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1360330.414453125,
+            "unit": "ns",
+            "range": "± 13480.634343892114"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 17008.94858601888,
+            "unit": "ns",
+            "range": "± 69.87683640012884"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117020.40028599331,
+            "unit": "ns",
+            "range": "± 281.3926246876965"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1430783.6658854166,
+            "unit": "ns",
+            "range": "± 5527.188377722316"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16001.077809651693,
+            "unit": "ns",
+            "range": "± 81.65697253517719"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 107750.33951241629,
+            "unit": "ns",
+            "range": "± 343.205489699498"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1182432.0445033482,
+            "unit": "ns",
+            "range": "± 8222.826293525119"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15655.064954121908,
+            "unit": "ns",
+            "range": "± 26.613665361657965"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107079.01704624722,
+            "unit": "ns",
+            "range": "± 453.9122304097873"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1206917.43671875,
+            "unit": "ns",
+            "range": "± 14458.5104829355"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13465.379344685873,
+            "unit": "ns",
+            "range": "± 71.70603340605496"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 99512.64406738282,
+            "unit": "ns",
+            "range": "± 429.7297052237573"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1106745.6510881695,
+            "unit": "ns",
+            "range": "± 7805.139841476072"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13256.523376464844,
+            "unit": "ns",
+            "range": "± 63.95268684142774"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 99862.57223307292,
+            "unit": "ns",
+            "range": "± 558.7474492345785"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1146045.3196149555,
+            "unit": "ns",
+            "range": "± 13964.681077902786"
           }
         ]
       }
