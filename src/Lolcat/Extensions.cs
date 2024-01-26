@@ -4,7 +4,7 @@ internal static class Extensions
 {
     // ReSharper disable once RedundantNullableFlowAttribute
     public static double ThrowIfOutOfRange([NotNull] this double argument, double min, double max,
-        [CallerArgumentExpression("argument")] string? paramName = null)
+        [CallerArgumentExpression(nameof(argument))] string? paramName = null)
     {
         if (argument >= min && argument <= max)
         {
@@ -20,7 +20,7 @@ internal static class Extensions
 
     // ReSharper disable once RedundantNullableFlowAttribute
     public static int ThrowIfLessThanOne([NotNull] this int argument,
-        [CallerArgumentExpression("argument")] string? paramName = null)
+        [CallerArgumentExpression(nameof(argument))] string? paramName = null)
     {
         if (argument >= 1)
         {

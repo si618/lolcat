@@ -5,10 +5,6 @@
 /// </summary>
 public sealed class Animation
 {
-    public Animation(AnimationStyle? style = null)
-        : this(new Rainbow(), style)
-    {
-    }
 
     public Animation(Rainbow? rainbow = null, AnimationStyle? style = null)
     {
@@ -80,7 +76,7 @@ public sealed class Animation
 
             WriteLines(lines, cursorTop);
 
-            Thread.Sleep((int)(1_000 / AnimationStyle.Speed));
+            Thread.Sleep(1_000 / AnimationStyle.Speed);
 
             Seed += Rainbow.RainbowStyle.Spread;
         }
