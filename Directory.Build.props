@@ -1,5 +1,7 @@
 <Project>
+
   <Import Project="Directory.Build.user.props" Condition="Exists('Directory.Build.user.props')" />
+
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
@@ -9,10 +11,9 @@
     <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+
   <ItemGroup>
-    <PackageReference Include="Nerdbank.GitVersioning" Condition="!Exists('packages.config')">
-      <PrivateAssets>all</PrivateAssets>
-      <Version>3.6.133</Version>
-    </PackageReference>
+    <PackageReference Include="Nerdbank.GitVersioning" />
   </ItemGroup>
+
 </Project>

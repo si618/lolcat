@@ -16,20 +16,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.13.12" />
-    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.12" />
-    <PackageReference Include="Spectre.Console" Version="0.48.0" />
+    <ProjectReference Include="..\..\src\Lolcat\Lolcat.csproj" />
+    <ProjectReference Include="..\Lolcat.Tests\Lolcat.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" />
+    <PackageReference Include="BenchmarkDotNet.Diagnostics.Windows" />
+    <PackageReference Include="Spectre.Console" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="..\..\assets\Rainbow.ico">
       <Link>Rainbow.ico</Link>
     </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\Lolcat\Lolcat.csproj" />
-    <ProjectReference Include="..\Lolcat.Tests\Lolcat.Tests.csproj" />
   </ItemGroup>
 
 </Project>

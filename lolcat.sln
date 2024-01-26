@@ -22,6 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{F7A39F4E
 		.github\workflows\workflow.yml = .github\workflows\workflow.yml
 		.gitignore = .gitignore
 		version.json = version.json
+		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lolcat.Benchmarks", "tests\Lolcat.Benchmarks\Lolcat.Benchmarks.csproj", "{7EEA7A0C-488C-43FA-B88F-1A26B3039B2B}"
