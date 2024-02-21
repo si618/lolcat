@@ -11,7 +11,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
     <PackageVersion Include="FluentAssertions" Version="6.12.0" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.8.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
     <PackageVersion Include="Nerdbank.GitVersioning" Version="3.6.133" PrivateAssets="all" />
     <PackageVersion Include="Spectre.Console" Version="0.48.0" />
     <PackageVersion Include="Spectre.Console.Testing" Version="0.48.0" />
