@@ -8,11 +8,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-
-groups:
-  xunit:
-    patterns:
-    - "xunit*"
-  spectre:
-    patterns:
-    - "Spectre*"
+    groups:
+      xunit:
+        patterns:
+          - "xunit*"
+      spectre:
+        patterns:
+          - "Spectre*"
