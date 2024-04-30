@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714479889602,
+  "lastUpdate": 1714511781038,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -8844,6 +8844,138 @@ window.BENCHMARK_DATA = {
             "value": 1193859.3762555805,
             "unit": "ns",
             "range": "± 4236.956810451823"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "699d22a9f0b48608a768c9443d49bf1f40468932",
+          "message": "Bump the spectre group with 2 updates (#95)\n\nBumps the spectre group with 2 updates: [Spectre.Console](https://github.com/spectreconsole/spectre.console) and [Spectre.Console.Testing](https://github.com/spectreconsole/spectre.console).\n\n\nUpdates `Spectre.Console` from 0.48.0 to 0.49.1\n- [Release notes](https://github.com/spectreconsole/spectre.console/releases)\n- [Commits](https://github.com/spectreconsole/spectre.console/compare/0.48.0...0.49.1)\n\nUpdates `Spectre.Console.Testing` from 0.48.0 to 0.49.1\n- [Release notes](https://github.com/spectreconsole/spectre.console/releases)\n- [Commits](https://github.com/spectreconsole/spectre.console/compare/0.48.0...0.49.1)\n\nUpdates `Spectre.Console` from 0.48.0 to 0.49.1\n- [Release notes](https://github.com/spectreconsole/spectre.console/releases)\n- [Commits](https://github.com/spectreconsole/spectre.console/compare/0.48.0...0.49.1)\n\n---\nupdated-dependencies:\n- dependency-name: Spectre.Console\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n- dependency-name: Spectre.Console.Testing\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n- dependency-name: Spectre.Console\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2024-05-01T06:38:40+09:30",
+          "tree_id": "232db3b6b7770688ba3278d53c4d03b46bd4d835",
+          "url": "https://github.com/si618/lolcat/commit/699d22a9f0b48608a768c9443d49bf1f40468932"
+        },
+        "date": 1714511780630,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16851.07749586839,
+            "unit": "ns",
+            "range": "± 68.63914023751883"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 118228.32903180804,
+            "unit": "ns",
+            "range": "± 257.60836903948075"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1405111.711688702,
+            "unit": "ns",
+            "range": "± 8822.303688012342"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 17403.93655802409,
+            "unit": "ns",
+            "range": "± 100.66336645782272"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 123926.23924153646,
+            "unit": "ns",
+            "range": "± 912.2897398781004"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1446255.757421875,
+            "unit": "ns",
+            "range": "± 9522.98180123591"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15708.282242995043,
+            "unit": "ns",
+            "range": "± 115.99319922174067"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 107572.13675130208,
+            "unit": "ns",
+            "range": "± 361.2967206134353"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1211144.8100260417,
+            "unit": "ns",
+            "range": "± 9024.746989820576"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15967.248532976422,
+            "unit": "ns",
+            "range": "± 41.2460930672563"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107063.12104899088,
+            "unit": "ns",
+            "range": "± 467.28000885183604"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1185381.7387319712,
+            "unit": "ns",
+            "range": "± 5547.290497188095"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13402.433263142904,
+            "unit": "ns",
+            "range": "± 35.448016343051336"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 103203.5283203125,
+            "unit": "ns",
+            "range": "± 258.0822649998054"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1140737.0118489584,
+            "unit": "ns",
+            "range": "± 6307.220741798575"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13260.502513340542,
+            "unit": "ns",
+            "range": "± 41.60590368708744"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 101142.36038411458,
+            "unit": "ns",
+            "range": "± 378.38529992588855"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1127467.253155048,
+            "unit": "ns",
+            "range": "± 6650.481537946483"
           }
         ]
       }
