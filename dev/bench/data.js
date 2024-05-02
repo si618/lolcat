@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714511781038,
+  "lastUpdate": 1714654659737,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -8976,6 +8976,138 @@ window.BENCHMARK_DATA = {
             "value": 1127467.253155048,
             "unit": "ns",
             "range": "± 6650.481537946483"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ebf15605ba411a97bc62a54f73eb1b90331b34ba",
+          "message": "Bump the xunit group with 2 updates (#94)\n\nBumps the xunit group with 2 updates: [xunit](https://github.com/xunit/xunit) and [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit).\n\n\nUpdates `xunit` from 2.7.1 to 2.8.0\n- [Commits](https://github.com/xunit/xunit/compare/2.7.1...2.8.0)\n\nUpdates `xunit.runner.visualstudio` from 2.5.7 to 2.8.0\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\n- [Commits](https://github.com/xunit/visualstudio.xunit/compare/2.5.7...2.8.0)\n\n---\nupdated-dependencies:\n- dependency-name: xunit\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: xunit\n- dependency-name: xunit.runner.visualstudio\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: xunit\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2024-05-02T22:20:01+09:30",
+          "tree_id": "72b5f63228c2e05efc266789abed4e8834efcbe8",
+          "url": "https://github.com/si618/lolcat/commit/ebf15605ba411a97bc62a54f73eb1b90331b34ba"
+        },
+        "date": 1714654659113,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 16646.720728556316,
+            "unit": "ns",
+            "range": "± 53.168932621560394"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 119825.92267717634,
+            "unit": "ns",
+            "range": "± 653.8191160814233"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1340386.6675180288,
+            "unit": "ns",
+            "range": "± 5549.824715262766"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16967.51951904297,
+            "unit": "ns",
+            "range": "± 143.57447077868605"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117462.85919596354,
+            "unit": "ns",
+            "range": "± 772.7448974885318"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1340057.2216796875,
+            "unit": "ns",
+            "range": "± 8606.439532643839"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15847.036525472005,
+            "unit": "ns",
+            "range": "± 149.1931740529543"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 106196.00258963449,
+            "unit": "ns",
+            "range": "± 469.83246775918343"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1192032.7693359375,
+            "unit": "ns",
+            "range": "± 11465.140651714622"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15633.327867948092,
+            "unit": "ns",
+            "range": "± 42.2146012715665"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 106603.4795735677,
+            "unit": "ns",
+            "range": "± 719.8094954301582"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1164968.1873497595,
+            "unit": "ns",
+            "range": "± 5051.483387801519"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13293.299255371094,
+            "unit": "ns",
+            "range": "± 60.905140114019936"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 100245.84204101562,
+            "unit": "ns",
+            "range": "± 559.0544749122213"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1110926.9486979167,
+            "unit": "ns",
+            "range": "± 8517.445982720257"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13438.179504394531,
+            "unit": "ns",
+            "range": "± 28.00825502964287"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 103495.75113932292,
+            "unit": "ns",
+            "range": "± 502.0102325057731"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1140823.5418526786,
+            "unit": "ns",
+            "range": "± 6477.198298922056"
           }
         ]
       }
