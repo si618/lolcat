@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717582098918,
+  "lastUpdate": 1717582115592,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -9504,6 +9504,138 @@ window.BENCHMARK_DATA = {
             "value": 1154883.4446614583,
             "unit": "ns",
             "range": "± 5477.301842698489"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a20d744dc3712d58adaeae55c15dff81ff6ad0e1",
+          "message": "Bump the xunit group with 2 updates (#97)\n\nBumps the xunit group with 2 updates: [xunit](https://github.com/xunit/xunit) and [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit).\r\n\r\n\r\nUpdates `xunit` from 2.8.0 to 2.8.1\r\n- [Commits](https://github.com/xunit/xunit/compare/2.8.0...2.8.1)\r\n\r\nUpdates `xunit.runner.visualstudio` from 2.8.0 to 2.8.1\r\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\r\n- [Commits](https://github.com/xunit/visualstudio.xunit/compare/2.8.0...2.8.1)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: xunit\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n  dependency-group: xunit\r\n- dependency-name: xunit.runner.visualstudio\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n  dependency-group: xunit\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2024-06-05T19:30:21+09:30",
+          "tree_id": "e0535b50b296b4589f5c9249258af42ba1cc6e40",
+          "url": "https://github.com/si618/lolcat/commit/a20d744dc3712d58adaeae55c15dff81ff6ad0e1"
+        },
+        "date": 1717582115102,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 17107.827455793107,
+            "unit": "ns",
+            "range": "± 54.18681574222998"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 117505.16492571149,
+            "unit": "ns",
+            "range": "± 311.4831691356513"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1454881.9098958333,
+            "unit": "ns",
+            "range": "± 9093.478554413232"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 16950.584050105168,
+            "unit": "ns",
+            "range": "± 61.789417293156056"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 118785.95047701322,
+            "unit": "ns",
+            "range": "± 197.20140659652247"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1433568.9010416667,
+            "unit": "ns",
+            "range": "± 13162.99399305854"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 15799.610599772135,
+            "unit": "ns",
+            "range": "± 105.68596035605056"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 111927.01598249163,
+            "unit": "ns",
+            "range": "± 436.67631684448014"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1213809.3971354167,
+            "unit": "ns",
+            "range": "± 5016.801848047517"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 15868.892008463541,
+            "unit": "ns",
+            "range": "± 115.47427980383443"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 108366.45674351284,
+            "unit": "ns",
+            "range": "± 233.5324952555301"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1238456.5721354166,
+            "unit": "ns",
+            "range": "± 6886.734389979152"
+          },
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13131.47106388637,
+            "unit": "ns",
+            "range": "± 39.03816981614657"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 99088.10110677083,
+            "unit": "ns",
+            "range": "± 412.2950696051875"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1158389.031529018,
+            "unit": "ns",
+            "range": "± 5976.928195615284"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13380.821684701103,
+            "unit": "ns",
+            "range": "± 34.47528654893385"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 100345.32745768229,
+            "unit": "ns",
+            "range": "± 483.015342290389"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1163434.3549107143,
+            "unit": "ns",
+            "range": "± 9303.281687466431"
           }
         ]
       }
