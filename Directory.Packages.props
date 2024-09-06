@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageVersion Include="BenchmarkDotNet" Version="0.13.12" />
-    <PackageVersion Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.13.12" />
+    <PackageVersion Include="BenchmarkDotNet" Version="0.14.0" />
+    <PackageVersion Include="BenchmarkDotNet.Diagnostics.Windows" Version="0.14.0" />
     <PackageVersion Include="coverlet.collector" Version="6.0.2" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageVersion>
