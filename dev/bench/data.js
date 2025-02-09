@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739080384963,
+  "lastUpdate": 1739080402545,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11076,6 +11076,66 @@ window.BENCHMARK_DATA = {
             "value": 1204484.5419921875,
             "unit": "ns",
             "range": "± 4103.313135370897"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "55652319d1bc3feccb552454bf201f9ae4acdf09",
+          "message": "Bump Nerdbank.GitVersioning from 3.6.146 to 3.7.115 (#119)\n\nBumps [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning) from 3.6.146 to 3.7.115.\r\n- [Release notes](https://github.com/dotnet/Nerdbank.GitVersioning/releases)\r\n- [Commits](https://github.com/dotnet/Nerdbank.GitVersioning/commits)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: Nerdbank.GitVersioning\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-minor\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-02-09T16:19:55+10:30",
+          "tree_id": "f3420b0ba16dba1d31db21d0fb68bc226bcc7f10",
+          "url": "https://github.com/si618/lolcat/commit/55652319d1bc3feccb552454bf201f9ae4acdf09"
+        },
+        "date": 1739080402272,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13382.08215876988,
+            "unit": "ns",
+            "range": "± 130.66897624904755"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 99170.25825195313,
+            "unit": "ns",
+            "range": "± 1145.1875769322407"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1207215.0796875,
+            "unit": "ns",
+            "range": "± 8406.52366560323"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13978.707051595053,
+            "unit": "ns",
+            "range": "± 94.09687243423343"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 106727.73659842355,
+            "unit": "ns",
+            "range": "± 1029.92423310104"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1299044.39453125,
+            "unit": "ns",
+            "range": "± 11635.066578723923"
           }
         ]
       }
