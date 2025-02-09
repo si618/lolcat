@@ -3,7 +3,7 @@
 <root>
     <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
         <xsd:element name="root" msdata:IsDataSet="true">
-            
+
         </xsd:element>
     </xsd:schema>
     <resheader name="resmimetype">
@@ -29,6 +29,12 @@
     </data>
     <data name="SpectreText" xml:space="preserve">
         <value>SpectreRainbow</value>
+    </data>
+    <data name="SpectreTextWithEscapeCharacters" xml:space="preserve">
+        <value>[Left[[Middle]]Right]</value>
+    </data>
+    <data name="SpectreMarkupWithEscapeCharacters" xml:space="preserve">
+        <value>[rgb(254,68,60)][[/][rgb(254,64,64)]L[/][rgb(254,61,67)]e[/][rgb(254,57,71)]f[/][rgb(254,54,75)]t[/][rgb(253,50,79)][[/][rgb(253,47,83)][[/][rgb(252,44,87)]M[/][rgb(251,41,91)]i[/][rgb(250,38,95)]d[/][rgb(249,35,99)]d[/][rgb(248,32,103)]l[/][rgb(246,29,107)]e[/][rgb(245,26,111)]][/][rgb(243,24,116)]][/][rgb(241,22,120)]R[/][rgb(239,19,124)]i[/][rgb(237,17,128)]g[/][rgb(235,15,132)]h[/][rgb(233,13,137)]t[/][rgb(230,11,141)]][/]</value>
     </data>
     <data name="EmojiMultilineText" xml:space="preserve">
         <value>🌈 lolcat 🦄
@@ -60,7 +66,7 @@ The lovers, the dreamers and me
     </data>
     <data name="EmojiMultilineMarkupWidth1" xml:space="preserve">
         <value>[rgb(254,68,60)]🌈[/]
- 
+
 [rgb(254,61,67)]✨[/]</value>
     </data>
 </root>

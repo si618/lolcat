@@ -90,7 +90,7 @@ namespace Lolcat.Tests {
         
         /// <summary>
         ///   Looks up a localized string similar to [rgb(254,68,60)]🌈[/]
-        /// 
+        ///
         ///[rgb(254,61,67)]✨[/].
         /// </summary>
         internal static string EmojiMultilineMarkupWidth1 {
@@ -150,11 +150,29 @@ namespace Lolcat.Tests {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to [rgb(254,68,60)][[/][rgb(254,64,64)]L[/][rgb(254,61,67)]e[/][rgb(254,57,71)]f[/][rgb(254,54,75)]t[/][rgb(253,50,79)][[/][rgb(253,47,83)][[/][rgb(252,44,87)]M[/][rgb(251,41,91)]i[/][rgb(250,38,95)]d[/][rgb(249,35,99)]d[/][rgb(248,32,103)]l[/][rgb(246,29,107)]e[/][rgb(245,26,111)]][/][rgb(243,24,116)]][/][rgb(241,22,120)]R[/][rgb(239,19,124)]i[/][rgb(237,17,128)]g[/][rgb(235,15,132)]h[/][rgb(233,13,137)]t[/][rgb(230,11,141)]][/].
+        /// </summary>
+        internal static string SpectreMarkupWithEscapeCharacters {
+            get {
+                return ResourceManager.GetString("SpectreMarkupWithEscapeCharacters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SpectreRainbow.
         /// </summary>
         internal static string SpectreText {
             get {
                 return ResourceManager.GetString("SpectreText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Left[[Middle]]Right].
+        /// </summary>
+        internal static string SpectreTextWithEscapeCharacters {
+            get {
+                return ResourceManager.GetString("SpectreTextWithEscapeCharacters", resourceCulture);
             }
         }
     }

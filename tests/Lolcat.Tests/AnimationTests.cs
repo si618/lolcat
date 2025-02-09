@@ -10,9 +10,9 @@ public class AnimationTests : TestBase
         var rainbow = new Rainbow(MockConsole);
         var animation = new Animation(rainbow, style);
 
-        var animate = () => { animation.Animate(Resources.AnsiText); };
-
-        animate.ExecutionTime().Should().BeCloseTo(duration, 100.Milliseconds());
+        Should.CompleteIn(
+            action: () => { animation.Animate(Resources.AnsiText); },
+            timeout: duration.Add(100.Milliseconds()));
     }
 
     [Fact]
@@ -26,7 +26,7 @@ public class AnimationTests : TestBase
 
         animation.Animate(Resources.EmojiMultilineText);
 
-        animation.Rainbow.Lines.Should().HaveCount(MockConsole.GetWindowHeight());
+        animation.Rainbow.Lines.Count.ShouldBe(MockConsole.GetWindowHeight());
     }
 
     [Fact]
@@ -40,7 +40,7 @@ public class AnimationTests : TestBase
 
         animation.Animate(Resources.EmojiMultilineText);
 
-        animation.Rainbow.Lines.Should().HaveCount(MockConsole.GetWindowHeight());
+        animation.Rainbow.Lines.Count.ShouldBe(MockConsole.GetWindowHeight());
     }
 
     [Fact]
@@ -51,14 +51,12 @@ public class AnimationTests : TestBase
         var duration = 10.Milliseconds();
         var style = new AnimationStyle(Duration: duration);
         var animation = new Animation(rainbow, style);
+        var windowWidth = MockConsole.GetWindowWidth();
 
         animation.Animate(Resources.EmojiMultilineText);
 
-        animation.Rainbow.Lines.Should().AllSatisfy(line =>
-        {
-            var cleaned = RemoveMarkupAndPadRight(line);
-            cleaned.Length.Should().Be(MockConsole.GetWindowWidth());
-        });
+        animation.Rainbow.Lines
+            .ShouldAllBe(line => line.RemoveMarkupAndPadRight(windowWidth).Length == windowWidth);
     }
 
     [Fact]
@@ -69,13 +67,11 @@ public class AnimationTests : TestBase
         var duration = TimeSpan.FromMilliseconds(10);
         var style = new AnimationStyle(Duration: duration);
         var animation = new Animation(rainbow, style);
+        var windowWidth = MockConsole.GetWindowWidth();
 
         animation.Animate(Resources.EmojiMultilineText);
 
-        animation.Rainbow.Lines.Should().AllSatisfy(line =>
-        {
-            var cleaned = RemoveMarkupAndPadRight(line);
-            cleaned.Length.Should().Be(MockConsole.GetWindowWidth());
-        });
+        animation.Rainbow.Lines
+            .ShouldAllBe(line => line.RemoveMarkupAndPadRight(windowWidth).Length == windowWidth);
     }
 }

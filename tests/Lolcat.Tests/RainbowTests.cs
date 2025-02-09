@@ -9,7 +9,7 @@ public class RainbowTests : TestBase
 
         var rainbow = new Rainbow();
 
-        rainbow.RainbowStyle.Should().Be(style);
+        rainbow.RainbowStyle.ShouldBe(style);
     }
 
     [Fact]
@@ -20,7 +20,18 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.Markup(Resources.AnsiText);
 
-        markup.Should().Be(Resources.AnsiMarkup);
+        markup.ShouldBe(Resources.AnsiMarkup);
+    }
+
+    [Fact]
+    public void Markup_WithAnsiEscapeSequenceAndEscapedText_BuildsExpectedResult()
+    {
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: Seed);
+        var rainbow = new Rainbow(style);
+
+        var markup = rainbow.Markup(Resources.AnsiText);
+
+        markup.ShouldBe(Resources.AnsiMarkup);
     }
 
     [Fact]
@@ -31,7 +42,18 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.Markup(Resources.SpectreText);
 
-        markup.Should().Be(Resources.SpectreMarkup.ReplaceLineEndings());
+        markup.ShouldBe(Resources.SpectreMarkup.ReplaceLineEndings());
+    }
+
+    [Fact]
+    public void Markup_WithSpectreEscapeSequenceOnEscapedText_BuildsExpectedResult()
+    {
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
+
+        var markup = rainbow.Markup(Resources.SpectreTextWithEscapeCharacters);
+
+        markup.ShouldBe(Resources.SpectreMarkup.ReplaceLineEndings());
     }
 
     [Fact]
@@ -42,7 +64,7 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.Markup(Resources.EmojiMultilineText);
 
-        markup.Should().Be(Resources.EmojiMultilineMarkup.ReplaceLineEndings());
+        markup.ShouldBe(Resources.EmojiMultilineMarkup.ReplaceLineEndings());
     }
 
     [Fact]
@@ -53,7 +75,7 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.Markup(text);
 
-        markup.Should().Be(text);
+        markup.ShouldBe(text);
     }
 
     [Fact]
@@ -67,8 +89,8 @@ public class RainbowTests : TestBase
         seed += rainbow.RainbowStyle.Spread;
         var markupSeed2 = rainbow.Markup(Resources.SpectreFrameText, seed);
 
-        markupSeed1.Should().Be(Resources.SpectreMarkupSeed1.ReplaceLineEndings());
-        markupSeed2.Should().Be(Resources.SpectreMarkupSeed2.ReplaceLineEndings());
+        markupSeed1.ShouldBe(Resources.SpectreMarkupSeed1.ReplaceLineEndings());
+        markupSeed2.ShouldBe(Resources.SpectreMarkupSeed2.ReplaceLineEndings());
     }
 
     [Fact]
@@ -79,6 +101,6 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.MarkupLine(Resources.EmojiMultilineText);
 
-        markup.Should().EndWith(Environment.NewLine);
+        markup.ShouldEndWith(Environment.NewLine);
     }
 }

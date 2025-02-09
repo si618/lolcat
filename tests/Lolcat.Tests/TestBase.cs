@@ -9,19 +9,6 @@ public abstract class TestBase
 
     protected MockConsole MockConsole { get; set; } = new();
 
-    protected string RemoveMarkupAndPadRight(string text)
-    {
-        var cleaned = text.RemoveMarkup();
-
-        if (string.IsNullOrEmpty(cleaned))
-        {
-            // RemoveMarkup returns empty string if there is whitespace
-            cleaned = " ".PadRight(MockConsole.GetWindowWidth());
-        }
-
-        return cleaned;
-    }
-
     protected static int CountSurrogatePairs(string text)
     {
         var chars = text.ToCharArray();

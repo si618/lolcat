@@ -8,9 +8,7 @@ public class AnimationStyleTests : TestBase
         var ctor = () => new AnimationStyle(Speed: 0);
         var message = $"Less than 1 (Parameter 'Speed'){NL}Actual value was 0.{NL}";
 
-        ctor.Should()
-            .Throw<ArgumentOutOfRangeException>()
-            .WithMessage(message);
+        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
     }
 
     [Fact]
@@ -19,9 +17,7 @@ public class AnimationStyleTests : TestBase
         var ctor = () => new AnimationStyle(Speed: -1);
         var message = $"Less than 1 (Parameter 'Speed'){NL}Actual value was -1.{NL}";
 
-        ctor.Should()
-            .Throw<ArgumentOutOfRangeException>()
-            .WithMessage(message);
+        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
     }
 
     [Fact]
@@ -29,7 +25,7 @@ public class AnimationStyleTests : TestBase
     {
         var style = new AnimationStyle();
 
-        style.Duration.Should().Be(TimeSpan.FromSeconds(12));
+        style.Duration.ShouldBe(TimeSpan.FromSeconds(12));
     }
 
     [Fact]
@@ -37,6 +33,6 @@ public class AnimationStyleTests : TestBase
     {
         var style = new AnimationStyle();
 
-        style.Speed.Should().Be(20);
+        style.Speed.ShouldBe(20);
     }
 }

@@ -1,4 +1,4 @@
-global using FluentAssertions;
-global using FluentAssertions.Extensions;
+global using Shouldly;
+global using Shouldly.ShouldlyExtensionMethods;
 global using Spectre.Console;
 global using Xunit;
