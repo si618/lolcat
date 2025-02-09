@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739080054979,
+  "lastUpdate": 1739080384963,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11016,6 +11016,66 @@ window.BENCHMARK_DATA = {
             "value": 1247924.2368489583,
             "unit": "ns",
             "range": "± 5532.632299503818"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "500370e21c8cac379f5529840ab48f7a2bc46abf",
+          "message": "Bump coverlet.collector from 6.0.2 to 6.0.4 (#120)\n\nBumps [coverlet.collector](https://github.com/coverlet-coverage/coverlet) from 6.0.2 to 6.0.4.\r\n- [Release notes](https://github.com/coverlet-coverage/coverlet/releases)\r\n- [Commits](https://github.com/coverlet-coverage/coverlet/compare/v6.0.2...v6.0.4)\r\n\r\n---\r\nupdated-dependencies:\r\n- dependency-name: coverlet.collector\r\n  dependency-type: direct:production\r\n  update-type: version-update:semver-patch\r\n...\r\n\r\nSigned-off-by: dependabot[bot] <support@github.com>\r\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-02-09T16:19:42+10:30",
+          "tree_id": "708576c4b4e3d18d7d8e83cbb60bfbb144c0a682",
+          "url": "https://github.com/si618/lolcat/commit/500370e21c8cac379f5529840ab48f7a2bc46abf"
+        },
+        "date": 1739080384659,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 12601.206321716309,
+            "unit": "ns",
+            "range": "± 60.40299734442788"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 95525.36034138997,
+            "unit": "ns",
+            "range": "± 109.45275674817601"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1133403.5002604167,
+            "unit": "ns",
+            "range": "± 3477.5497331069946"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13554.562987263997,
+            "unit": "ns",
+            "range": "± 47.27638929929026"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 109091.48754882812,
+            "unit": "ns",
+            "range": "± 288.18707512423174"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1204484.5419921875,
+            "unit": "ns",
+            "range": "± 4103.313135370897"
           }
         ]
       }
