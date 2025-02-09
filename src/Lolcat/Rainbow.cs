@@ -32,13 +32,8 @@ public sealed class Rainbow
     /// </summary>
     public string Markup(string text, double seed)
     {
-        var lines = Spectre.Console.Markup
-            .Escape(text)
-            .ReplaceLineEndings()
-            .Split(Environment.NewLine);
-
         Lines.Clear();
-        Lines.AddRange(lines);
+        Lines.AddRange(text.ReplaceLineEndings().Split(Environment.NewLine));
 
         BuildLines(seed);
 
@@ -79,7 +74,7 @@ public sealed class Rainbow
     public void WriteLineWithMarkup(string text, double seed) =>
         Console.WriteLine(Markup(text, seed));
 
-    internal List<string> Lines { get; } = new();
+    internal List<string> Lines { get; } = [];
     private StringBuilder Line { get; } = new();
 
     internal double GetStartingSeed()
@@ -118,6 +113,11 @@ public sealed class Rainbow
 
             var pair = i + 1 < line.Length && char.IsSurrogatePair(line[i], line[i + 1]);
             var @char = pair ? line[i] + line[++i].ToString() : line[i].ToString();
+
+            if (RainbowStyle.EscapeSequence == EscapeSequence.Spectre)
+            {
+                @char = @char.EscapeMarkup();
+            }
 
             Line.AppendFormat(Console.Format, red, green, blue, @char);
         }

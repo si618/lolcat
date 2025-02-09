@@ -27,10 +27,10 @@
 
 ```bash
 > dotnet --list-sdks
-8.0.101 [/usr/share/dotnet/sdk]
+8.0.405 [/usr/share/dotnet/sdk]
 
 > git --version
-git version 2.43.0
+git version 2.47.1
 
 > git clone https://github.com/si618/lolcat.git
 Cloning into 'lolcat'...
