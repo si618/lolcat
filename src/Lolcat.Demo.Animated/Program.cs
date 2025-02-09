@@ -16,6 +16,6 @@ var text = args.Length > 0
         ? Resources.Alien
         : Resources.Unicorn;
 
-var rainbow = new Rainbow(rainbowStyle);
+var rainbow = Rainbow.WithStyle(rainbowStyle);
 
 rainbow.Animate(text, animationStyle);

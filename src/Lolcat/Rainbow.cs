@@ -13,6 +13,8 @@ public sealed class Rainbow
             : new SpectreConsole();
     }
 
+    public static Rainbow WithStyle(RainbowStyle rainbowStyle) => new(rainbowStyle);
+
     internal Rainbow(IConsole console, RainbowStyle? rainbowStyle = null) : this(rainbowStyle)
     {
         Console = console;
@@ -30,8 +32,13 @@ public sealed class Rainbow
     /// </summary>
     public string Markup(string text, double seed)
     {
+        var lines = Spectre.Console.Markup
+            .Escape(text)
+            .ReplaceLineEndings()
+            .Split(Environment.NewLine);
+
         Lines.Clear();
-        Lines.AddRange(text.ReplaceLineEndings().Split(Environment.NewLine));
+        Lines.AddRange(lines);
 
         BuildLines(seed);
 

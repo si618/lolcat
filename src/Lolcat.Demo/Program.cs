@@ -14,7 +14,7 @@ Console.WriteLine(markup);
 text = "The lovers, the dreamers and me";
 
 // Spectre.Console escape sequence is also available
-rainbow = new Rainbow(style with
+rainbow = Rainbow.WithStyle(style with
 {
     EscapeSequence = EscapeSequence.Spectre,
     Frequency = 1,

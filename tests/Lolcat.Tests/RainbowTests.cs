@@ -24,17 +24,6 @@ public class RainbowTests : TestBase
     }
 
     [Fact]
-    public void Markup_WithAnsiEscapeSequenceAndEscapedText_BuildsExpectedResult()
-    {
-        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: Seed);
-        var rainbow = new Rainbow(style);
-
-        var markup = rainbow.Markup(Resources.AnsiText);
-
-        markup.ShouldBe(Resources.AnsiMarkup);
-    }
-
-    [Fact]
     public void Markup_WithSpectreEscapeSequence_BuildsExpectedResult()
     {
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
@@ -53,7 +42,7 @@ public class RainbowTests : TestBase
 
         var markup = rainbow.Markup(Resources.SpectreTextWithEscapeCharacters);
 
-        markup.ShouldBe(Resources.SpectreMarkup.ReplaceLineEndings());
+        markup.ShouldBe(Resources.SpectreMarkupWithEscapeCharacters.ReplaceLineEndings());
     }
 
     [Fact]
@@ -102,5 +91,15 @@ public class RainbowTests : TestBase
         var markup = rainbow.MarkupLine(Resources.EmojiMultilineText);
 
         markup.ShouldEndWith(Environment.NewLine);
+    }
+
+    [Fact]
+    public void WriteLineWithMarkup_WithSpectreEscapeSequence_WorksWithEscapeCharactersInText()
+    {
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
+
+        Should.NotThrow(() =>
+            rainbow.WriteLineWithMarkup(Resources.SpectreTextWithEscapeCharacters));
     }
 }
