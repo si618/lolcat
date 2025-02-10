@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1739080402545,
+  "lastUpdate": 1739180894557,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11136,6 +11136,66 @@ window.BENCHMARK_DATA = {
             "value": 1299044.39453125,
             "unit": "ns",
             "range": "± 11635.066578723923"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1d844d7429fde7bf69c63e361ade12c614d059a2",
+          "message": "Bump xunit.runner.visualstudio from 3.0.1 to 3.0.2 in the xunit group (#124)\n\nBumps the xunit group with 1 update: [xunit.runner.visualstudio](https://github.com/xunit/visualstudio.xunit).\n\n\nUpdates `xunit.runner.visualstudio` from 3.0.1 to 3.0.2\n- [Release notes](https://github.com/xunit/visualstudio.xunit/releases)\n- [Commits](https://github.com/xunit/visualstudio.xunit/compare/3.0.1...3.0.2)\n\n---\nupdated-dependencies:\n- dependency-name: xunit.runner.visualstudio\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n  dependency-group: xunit\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-02-10T20:14:27+10:30",
+          "tree_id": "a66f3d42db3f4f81c3e4bcb36f799088a591b8d5",
+          "url": "https://github.com/si618/lolcat/commit/1d844d7429fde7bf69c63e361ade12c614d059a2"
+        },
+        "date": 1739180894243,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13327.313160487583,
+            "unit": "ns",
+            "range": "± 71.48091676537652"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 97440.95772007534,
+            "unit": "ns",
+            "range": "± 687.9063962927372"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1230458.708203125,
+            "unit": "ns",
+            "range": "± 11368.75405067994"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 14166.205974324545,
+            "unit": "ns",
+            "range": "± 95.83261697581524"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 110388.3171061198,
+            "unit": "ns",
+            "range": "± 464.1677547914268"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1285402.1566685268,
+            "unit": "ns",
+            "range": "± 5550.363514607281"
           }
         ]
       }
