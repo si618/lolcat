@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="xunit.runner.visualstudio" VersionOverride="3.1.4" />
     <None Include="..\..\assets\Rainbow.ico">
       <Link>Rainbow.ico</Link>
     </None>
