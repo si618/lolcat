@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1740351985531,
+  "lastUpdate": 1757430289886,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11256,6 +11256,66 @@ window.BENCHMARK_DATA = {
             "value": 1263201.6803385417,
             "unit": "ns",
             "range": "± 6007.499834260288"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cdcf972030310c823b5d14881a8aef2aa09e17ab",
+          "message": "Bump Spectre.Console and Spectre.Console.Testing (#137)\n\nBumps Spectre.Console from 0.49.1 to 0.51.1\nBumps Spectre.Console.Testing from 0.49.1 to 0.51.1\n\n---\nupdated-dependencies:\n- dependency-name: Spectre.Console\n  dependency-version: 0.51.1\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n- dependency-name: Spectre.Console.Testing\n  dependency-version: 0.51.1\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n- dependency-name: Spectre.Console.Testing\n  dependency-version: 0.51.1\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n  dependency-group: spectre\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-09-10T00:31:14+09:30",
+          "tree_id": "f518773188381616064392f83bb2faf6dc297756",
+          "url": "https://github.com/si618/lolcat/commit/cdcf972030310c823b5d14881a8aef2aa09e17ab"
+        },
+        "date": 1757430289598,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13271.758037312826,
+            "unit": "ns",
+            "range": "± 184.9019191112566"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 98703.87248535156,
+            "unit": "ns",
+            "range": "± 533.5461801878052"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1211711.14609375,
+            "unit": "ns",
+            "range": "± 18771.35694763076"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 14375.019652303059,
+            "unit": "ns",
+            "range": "± 100.531342831535"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 112577.45022786458,
+            "unit": "ns",
+            "range": "± 790.2189280937214"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1393105.3996582031,
+            "unit": "ns",
+            "range": "± 26700.60523184498"
           }
         ]
       }
