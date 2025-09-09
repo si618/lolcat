@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Spectre.Console.Testing" VersionOverride="0.51.1" />
     <None Include="..\..\assets\Rainbow.ico">
       <Link>Rainbow.ico</Link>
     </None>
