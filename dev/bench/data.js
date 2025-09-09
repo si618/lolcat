@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757430315298,
+  "lastUpdate": 1757430325153,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11376,6 +11376,66 @@ window.BENCHMARK_DATA = {
             "value": 1360172.4184895833,
             "unit": "ns",
             "range": "± 8110.487339452131"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "58fbeff72053a9e145066564c84755827c3387da",
+          "message": "Bump benchmark-action/github-action-benchmark from 1.20.4 to 1.20.7 (#135)\n\nBumps [benchmark-action/github-action-benchmark](https://github.com/benchmark-action/github-action-benchmark) from 1.20.4 to 1.20.7.\n- [Release notes](https://github.com/benchmark-action/github-action-benchmark/releases)\n- [Changelog](https://github.com/benchmark-action/github-action-benchmark/blob/master/CHANGELOG.md)\n- [Commits](https://github.com/benchmark-action/github-action-benchmark/compare/v1.20.4...v1.20.7)\n\n---\nupdated-dependencies:\n- dependency-name: benchmark-action/github-action-benchmark\n  dependency-version: 1.20.7\n  dependency-type: direct:production\n  update-type: version-update:semver-patch\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2025-09-10T00:31:48+09:30",
+          "tree_id": "83671d57d71518de36a2084a3cf562df51ca572e",
+          "url": "https://github.com/si618/lolcat/commit/58fbeff72053a9e145066564c84755827c3387da"
+        },
+        "date": 1757430324789,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13406.229573176457,
+            "unit": "ns",
+            "range": "± 100.13918057184834"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 103785.67166341146,
+            "unit": "ns",
+            "range": "± 559.9499113837082"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1286789.0228515626,
+            "unit": "ns",
+            "range": "± 10662.018778798743"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 14223.876769002278,
+            "unit": "ns",
+            "range": "± 68.26615402693982"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 117292.8169555664,
+            "unit": "ns",
+            "range": "± 272.77337917088767"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1301549.9644252232,
+            "unit": "ns",
+            "range": "± 4961.7914925324685"
           }
         ]
       }
