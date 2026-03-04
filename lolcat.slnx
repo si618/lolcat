@@ -1,0 +1,29 @@
+<Solution>
+  <Folder Name="/assets/">
+    <File Path="assets/nom.webp" />
+    <File Path="assets/Rainbow.ico" />
+    <File Path="assets/Rainbow.png" />
+  </Folder>
+  <Folder Name="/items/">
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="nuget.config" />
+    <File Path=".github/dependabot.yml" />
+    <File Path=".github/workflows/workflow.yml" />
+    <File Path=".gitignore" />
+    <File Path="version.json" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Lolcat/Lolcat.csproj" />
+    <Project Path="src/Lolcat.Demo/Lolcat.Demo.csproj" />
+    <Project Path="src/Lolcat.Demo.Animated/Lolcat.Demo.Animated.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Lolcat.Tests/Lolcat.Tests.csproj" />
+    <Project Path="tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj" />
+  </Folder>
+</Solution>

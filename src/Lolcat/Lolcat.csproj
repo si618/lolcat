@@ -18,6 +18,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="Spectre.Console" />
+    <Using Include="System.Diagnostics" />
+    <Using Include="System.Diagnostics.CodeAnalysis" />
+    <Using Include="System.Runtime.CompilerServices" />
+    <Using Include="System.Text" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\assets\Rainbow.png" Pack="true" PackagePath="\" Link="Rainbow.png" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>

@@ -27,6 +27,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="BenchmarkDotNet.Attributes" />
+    <Using Include="BenchmarkDotNet.Columns" />
+    <Using Include="BenchmarkDotNet.Configs" />
+    <Using Include="BenchmarkDotNet.Diagnosers" />
+    <Using Include="BenchmarkDotNet.Environments" />
+    <Using Include="BenchmarkDotNet.Exporters.Json" />
+    <Using Include="BenchmarkDotNet.Jobs" />
+    <Using Include="BenchmarkDotNet.Running" />
+    <Using Include="Lolcat.Benchmarks" />
+    <Using Include="Lolcat.Tests" />
+    <Using Include="Spectre.Console" />
+    <Using Include="System.Runtime.InteropServices" />
+    <Using Include="System.Text" />
+    <Using Include="System.Text.Json.Nodes" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\assets\Rainbow.ico">
       <Link>Rainbow.ico</Link>
     </None>

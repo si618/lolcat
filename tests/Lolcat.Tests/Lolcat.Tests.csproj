@@ -18,6 +18,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="Shouldly" />
+    <Using Include="Spectre.Console" />
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
