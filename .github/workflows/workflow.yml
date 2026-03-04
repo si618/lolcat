@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 0 # avoid shallow clone so nbgv can do its work
 
       - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -51,7 +51,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
@@ -65,7 +65,7 @@ jobs:
 
       - name: 🚚 Store benchmarks
         id: store-benchmarks
-        uses: benchmark-action/github-action-benchmark@v1.20.4
+        uses: benchmark-action/github-action-benchmark@v1.20.7
         with:
           name: Benchmarks
           tool: benchmarkdotnet
@@ -84,7 +84,7 @@ jobs:
           fetch-depth: 0
 
       - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
