@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1757430343753,
+  "lastUpdate": 1772605495176,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11496,6 +11496,66 @@ window.BENCHMARK_DATA = {
             "value": 1193780.7606026786,
             "unit": "ns",
             "range": "± 3093.822083898054"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4312e9b07f954abd869841b4625c0b545833cb02",
+          "message": "Bump Nerdbank.GitVersioning from 3.7.115 to 3.8.118 (#143)\n\n---\nupdated-dependencies:\n- dependency-name: Nerdbank.GitVersioning\n  dependency-version: 3.8.118\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-03-04T16:51:16+10:30",
+          "tree_id": "7420508b32fe25c2e49286cba0f4b761d2784f71",
+          "url": "https://github.com/si618/lolcat/commit/4312e9b07f954abd869841b4625c0b545833cb02"
+        },
+        "date": 1772605494919,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 13444.588106282552,
+            "unit": "ns",
+            "range": "± 100.71400132988613"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 99856.64948381696,
+            "unit": "ns",
+            "range": "± 344.8653302198115"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1339206.9997395833,
+            "unit": "ns",
+            "range": "± 5105.325989539413"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 14289.864232381186,
+            "unit": "ns",
+            "range": "± 127.7165489116088"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 109107.74811808269,
+            "unit": "ns",
+            "range": "± 408.26810740761596"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1311727.2071814905,
+            "unit": "ns",
+            "range": "± 12244.23580636036"
           }
         ]
       }
