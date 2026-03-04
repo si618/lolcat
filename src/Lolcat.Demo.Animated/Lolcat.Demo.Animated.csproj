@@ -11,6 +11,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Using Include="Lolcat" />
+    <Using Include="Lolcat.Demo.Animated" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\assets\Rainbow.ico">
       <Link>Rainbow.ico</Link>
     </None>
