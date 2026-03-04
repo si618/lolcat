@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772605608814,
+  "lastUpdate": 1772607406890,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11736,6 +11736,66 @@ window.BENCHMARK_DATA = {
             "value": 1255749.5633370536,
             "unit": "ns",
             "range": "± 3733.2636380714"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "37055c12df64d8f9033dd0b1ebf52a13d39afb7f",
+          "message": "Upgrade to .NET 10 and clean up code (#145)\n\n* Upgrade to .NET 10 and switch to SDK-style global usings\n\n* Upgrade to .NET 10, update dependencies, and adjust benchmarks config",
+          "timestamp": "2026-03-04T17:23:08+10:30",
+          "tree_id": "160ffd66b573fcf34b436efc2356802d778f908e",
+          "url": "https://github.com/si618/lolcat/commit/37055c12df64d8f9033dd0b1ebf52a13d39afb7f"
+        },
+        "date": 1772607406226,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 11838.651819864908,
+            "unit": "ns",
+            "range": "± 86.48405461990204"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 90776.23741048177,
+            "unit": "ns",
+            "range": "± 445.0807100814591"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1124430.78125,
+            "unit": "ns",
+            "range": "± 14883.580951481163"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 12912.048876081195,
+            "unit": "ns",
+            "range": "± 61.85269596143378"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 107230.76529134114,
+            "unit": "ns",
+            "range": "± 513.003737396454"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1238947.3813802083,
+            "unit": "ns",
+            "range": "± 20207.211796319618"
           }
         ]
       }
