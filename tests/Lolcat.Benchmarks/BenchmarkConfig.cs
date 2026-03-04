@@ -10,7 +10,6 @@ public sealed class BenchmarkConfig : ManualConfig
 
         AddExporter(new JsonExporter());
 
-        AddJob(Job.Default.WithRuntime(CoreRuntime.Core80));
-        //AddJob(Job.Default.WithRuntime(CoreRuntime.Core90));
+        AddJob(Job.Default.WithRuntime(CoreRuntime.Core10_0));
     }
 }
