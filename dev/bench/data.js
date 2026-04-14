@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1772607406890,
+  "lastUpdate": 1776126824828,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11796,6 +11796,66 @@ window.BENCHMARK_DATA = {
             "value": 1238947.3813802083,
             "unit": "ns",
             "range": "± 20207.211796319618"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "35a53117d462fe9b1ddea336274851505f839f47",
+          "message": "Fix Spectre.Markup escaping and upgrade dependencies (#156)\n\n* Upgrade to .NET SDK 10.0.104, add local CLA settings, and fix Spectre.Markup escaping (fixes #152)\n\n* Upgrade dependencies: coverlet.collector, Microsoft.NET.Test.Sdk, Nerdbank.GitVersioning, and Spectre.Console",
+          "timestamp": "2026-04-14T10:00:13+09:30",
+          "tree_id": "9e7f4e462f29ba41077d49f51b2548f0d4200865",
+          "url": "https://github.com/si618/lolcat/commit/35a53117d462fe9b1ddea336274851505f839f47"
+        },
+        "date": 1776126824383,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 11523.165516153971,
+            "unit": "ns",
+            "range": "± 75.75146553941113"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 98802.35110037668,
+            "unit": "ns",
+            "range": "± 753.0982149587716"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1097234.1966145833,
+            "unit": "ns",
+            "range": "± 18792.460602071475"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 12333.734931437175,
+            "unit": "ns",
+            "range": "± 84.02255643577374"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 101175.49483642579,
+            "unit": "ns",
+            "range": "± 1069.5638847575583"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1208978.2953725962,
+            "unit": "ns",
+            "range": "± 10324.939030001866"
           }
         ]
       }
