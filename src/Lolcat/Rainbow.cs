@@ -5,20 +5,29 @@
 /// </summary>
 public sealed class Rainbow
 {
+    private readonly bool _escape;
+
     public Rainbow(RainbowStyle? rainbowStyle = null)
     {
         RainbowStyle = rainbowStyle ?? new RainbowStyle();
-        Console = RainbowStyle.EscapeSequence == EscapeSequence.Ansi
-            ? new SystemConsole()
-            : new SpectreConsole();
-    }
 
-    public static Rainbow WithStyle(RainbowStyle rainbowStyle) => new(rainbowStyle);
+        if (RainbowStyle.EscapeSequence == EscapeSequence.Ansi)
+        {
+            Console = new SystemConsole();
+        }
+        else
+        {
+            Console = new SpectreConsole();
+            _escape = true;
+        }
+    }
 
     internal Rainbow(IConsole console, RainbowStyle? rainbowStyle = null) : this(rainbowStyle)
     {
         Console = console;
     }
+
+    public static Rainbow WithStyle(RainbowStyle rainbowStyle) => new(rainbowStyle);
 
     public IConsole Console { get; }
 
@@ -114,9 +123,9 @@ public sealed class Rainbow
             var pair = i + 1 < line.Length && char.IsSurrogatePair(line[i], line[i + 1]);
             var @char = pair ? line[i] + line[++i].ToString() : line[i].ToString();
 
-            if (RainbowStyle.EscapeSequence == EscapeSequence.Spectre)
+            if (_escape)
             {
-                @char = @char.EscapeMarkup();
+                @char = Spectre.Console.Markup.Escape(@char);
             }
 
             Line.AppendFormat(Console.Format, red, green, blue, @char);
