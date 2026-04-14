@@ -102,4 +102,21 @@ public class RainbowTests : TestBase
         Should.NotThrow(() =>
             rainbow.WriteLineWithMarkup(Resources.SpectreTextWithEscapeCharacters));
     }
+
+    [Fact]
+    public void Markup_WithSpectreEscapeSequence_EscapesMarkupSpecialCharacters()
+    {
+        // Regression test for https://github.com/si618/lolcat/issues/152
+        // StringExtensions.EscapeMarkup was moved from Spectre.Console.dll to
+        // Spectre.Console.Ansi.dll in 0.55.0, causing MissingMethodException in
+        // published binaries. Fix: use Markup.Escape() which stays in Spectre.Console.dll.
+        var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
+        var rainbow = new Rainbow(style);
+
+        var markup = rainbow.Markup("[hello]");
+
+        // Output must be valid Spectre markup — i.e., [ and ] were escaped via Markup.Escape.
+        // new Markup() throws if the string contains unescaped markup-special characters.
+        Should.NotThrow(() => new Markup(markup));
+    }
 }
