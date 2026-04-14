@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1776127273549,
+  "lastUpdate": 1776128470729,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -11916,6 +11916,66 @@ window.BENCHMARK_DATA = {
             "value": 1188001.508984375,
             "unit": "ns",
             "range": "± 10629.06851648057"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ad44296768d46955dd5e1783ac2ee2794865e6d8",
+          "message": "Update license metadata to use `PackageLicenseExpression` with Apache-2.0 (#157)",
+          "timestamp": "2026-04-14T10:27:37+09:30",
+          "tree_id": "96314be014e583015b9b9ffdc1e1e507d84c70a3",
+          "url": "https://github.com/si618/lolcat/commit/ad44296768d46955dd5e1783ac2ee2794865e6d8"
+        },
+        "date": 1776128470475,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 11705.059557233539,
+            "unit": "ns",
+            "range": "± 64.70932525972442"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 91654.72261149088,
+            "unit": "ns",
+            "range": "± 684.2878920165418"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1424582.6596354167,
+            "unit": "ns",
+            "range": "± 21611.0378225612"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 12246.23465510777,
+            "unit": "ns",
+            "range": "± 84.3426941017379"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 104597.822265625,
+            "unit": "ns",
+            "range": "± 542.0005742815306"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1168487.15390625,
+            "unit": "ns",
+            "range": "± 18802.293941718144"
           }
         ]
       }
