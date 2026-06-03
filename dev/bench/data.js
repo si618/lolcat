@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1780493768303,
+  "lastUpdate": 1780493799961,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12036,6 +12036,66 @@ window.BENCHMARK_DATA = {
             "value": 1188304.2444010417,
             "unit": "ns",
             "range": "± 20039.016340991082"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "45818e40cf7a2478dbcfa3c7877fade95b556fb3",
+          "message": "Bump coverlet.collector from 8.0.1 to 10.0.1 (#162)\n\n---\nupdated-dependencies:\n- dependency-name: coverlet.collector\n  dependency-version: 10.0.1\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-06-03T23:02:51+09:30",
+          "tree_id": "a2ef2648a9d3fb7a64dd5ce2b174d0e1b1869f0f",
+          "url": "https://github.com/si618/lolcat/commit/45818e40cf7a2478dbcfa3c7877fade95b556fb3"
+        },
+        "date": 1780493799598,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 12628.12024790446,
+            "unit": "ns",
+            "range": "± 110.78822292017985"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 91491.73849283854,
+            "unit": "ns",
+            "range": "± 170.70927694111597"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1116157.7416666667,
+            "unit": "ns",
+            "range": "± 19324.34745495886"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 12630.833852132162,
+            "unit": "ns",
+            "range": "± 23.921070730964786"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 102110.66462590144,
+            "unit": "ns",
+            "range": "± 84.25409708820672"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1220408.0342447916,
+            "unit": "ns",
+            "range": "± 20100.586492291775"
           }
         ]
       }
