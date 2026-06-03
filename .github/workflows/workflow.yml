@@ -65,7 +65,7 @@ jobs:
 
       - name: 🚚 Store benchmarks
         id: store-benchmarks
-        uses: benchmark-action/github-action-benchmark@v1.22.0
+        uses: benchmark-action/github-action-benchmark@v1.22.1
         with:
           name: Benchmarks
           tool: benchmarkdotnet
