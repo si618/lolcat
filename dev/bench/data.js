@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1788434839251,
+  "lastUpdate": 1788434845569,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12576,6 +12576,66 @@ window.BENCHMARK_DATA = {
             "value": 1233363.3389322916,
             "unit": "ns",
             "range": "± 19008.86043815404"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4612883e52a4904b7d03070c1627488d57f3d0d1",
+          "message": "Bump the xunit group with 1 update (#173)\n\nBumps xunit.runner.visualstudio from 3.1.5 to 4.0.0\n\n---\nupdated-dependencies:\n- dependency-name: xunit.runner.visualstudio\n  dependency-version: 4.0.0\n  dependency-type: direct:production\n  update-type: version-update:semver-major\n  dependency-group: xunit\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-09-03T20:53:26+09:30",
+          "tree_id": "ca1f779b98944632d944ef5932e3469f0afb7560",
+          "url": "https://github.com/si618/lolcat/commit/4612883e52a4904b7d03070c1627488d57f3d0d1"
+        },
+        "date": 1788434844957,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 11735.644284174992,
+            "unit": "ns",
+            "range": "± 29.207338518626358"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 95076.34749348958,
+            "unit": "ns",
+            "range": "± 333.4840295281503"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1109488.4656982422,
+            "unit": "ns",
+            "range": "± 21193.40167505364"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 12706.32494027274,
+            "unit": "ns",
+            "range": "± 28.81670398512368"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 102455.02790178571,
+            "unit": "ns",
+            "range": "± 412.3922504919809"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1231667.345703125,
+            "unit": "ns",
+            "range": "± 10928.224080159776"
           }
         ]
       }
