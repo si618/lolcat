@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1788434845569,
+  "lastUpdate": 1789424520580,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12636,6 +12636,66 @@ window.BENCHMARK_DATA = {
             "value": 1231667.345703125,
             "unit": "ns",
             "range": "± 10928.224080159776"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49699333+dependabot[bot]@users.noreply.github.com",
+            "name": "dependabot[bot]",
+            "username": "dependabot[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f741a208c2b19174520e4d393cb40cd63dfa3f8c",
+          "message": "Bump Microsoft.NET.Test.Sdk from 18.6.0 to 18.10.0 (#176)\n\n---\nupdated-dependencies:\n- dependency-name: Microsoft.NET.Test.Sdk\n  dependency-version: 18.10.0\n  dependency-type: direct:production\n  update-type: version-update:semver-minor\n...\n\nSigned-off-by: dependabot[bot] <support@github.com>\nCo-authored-by: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>",
+          "timestamp": "2026-09-15T07:47:56+09:30",
+          "tree_id": "b3cf8af3d16e602f149ba26e0f84af298a396e15",
+          "url": "https://github.com/si618/lolcat/commit/f741a208c2b19174520e4d393cb40cd63dfa3f8c"
+        },
+        "date": 1789424519366,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 12024.219909667969,
+            "unit": "ns",
+            "range": "± 19.262679268422755"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 97004.34196589544,
+            "unit": "ns",
+            "range": "± 241.60344389535018"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1160224.9380208333,
+            "unit": "ns",
+            "range": "± 15668.849596890772"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 13173.502690996442,
+            "unit": "ns",
+            "range": "± 32.1869474069841"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 104079.53076985678,
+            "unit": "ns",
+            "range": "± 315.4464302632771"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1230876.3454733456,
+            "unit": "ns",
+            "range": "± 24322.84881994129"
           }
         ]
       }
