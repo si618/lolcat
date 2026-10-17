@@ -19,6 +19,7 @@
     <File Path="README.md" />
     <File Path=".gitignore" />
     <File Path=".github/renovate.json" />
+    <File Path=".github/workflows/publish.yml" />
     <File Path=".github/workflows/workflow.yml" />
   </Folder>
   <Folder Name="/src/">

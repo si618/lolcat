@@ -1,0 +1,60 @@
+name: publish
+
+# nuget.org trusted publishing names this file in its policy, so only this workflow can
+# exchange a GitHub OIDC token for a short-lived NuGet API key. There's no stored key.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  publish:
+    # version.json makes only main a public release
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # NuGet/login exchanges the OIDC token
+    steps:
+      - name: 🚧 Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # avoid shallow clone so nbgv can do its work
+          persist-credentials: false
+
+      - name: 🔨 Setup dotnet
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
+        with:
+          global-json-file: global.json
+
+      - name: 📥 Restore
+        run: dotnet restore
+
+      - name: 🏗️ Build
+        run: dotnet build --no-restore --configuration Release -warnaserror
+
+      - name: 🧪 Test
+        run: dotnet test --no-build --configuration Release
+
+      # The package pushed is the build that was just tested: pack never rebuilds.
+      - name: 📦️ Pack
+        run: dotnet pack src/Lolcat --no-build --configuration Release
+
+      - name: 🔑 NuGet login
+        id: login
+        uses: NuGet/login@8d196754b4036150537f80ac539e15c2f1028841 # v1.2.0
+        with:
+          user: si-fi
+
+      # Pushes each .nupkg and the matching .snupkg beside it
+      - name: 🚀 Publish
+        run: >-
+          dotnet nuget push "artifacts/package/release/*.nupkg"
+          --api-key "${{ steps.login.outputs.NUGET_API_KEY }}"
+          --source https://api.nuget.org/v3/index.json
