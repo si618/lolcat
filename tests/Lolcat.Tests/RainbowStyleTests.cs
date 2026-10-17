@@ -2,39 +2,74 @@ namespace Lolcat.Tests;
 
 public class RainbowStyleTests : TestBase
 {
-    [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenFrequencyTooHigh()
+    [Theory]
+    [InlineData(1.001, "Greater than max '1'")]
+    [InlineData(0, "Less than min '0.001'")]
+    public void Ctor_FrequencyOutOfRange_ThrowsArgumentOutOfRangeException(
+        double frequency, string message)
     {
-        var ctor = () => new RainbowStyle(Frequency: 1.001);
-        var message = $"Greater than max '1' (Parameter 'Frequency'){NL}Actual value was 1.001.{NL}";
+        // Act
+        ArgumentOutOfRangeException exception = Should.Throw<ArgumentOutOfRangeException>(
+            () => new RainbowStyle(Frequency: frequency));
 
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
+        // Assert
+        exception.ParamName.ShouldBe(nameof(RainbowStyle.Frequency));
+        exception.ActualValue.ShouldBe(frequency);
+        exception.Message.ShouldStartWith(message);
+    }
+
+    [Theory]
+    [InlineData(1_000, "Greater than max '100'")]
+    [InlineData(0, "Less than min '1'")]
+    public void Ctor_SpreadOutOfRange_ThrowsArgumentOutOfRangeException(
+        double spread, string message)
+    {
+        // Act
+        ArgumentOutOfRangeException exception = Should.Throw<ArgumentOutOfRangeException>(
+            () => new RainbowStyle(Spread: spread));
+
+        // Assert
+        exception.ParamName.ShouldBe(nameof(RainbowStyle.Spread));
+        exception.ActualValue.ShouldBe(spread);
+        exception.Message.ShouldStartWith(message);
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenFrequencyTooLow()
+    public void With_SpreadOutOfRange_ThrowsArgumentOutOfRangeException()
     {
-        var ctor = () => new RainbowStyle(Frequency: 0);
-        var message = $"Less than min '0.001' (Parameter 'Frequency'){NL}Actual value was 0.{NL}";
+        // Arrange
+        var style = new RainbowStyle();
 
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
+        // Act
+        ArgumentOutOfRangeException exception = Should.Throw<ArgumentOutOfRangeException>(() => style with { Spread = 500 });
+
+        // Assert
+        exception.ParamName.ShouldBe(nameof(RainbowStyle.Spread));
+        exception.ActualValue.ShouldBe(500d);
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpreadTooHigh()
+    public void ObjectInitializer_FrequencyOutOfRange_ThrowsArgumentOutOfRangeException()
     {
-        var ctor = () => new RainbowStyle(Spread: 1_000);
-        var message = $"Greater than max '100' (Parameter 'Spread'){NL}Actual value was 1000.{NL}";
+        // Act
+        ArgumentOutOfRangeException exception = Should.Throw<ArgumentOutOfRangeException>(
+            () => new RainbowStyle { Frequency = -1 });
 
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
+        // Assert
+        exception.ParamName.ShouldBe(nameof(RainbowStyle.Frequency));
+        exception.ActualValue.ShouldBe(-1d);
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpreadTooLow()
+    public void With_SpreadInRange_CopiesStyleWithNewSpread()
     {
-        var ctor = () => new RainbowStyle(Spread: 0);
-        var message = $"Less than min '1' (Parameter 'Spread'){NL}Actual value was 0.{NL}";
+        // Arrange
+        var style = new RainbowStyle(Frequency: 0.5, Seed: Seed);
 
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
+        // Act
+        RainbowStyle copy = style with { Spread = 50 };
+
+        // Assert
+        copy.ShouldBe(new RainbowStyle(Spread: 50, Frequency: 0.5, Seed: Seed));
     }
 }

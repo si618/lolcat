@@ -1,9 +1,10 @@
-﻿namespace Lolcat;
+namespace Lolcat;
 
 /// <summary>Animation style options</summary>
 /// <param name="Duration">Animation duration (default: 12s)</param>
 /// <param name="Speed">Animation speed (default 20)</param>
 /// <param name="ClearConsole">Clears the console on start and window resize (default: true)</param>
+/// <param name="PadToWindowSize">Pad or trim text to fill the current window size (default: true)</param>
 /// <param name="StopOnResize">Stop animation if console window is resized (default: false)</param>
 public sealed record AnimationStyle(
     TimeSpan? Duration = null,
@@ -26,8 +27,8 @@ public sealed record AnimationStyle(
     /// Clears the console on start and window resize (default: true)
     /// </summary>
     /// <remarks>
-    /// If this is set <c>false</c> expect strange things to happen on window resizing unless
-    /// <see cref="StopOnResize"/> is <c>true</c>
+    /// If this is set <see langword="false"/> expect strange things to happen on window resizing unless
+    /// <see cref="StopOnResize"/> is <see langword="true"/>
     /// </remarks>
     public bool ClearConsole { get; } = ClearConsole;
 

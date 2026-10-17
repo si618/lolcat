@@ -1,6 +1,6 @@
 try
 {
-    BenchmarkRunner.Run<Benchmarks>();
+    BenchmarkRunner.Run<MarkupBenchmarks>();
 
     Report.Cleanup();
 

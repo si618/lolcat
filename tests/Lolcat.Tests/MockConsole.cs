@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Tests;
+namespace Lolcat.Tests;
 
 /// <summary>
 /// Mock console used for tests and benchmarks, as a console is not typically available
@@ -12,19 +12,28 @@ public sealed class MockConsole(
     int cursorLeft = 0)
     : IConsole
 {
+    private bool _cursorVisibility = cursorVisibility;
+    private int _cursorTop = cursorTop;
+    private int _cursorLeft = cursorLeft;
+
     public string Format { get; init; } = escapeSequence == EscapeSequence.Ansi
         ? SystemConsole.AnsiFormat
         : SpectreConsole.SpectreFormat;
+
+    /// <summary>
+    /// Number of lines written, one per line in each animation frame
+    /// </summary>
+    public int LinesWritten { get; private set; }
 
     public void Clear()
     {
     }
 
-    public int GetCursorTop() => cursorTop;
+    public int GetCursorTop() => _cursorTop;
 
-    public int GetCursorLeft() => cursorLeft;
+    public int GetCursorLeft() => _cursorLeft;
 
-    public bool GetCursorVisibility() => cursorVisibility;
+    public bool GetCursorVisibility() => _cursorVisibility;
 
     public int GetWindowHeight() => windowHeight;
 
@@ -32,23 +41,19 @@ public sealed class MockConsole(
 
     public void MoveCursorToTopLeft(int top)
     {
-        cursorTop = top;
-        cursorLeft = 0;
+        _cursorTop = top;
+        _cursorLeft = 0;
     }
 
-    public void MoveCursorToStartOfLine() => cursorLeft = 0;
+    public void MoveCursorToStartOfLine() => _cursorLeft = 0;
 
     public void SetBufferSizeToCurrentWindow()
     {
     }
 
-    public void SetCursorVisibility(bool visible) => cursorVisibility = visible;
+    public void SetCursorVisibility(bool visible) => _cursorVisibility = visible;
 
-    public void Write(string txt)
-    {
-    }
+    public void Write(string text) => LinesWritten++;
 
-    public void WriteLine(string txt)
-    {
-    }
+    public void WriteLine(string text) => LinesWritten++;
 }

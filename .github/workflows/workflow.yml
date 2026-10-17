@@ -7,91 +7,88 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# Least privilege: the default token can write to contents, and only the benchmark job needs to.
+permissions:
+  contents: read
+
 env:
   DOTNET_NOLOGO: true
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  DOTNET_FRAMEWORK: net10.0
-  DOTNET_VERSION: 10.0.x
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: 🚧 Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0 # avoid shallow clone so nbgv can do its work
+          persist-credentials: false
 
       - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v6
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          global-json-file: global.json
 
-      - name: 🏗️ Run dotnet build
-        id: build
-        run: dotnet build -c release
+      - name: 📥 Restore
+        run: dotnet restore
 
-      - name: 🎨 Run dotnet format
-        id: format
-        run: dotnet format --verbosity diagnostic --verify-no-changes --no-restore
+      - name: 🏗️ Build
+        run: dotnet build --no-restore --configuration Release -warnaserror
 
-      - name: 🧪 Run dotnet test
-        id: test
-        run: dotnet test -c release --no-restore
+      - name: 🎨 Format
+        run: dotnet format --verify-no-changes --no-restore
+
+      - name: 🧪 Test
+        run: >-
+          dotnet test --no-build --configuration Release
+          --report-xunit-trx
+          --coverage --coverage-output-format cobertura
+          --results-directory artifacts/test-results
+
+      - name: 📊 Upload test results
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: test-results
+          path: artifacts/test-results
+
+      # Packing on every run also runs package validation against the last release.
+      - name: 📦️ Pack
+        run: dotnet pack src/Lolcat --no-build --configuration Release
+
+      - name: 📦️ Upload package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: package
+          path: artifacts/package/release
 
   benchmark:
     if: ${{ github.event_name == 'push' }}
     needs: [ build ]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # pushes results to gh-pages
     steps:
       - name: 🚧 Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
 
       - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v6
+        uses: actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68 # v6.0.0
         with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
+          global-json-file: global.json
 
       - name: ⚗ Run benchmarks
-        id: run-benchmarks
-        run: |
-          dotnet run \
-          --framework ${{ env.DOTNET_FRAMEWORK }} \
-          --configuration release \
-          --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
+        run: dotnet run --configuration Release --project ./tests/Lolcat.Benchmarks/Lolcat.Benchmarks.csproj
 
       - name: 🚚 Store benchmarks
-        id: store-benchmarks
-        uses: benchmark-action/github-action-benchmark@v1.22.1
+        uses: benchmark-action/github-action-benchmark@4322e5726e6334590d251fc4f92bec0efafc45dc # v1.22.2
         with:
           name: Benchmarks
           tool: benchmarkdotnet
-          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.Benchmarks-report.json
+          output-file-path: BenchmarkDotNet.Artifacts/results/Lolcat.Benchmarks.MarkupBenchmarks-report.json
           github-token: ${{ secrets.GITHUB_TOKEN }}
           auto-push: true
-
-  publish:
-    if: ${{ github.event_name == 'workflow_dispatch' }}
-    needs: [ build ]
-    runs-on: ubuntu-latest
-    steps:
-      - name: 🚧 Checkout
-        uses: actions/checkout@main
-        with:
-          fetch-depth: 0
-
-      - name: 🔨 Setup dotnet
-        uses: actions/setup-dotnet@v6
-        with:
-          dotnet-version: ${{ env.DOTNET_VERSION }}
-
-      - name: 📦️ Package
-        run: dotnet pack -c release ./src/Lolcat/Lolcat.csproj
-
-      - name: 🚀 Publish
-        run: dotnet nuget push ./src/Lolcat/**/*.nupkg -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{ secrets.NUGET_TOKEN }}

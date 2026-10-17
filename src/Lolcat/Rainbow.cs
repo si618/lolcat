@@ -1,4 +1,6 @@
-﻿namespace Lolcat;
+using System.Globalization;
+
+namespace Lolcat;
 
 /// <summary>
 /// Convert plain text to a rainbow
@@ -22,10 +24,7 @@ public sealed class Rainbow
         }
     }
 
-    internal Rainbow(IConsole console, RainbowStyle? rainbowStyle = null) : this(rainbowStyle)
-    {
-        Console = console;
-    }
+    internal Rainbow(IConsole console, RainbowStyle? rainbowStyle = null) : this(rainbowStyle) => Console = console;
 
     public static Rainbow WithStyle(RainbowStyle rainbowStyle) => new(rainbowStyle);
 
@@ -83,24 +82,39 @@ public sealed class Rainbow
     public void WriteLineWithMarkup(string text, double seed) =>
         Console.WriteLine(Markup(text, seed));
 
+    /// <summary>
+    /// Animate <paramref name="text" /> as a rainbow using <paramref name="style"/> and
+    /// <see cref="RainbowStyle"/>
+    /// </summary>
+    /// <param name="text">The text to animate</param>
+    /// <param name="style">The animation style</param>
+    /// <remarks>
+    /// Console window resizing is not fully supported, expect strange things to happen :)
+    /// </remarks>
+    public void Animate(string text, AnimationStyle? style = null) =>
+        new Animation(this, style).Animate(text);
+
     internal List<string> Lines { get; } = [];
     private StringBuilder Line { get; } = new();
 
     internal double GetStartingSeed()
     {
-        var random = RainbowStyle.Seed == 0 ? new Random() : new Random((int)RainbowStyle.Seed);
+        Random random = RainbowStyle.Seed == 0 ? new Random() : new Random((int)RainbowStyle.Seed);
 
         return RainbowStyle.Seed == 0 ? random.Next(0, 255) : Convert.ToDouble(RainbowStyle.Seed);
     }
 
     internal void BuildLines(double seed)
     {
-        for (var i = 0; i < Lines.Count; i++)
+        for (int i = 0; i < Lines.Count; i++)
         {
             seed++;
 
             // No point building an empty or blank line
-            if (string.IsNullOrWhiteSpace(Lines[i])) continue;
+            if (string.IsNullOrWhiteSpace(Lines[i]))
+            {
+                continue;
+            }
 
             BuildLine(Lines[i], seed + RainbowStyle.Spread);
 
@@ -112,23 +126,25 @@ public sealed class Rainbow
     {
         Line.Clear();
 
-        for (var i = 0; i < line.Length; i++)
+        for (int i = 0; i < line.Length; i++)
         {
-            var n = (seed + i) / RainbowStyle.Spread;
+            double n = (seed + i) / RainbowStyle.Spread;
 
-            var red = (int)(Math.Sin(RainbowStyle.Frequency * n) * 127 + 128);
-            var green = (int)(Math.Sin(RainbowStyle.Frequency * n + 2 * Math.PI / 3) * 127 + 128);
-            var blue = (int)(Math.Sin(RainbowStyle.Frequency * n + 4 * Math.PI / 3) * 127 + 128);
+            double angle = RainbowStyle.Frequency * n;
+            int red = (int)((Math.Sin(angle) * 127) + 128);
+            int green = (int)((Math.Sin(angle + (2 * Math.PI / 3)) * 127) + 128);
+            int blue = (int)((Math.Sin(angle + (4 * Math.PI / 3)) * 127) + 128);
 
-            var pair = i + 1 < line.Length && char.IsSurrogatePair(line[i], line[i + 1]);
-            var @char = pair ? line[i] + line[++i].ToString() : line[i].ToString();
+            bool pair = i + 1 < line.Length && char.IsSurrogatePair(line[i], line[i + 1]);
+            string @char = pair ? line[i] + line[++i].ToString() : line[i].ToString();
 
             if (_escape)
             {
                 @char = Spectre.Console.Markup.Escape(@char);
             }
 
-            Line.AppendFormat(Console.Format, red, green, blue, @char);
+            // Machine-facing: escape sequences need invariant digits.
+            Line.AppendFormat(CultureInfo.InvariantCulture, Console.Format, red, green, blue, @char);
         }
     }
 }

@@ -30,8 +30,13 @@
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-  <PropertyGroup>
+  <PropertyGroup Label="Package publishing">
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <!-- Fails pack on a breaking change to the public API since this release. -->
+    <PackageValidationBaselineVersion>1.1.134</PackageValidationBaselineVersion>
   </PropertyGroup>
 
   <ItemGroup>

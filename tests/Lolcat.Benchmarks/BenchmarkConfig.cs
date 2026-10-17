@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Benchmarks;
+namespace Lolcat.Benchmarks;
 
 public sealed class BenchmarkConfig : ManualConfig
 {

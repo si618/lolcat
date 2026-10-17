@@ -1,4 +1,4 @@
-﻿var random = new Random();
+var random = new Random();
 
 var rainbowStyle = new RainbowStyle(
     EscapeSequence.Spectre,
@@ -10,7 +10,7 @@ var animationStyle = new AnimationStyle(
     Duration: TimeSpan.FromSeconds(8),
     Speed: random.Next(10, 42));
 
-var text = args.Length > 0
+string text = args.Length > 0
     ? string.Join(Environment.NewLine, args)
     : DateTime.Now.Ticks % 2 == 0
         ? Resources.Alien

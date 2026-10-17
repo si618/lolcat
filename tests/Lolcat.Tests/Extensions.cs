@@ -1,22 +1,20 @@
-﻿namespace Lolcat.Tests;
+namespace Lolcat.Tests;
 
 public static class Extensions
 {
-    public static TimeSpan Milliseconds(this int milliseconds)
+    extension(string text)
     {
-        return TimeSpan.FromMilliseconds(milliseconds);
-    }
-
-    public static string RemoveMarkupAndPadRight(this string text, int windowWidth)
-    {
-        var cleaned = text.RemoveMarkup();
-
-        if (string.IsNullOrEmpty(cleaned))
+        public string RemoveMarkupAndPadRight(int windowWidth)
         {
-            // RemoveMarkup returns empty string if there is whitespace
-            cleaned = " ".PadRight(windowWidth);
-        }
+            string cleaned = text.RemoveMarkup();
 
-        return cleaned;
+            if (string.IsNullOrEmpty(cleaned))
+            {
+                // RemoveMarkup returns empty string if there is whitespace
+                cleaned = " ".PadRight(windowWidth);
+            }
+
+            return cleaned;
+        }
     }
 }

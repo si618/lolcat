@@ -25,9 +25,11 @@
 
 ## 🏗 Build️
 
+`global.json` asks for the .NET 10 SDK, `10.0.400` or later.
+
 ```bash
 > dotnet --list-sdks
-10.0.104 [/usr/share/dotnet/sdk]
+10.0.4xx [/usr/share/dotnet/sdk]
 
 > git --version
 git version 2.53.0
@@ -41,6 +43,8 @@ Cloning into 'lolcat'...
 
 ## 🧪 Test
 
+Tests run on xUnit v3 and Microsoft.Testing.Platform.
+
 ```bash
 > dotnet test
 ```
@@ -52,6 +56,10 @@ Cloning into 'lolcat'...
 ```bash
 > dotnet run --project ./tests/Lolcat.Benchmarks -c release -f net10.0
 ```
+
+## 🚀 Publish
+
+Run the [publish](https://github.com/si618/lolcat/actions/workflows/publish.yml) workflow on `main`. It builds, tests, and packs, then pushes to nuget.org with [trusted publishing](https://learn.microsoft.com/nuget/nuget-org/trusted-publishing), so the repository stores no API key.
 
 ## 🎉 Demos
 
