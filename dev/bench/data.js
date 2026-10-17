@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792198556563,
+  "lastUpdate": 1792199299389,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12936,6 +12936,66 @@ window.BENCHMARK_DATA = {
             "value": 1365035.0709635417,
             "unit": "ns",
             "range": "± 14164.5963716613"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9493858a9c975846bb94ba5c982e841427b6b126",
+          "message": "Skip Renovate patch updates for the .NET SDK (#183)\n\nglobal.json rolls forward to the latest feature band, so its version is\na floor. Patch bumps raise the floor without changing the SDK CI uses.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-17T11:35:07+10:30",
+          "tree_id": "7a376e6d9829ed845fe634f739e87c353df55359",
+          "url": "https://github.com/si618/lolcat/commit/9493858a9c975846bb94ba5c982e841427b6b126"
+        },
+        "date": 1792199298831,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 10370.979154459636,
+            "unit": "ns",
+            "range": "± 70.26773679350802"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 86476.29265136718,
+            "unit": "ns",
+            "range": "± 514.3084554890396"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1109022.1729166666,
+            "unit": "ns",
+            "range": "± 17866.488553154373"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 11234.214468383789,
+            "unit": "ns",
+            "range": "± 61.28215726494828"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 94625.69868977864,
+            "unit": "ns",
+            "range": "± 426.71318371151324"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1424382.0067708334,
+            "unit": "ns",
+            "range": "± 18297.29539218379"
           }
         ]
       }
