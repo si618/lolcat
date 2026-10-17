@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792193203217,
+  "lastUpdate": 1792198556563,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12876,6 +12876,66 @@ window.BENCHMARK_DATA = {
             "value": 1175907.2005208333,
             "unit": "ns",
             "range": "± 16929.10887333183"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6c8c401ab226b67c8d449f83c8338a2e9dc016b9",
+          "message": "Apply Awesome Humans of .NET verify-project findings (#180)\n\n* Normalize text files to UTF-8 without BOM, LF, and a final newline\n\n* Adopt dotnet-awesome-humans build settings and library opinions\n\nBuild and packaging:\n- Directory.Build.props, Directory.Packages.props, .editorconfig, and global.json\n  from the dotnet-awesome-humans templates: artifacts output, latest-recommended\n  analyzers, Meziantou.Analyzer, transitive pinning, and doc file generation.\n- Move PrivateAssets=\"all\" for Nerdbank.GitVersioning onto the PackageReference.\n  On the PackageVersion it had no effect, so lolcat 1.1.134 lists\n  Nerdbank.GitVersioning as a runtime dependency.\n- Ship symbols and enable package validation against 1.1.134.\n- Regenerate .gitignore with dotnet new gitignore, and stop tracking\n  .claude/settings.local.json.\n- Tests move to xunit.v3 on Microsoft.Testing.Platform, with code coverage.\n\nLibrary:\n- Validate RainbowStyle.Spread and Frequency in their init accessors, so\n  `with` and object initializers can't bypass the range check.\n- Rainbow.Animate is an instance method. RainbowExtensions keeps the 1.1\n  extension method as an obsolete extension-block shim for binary\n  compatibility, which package validation checks.\n- Animation takes a TimeProvider and gains AnimateAsync with cancellation.\n- Internal extension methods use C# 14 extension blocks.\n- Fixes from the new analyzers, including invariant formatting of escape\n  sequences (CA1305).\n\n* Rewrite tests on fake time and the house naming convention\n\n- Animation tests run on FakeTimeProvider instead of the real clock. The\n  duration test was a one-second wall-clock run with a 100 ms margin; it now\n  checks the exact frame count and end time.\n- New tests: `with` and object initializers can't bypass RainbowStyle\n  validation, and cancelling AnimateAsync throws and restores the cursor.\n- Exception assertions check ParamName, ActualValue, and our own message\n  prefix, so they no longer depend on the current culture.\n- Tests are named UnitOfWork_Scenario_ExpectedBehaviour, with Arrange, Act,\n  and Assert comments.\n- Each new assertion was seen to fail against a broken implementation:\n  removed init validation, a missing finally, an unforwarded token, and an\n  off-by-one or endless animation loop.\n\n* Harden CI and publish with nuget.org trusted publishing\n\n- Pin every action to a commit SHA, and default the token to contents: read.\n  Only the benchmark job gets contents: write, for gh-pages.\n- Restore, build with -warnaserror, test, and pack in order, each reusing the\n  previous step's output. setup-dotnet reads global.json.\n- Upload TRX and Cobertura coverage, even when tests fail, and the package.\n- New publish.yml, the workflow the nuget.org trusted publishing policy names:\n  NuGet/login exchanges the OIDC token for a short-lived key, so the\n  NUGET_TOKEN secret is no longer used.\n- Replace Dependabot with Renovate, which also pins action digests.\n- README: SDK requirement, test platform, and how to publish.\n\n* Show the SDK band, not a patch, in the README build example",
+          "timestamp": "2026-10-17T11:22:54+10:30",
+          "tree_id": "9a5ecd35b0fe79f366316a7984ce5979686bf75d",
+          "url": "https://github.com/si618/lolcat/commit/6c8c401ab226b67c8d449f83c8338a2e9dc016b9"
+        },
+        "date": 1792198556309,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 10446.863842773437,
+            "unit": "ns",
+            "range": "± 107.00126932837499"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 85357.15879720052,
+            "unit": "ns",
+            "range": "± 277.1688829281477"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1096676.6710379464,
+            "unit": "ns",
+            "range": "± 17296.881164396334"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 11428.51716003418,
+            "unit": "ns",
+            "range": "± 52.74112505970664"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 94478.49338785808,
+            "unit": "ns",
+            "range": "± 188.60369832973512"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1365035.0709635417,
+            "unit": "ns",
+            "range": "± 14164.5963716613"
           }
         ]
       }
