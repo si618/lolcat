@@ -6,6 +6,11 @@
     {
       "groupName": "Spectre.Console",
       "matchPackageNames": ["Spectre.Console*"]
+    },
+    {
+      "matchDepNames": ["dotnet-sdk"],
+      "matchUpdateTypes": ["patch"],
+      "enabled": false
     }
   ]
 }
