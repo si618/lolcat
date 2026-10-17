@@ -29,7 +29,7 @@
 
 ```bash
 > dotnet --list-sdks
-10.0.401 [/usr/share/dotnet/sdk]
+10.0.4xx [/usr/share/dotnet/sdk]
 
 > git --version
 git version 2.53.0
