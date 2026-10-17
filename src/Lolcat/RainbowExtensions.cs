@@ -1,22 +1,22 @@
+using System.ComponentModel;
+
 namespace Lolcat;
 
+/// <summary>
+/// Binary compatibility with 1.1, which shipped <see cref="Rainbow.Animate"/> as an extension method.
+/// </summary>
+[EditorBrowsable(EditorBrowsableState.Never)]
 public static class RainbowExtensions
 {
-    /// <summary>
-    /// Animate <paramref name="text" /> as a rainbow using <see cref="Lolcat.AnimationStyle"/> and
-    /// <see cref="RainbowStyle"/>
-    /// </summary>
-    /// <param name="rainbow">The rainbow to animate</param>
-    /// <param name="text">The text to animate</param>
-    /// <param name="style">The animation style</param>
-    /// <remarks>
-    /// Console window resizing is not fully supported, expect strange things to happen :)
-    /// </remarks>
-    /// <returns>Instance of an <see cref="Animation"/> object</returns>
-    public static void Animate(this Rainbow rainbow, string text, AnimationStyle? style = null)
+    extension(Rainbow rainbow)
     {
-        var animation = new Animation(rainbow, style);
-
-        animation.Animate(text);
+        /// <summary>
+        /// Animate <paramref name="text" /> as a rainbow. Use <see cref="Rainbow.Animate"/>.
+        /// </summary>
+        /// <param name="text">The text to animate</param>
+        /// <param name="style">The animation style</param>
+        [Obsolete("Use the Rainbow.Animate instance method.")]
+        public void Animate(string text, AnimationStyle? style = null) =>
+            rainbow.Animate(text, style);
     }
 }

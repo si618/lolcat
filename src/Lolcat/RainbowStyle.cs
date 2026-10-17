@@ -19,12 +19,20 @@ public sealed record RainbowStyle(
     /// <summary>
     /// Rainbow spread (default: 3.0)
     /// </summary>
-    public double Spread { get; init; } = Spread.ThrowIfOutOfRange(1, 100);
+    public double Spread
+    {
+        get;
+        init => field = value.ThrowIfOutOfRange(1, 100, nameof(Spread));
+    } = Spread.ThrowIfOutOfRange(1, 100);
 
     /// <summary>
     /// Rainbow frequency (default: 0.1)
     /// </summary>
-    public double Frequency { get; init; } = Frequency.ThrowIfOutOfRange(0.001, 1);
+    public double Frequency
+    {
+        get;
+        init => field = value.ThrowIfOutOfRange(0.001, 1, nameof(Frequency));
+    } = Frequency.ThrowIfOutOfRange(0.001, 1);
 
     /// <summary>
     /// Random seed, 0 = random (default: 0)

@@ -1,32 +1,33 @@
+using System.Globalization;
+
 namespace Lolcat;
 
 internal static class Extensions
 {
-    // ReSharper disable once RedundantNullableFlowAttribute
-    public static double ThrowIfOutOfRange([NotNull] this double argument, double min, double max,
-        [CallerArgumentExpression(nameof(argument))] string? paramName = null)
+    extension(double argument)
     {
-        if (argument >= min && argument <= max)
+        public double ThrowIfOutOfRange(double min, double max,
+            [CallerArgumentExpression(nameof(argument))] string? paramName = null)
         {
-            return argument;
+            if (argument >= min && argument <= max)
+            {
+                return argument;
+            }
+
+            string message = argument < min
+                ? string.Create(CultureInfo.InvariantCulture, $"Less than {nameof(min)} '{min}'")
+                : string.Create(CultureInfo.InvariantCulture, $"Greater than {nameof(max)} '{max}'");
+
+            throw new ArgumentOutOfRangeException(paramName, argument, message);
         }
-
-        var message = argument < min
-            ? $"Less than {nameof(min)} '{min}'"
-            : $"Greater than {nameof(max)} '{max}'";
-
-        throw new ArgumentOutOfRangeException(paramName, argument, message);
     }
 
-    // ReSharper disable once RedundantNullableFlowAttribute
-    public static int ThrowIfLessThanOne([NotNull] this int argument,
-        [CallerArgumentExpression(nameof(argument))] string? paramName = null)
+    extension(int argument)
     {
-        if (argument >= 1)
-        {
-            return argument;
-        }
-
-        throw new ArgumentOutOfRangeException(paramName, argument, "Less than 1");
+        public int ThrowIfLessThanOne(
+            [CallerArgumentExpression(nameof(argument))] string? paramName = null) =>
+            argument >= 1
+                ? argument
+                : throw new ArgumentOutOfRangeException(paramName, argument, "Less than 1");
     }
 }

@@ -1,7 +1,7 @@
 namespace Lolcat.Benchmarks;
 
 [Config(typeof(BenchmarkConfig))]
-public class Benchmarks
+public class MarkupBenchmarks
 {
     private readonly Rainbow _ansiRainbow = new(new MockConsole(), new RainbowStyle());
     private readonly Rainbow _spectreRainbow =
@@ -29,14 +29,14 @@ public class Benchmarks
     {
         var set = new StringBuilder();
 
-        var chars = CollectionsMarshal.AsSpan(Enumerable
+        Span<char> chars = CollectionsMarshal.AsSpan(Enumerable
             .Range(65, 26)
             .SelectMany(i => new[] { i, i + 32 })
-            .OrderBy(i => i)
+            .Order()
             .Select(i => (char)i)
             .ToList());
 
-        for (var i = 0; i < lineCount; i++)
+        for (int i = 0; i < lineCount; i++)
         {
             set.Append(chars[..chars.Length]);
             set.AppendLine();

@@ -1,21 +1,25 @@
 <Solution>
   <Folder Name="/assets/">
-    <File Path="assets/nom.webp" />
+    <File Path="assets/AlienIsBeautiful.gif" />
+    <File Path="assets/Nom.webp" />
+    <File Path="assets/Ouroboros.webp" />
     <File Path="assets/Rainbow.ico" />
     <File Path="assets/Rainbow.png" />
+  </Folder>
+  <Folder Name="/build/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path=".editorconfig" />
+    <File Path="nuget.config" />
+    <File Path="version.json" />
   </Folder>
   <Folder Name="/items/">
     <File Path="LICENSE" />
     <File Path="README.md" />
-    <File Path=".editorconfig" />
-    <File Path="Directory.Build.props" />
-    <File Path="nuget.config" />
-    <File Path=".github/dependabot.yml" />
-    <File Path=".github/workflows/workflow.yml" />
     <File Path=".gitignore" />
-    <File Path="version.json" />
-    <File Path="Directory.Packages.props" />
-    <File Path="global.json" />
+    <File Path=".github/renovate.json" />
+    <File Path=".github/workflows/workflow.yml" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Lolcat/Lolcat.csproj" />

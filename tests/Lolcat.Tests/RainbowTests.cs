@@ -18,7 +18,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Ansi, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.Markup(Resources.AnsiText);
+        string markup = rainbow.Markup(Resources.AnsiText);
 
         markup.ShouldBe(Resources.AnsiMarkup);
     }
@@ -29,7 +29,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.Markup(Resources.SpectreText);
+        string markup = rainbow.Markup(Resources.SpectreText);
 
         markup.ShouldBe(Resources.SpectreMarkup.ReplaceLineEndings());
     }
@@ -40,7 +40,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.Markup(Resources.SpectreTextWithEscapeCharacters);
+        string markup = rainbow.Markup(Resources.SpectreTextWithEscapeCharacters);
 
         markup.ShouldBe(Resources.SpectreMarkupWithEscapeCharacters.ReplaceLineEndings());
     }
@@ -51,7 +51,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.Markup(Resources.EmojiMultilineText);
+        string markup = rainbow.Markup(Resources.EmojiMultilineText);
 
         markup.ShouldBe(Resources.EmojiMultilineMarkup.ReplaceLineEndings());
     }
@@ -60,9 +60,9 @@ public class RainbowTests : TestBase
     public void Markup_EmptyLinesRemain_AfterInvoking()
     {
         var rainbow = new Rainbow();
-        var text = Environment.NewLine + Environment.NewLine;
+        string text = Environment.NewLine + Environment.NewLine;
 
-        var markup = rainbow.Markup(text);
+        string markup = rainbow.Markup(text);
 
         markup.ShouldBe(text);
     }
@@ -71,12 +71,12 @@ public class RainbowTests : TestBase
     public void Markup_WhenPassingSeed_BuildsExpectedFrames()
     {
         var rainbow = new Rainbow(new RainbowStyle(EscapeSequence.Spectre, Seed: Seed));
-        var seed = rainbow.RainbowStyle.Seed;
+        double seed = rainbow.RainbowStyle.Seed;
 
 
-        var markupSeed1 = rainbow.Markup(Resources.SpectreFrameText, seed);
+        string markupSeed1 = rainbow.Markup(Resources.SpectreFrameText, seed);
         seed += rainbow.RainbowStyle.Spread;
-        var markupSeed2 = rainbow.Markup(Resources.SpectreFrameText, seed);
+        string markupSeed2 = rainbow.Markup(Resources.SpectreFrameText, seed);
 
         markupSeed1.ShouldBe(Resources.SpectreMarkupSeed1.ReplaceLineEndings());
         markupSeed2.ShouldBe(Resources.SpectreMarkupSeed2.ReplaceLineEndings());
@@ -88,7 +88,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.MarkupLine(Resources.EmojiMultilineText);
+        string markup = rainbow.MarkupLine(Resources.EmojiMultilineText);
 
         markup.ShouldEndWith(Environment.NewLine);
     }
@@ -113,7 +113,7 @@ public class RainbowTests : TestBase
         var style = new RainbowStyle(EscapeSequence: EscapeSequence.Spectre, Seed: Seed);
         var rainbow = new Rainbow(style);
 
-        var markup = rainbow.Markup("[hello]");
+        string markup = rainbow.Markup("[hello]");
 
         // Output must be valid Spectre markup — i.e., [ and ] were escaped via Markup.Escape.
         // new Markup() throws if the string contains unescaped markup-special characters.

@@ -10,5 +10,5 @@ public enum EscapeSequence
     /// <summary>
     /// Use Spectre.Console escape sequence - https://spectreconsole.net/markup#colors
     /// </summary>
-    Spectre
+    Spectre,
 }

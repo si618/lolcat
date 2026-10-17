@@ -5,9 +5,16 @@ namespace Lolcat;
 /// </summary>
 public sealed class Animation
 {
+    private readonly TimeProvider _time;
 
     public Animation(Rainbow? rainbow = null, AnimationStyle? style = null)
+        : this(TimeProvider.System, rainbow, style)
     {
+    }
+
+    internal Animation(TimeProvider time, Rainbow? rainbow = null, AnimationStyle? style = null)
+    {
+        _time = time;
         Rainbow = rainbow ?? new Rainbow();
         AnimationStyle = style ?? new AnimationStyle();
         Seed = Rainbow.GetStartingSeed();
@@ -29,64 +36,80 @@ public sealed class Animation
     /// <remarks>
     /// Console window resizing is not fully supported, expect strange things to happen :)
     /// </remarks>
-    public void Animate(string text)
-    {
-        var stopwatch = new Stopwatch();
-        stopwatch.Start();
+    public void Animate(string text) => AnimateAsync(text).GetAwaiter().GetResult();
 
-        var console = Rainbow.Console;
-        var width = console.GetWindowWidth();
-        var height = console.GetWindowHeight();
-        var lines = text.ReplaceLineEndings().Split(Environment.NewLine);
-        var cursorVisible = console.GetCursorVisibility();
+    /// <summary>
+    /// Animate <paramref name="text" /> as a rainbow using <see cref="Lolcat.AnimationStyle"/> and
+    /// <see cref="RainbowStyle"/>, until the duration elapses or the token is cancelled
+    /// </summary>
+    /// <param name="text">The text to animate</param>
+    /// <param name="cancellationToken">Stops the animation</param>
+    /// <remarks>
+    /// Console window resizing is not fully supported, expect strange things to happen :)
+    /// </remarks>
+    public async Task AnimateAsync(string text, CancellationToken cancellationToken = default)
+    {
+        long start = _time.GetTimestamp();
+        TimeSpan frame = TimeSpan.FromSeconds(1) / AnimationStyle.Speed;
+
+        IConsole console = Rainbow.Console;
+        int width = console.GetWindowWidth();
+        int height = console.GetWindowHeight();
+        string[] lines = text.ReplaceLineEndings().Split(Environment.NewLine);
+        bool cursorVisible = console.GetCursorVisibility();
 
         if (AnimationStyle.ClearConsole)
         {
             console.Clear();
         }
         console.SetBufferSizeToCurrentWindow();
-        console.SetCursorVisibility(false);
+        console.SetCursorVisibility(visible: false);
 
-        var cursorTop = console.GetCursorTop();
-
-        while (stopwatch.Elapsed <= AnimationStyle.Duration)
+        try
         {
-            var currentWidth = console.GetWindowWidth();
-            var currentHeight = console.GetWindowHeight();
+            int cursorTop = console.GetCursorTop();
 
-            if (currentWidth != width || currentHeight != height)
+            while (_time.GetElapsedTime(start) <= AnimationStyle.Duration)
             {
-                if (AnimationStyle.StopOnResize)
+                int currentWidth = console.GetWindowWidth();
+                int currentHeight = console.GetWindowHeight();
+
+                if (currentWidth != width || currentHeight != height)
                 {
-                    break;
+                    if (AnimationStyle.StopOnResize)
+                    {
+                        break;
+                    }
+
+                    width = currentWidth;
+                    height = currentHeight;
+
+                    console.SetBufferSizeToCurrentWindow();
+
+                    if (AnimationStyle.ClearConsole)
+                    {
+                        console.Clear();
+                    }
                 }
 
-                width = currentWidth;
-                height = currentHeight;
+                console.MoveCursorToTopLeft(cursorTop);
 
-                console.SetBufferSizeToCurrentWindow();
+                WriteLines(lines, cursorTop);
 
-                if (AnimationStyle.ClearConsole)
-                {
-                    console.Clear();
-                }
+                await Task.Delay(frame, _time, cancellationToken).ConfigureAwait(false);
+
+                Seed += Rainbow.RainbowStyle.Spread;
             }
-
-            console.MoveCursorToTopLeft(cursorTop);
-
-            WriteLines(lines, cursorTop);
-
-            Thread.Sleep(1_000 / AnimationStyle.Speed);
-
-            Seed += Rainbow.RainbowStyle.Spread;
         }
-
-        console.SetCursorVisibility(cursorVisible);
+        finally
+        {
+            console.SetCursorVisibility(cursorVisible);
+        }
     }
 
     private void WriteLines(IEnumerable<string> lines, int cursorTop)
     {
-        var console = Rainbow.Console;
+        IConsole console = Rainbow.Console;
 
         Rainbow.Lines.Clear();
         Rainbow.Lines.AddRange(lines);
@@ -99,9 +122,9 @@ public sealed class Animation
 
         Rainbow.BuildLines(Seed);
 
-        for (var i = 0; i < Rainbow.Lines.Count; i++)
+        for (int i = 0; i < Rainbow.Lines.Count; i++)
         {
-            var line = Rainbow.Lines[i];
+            string line = Rainbow.Lines[i];
 
             console.MoveCursorToStartOfLine();
 
@@ -118,9 +141,9 @@ public sealed class Animation
 
     private void AdjustLineHeight(int cursorTop)
     {
-        var availableHeight = Rainbow.Console.GetWindowHeight() - cursorTop;
+        int availableHeight = Rainbow.Console.GetWindowHeight() - cursorTop;
 
-        var lines = Rainbow.Lines;
+        List<string> lines = Rainbow.Lines;
         if (availableHeight <= 0 || availableHeight == lines.Count)
         {
             return;
@@ -132,27 +155,36 @@ public sealed class Animation
         }
         else
         {
-            var pad = availableHeight - lines.Count;
+            int pad = availableHeight - lines.Count;
             lines.AddRange(new string[pad]);
         }
     }
 
     private void AdjustLineWidth()
     {
-        var windowWidth = Rainbow.Console.GetWindowWidth();
-        if (windowWidth <= 0) return;
+        int windowWidth = Rainbow.Console.GetWindowWidth();
+        if (windowWidth <= 0)
+        {
+            return;
+        }
 
-        for (var i = 0; i < Rainbow.Lines.Count; i++)
+        for (int i = 0; i < Rainbow.Lines.Count; i++)
         {
             var line = new StringBuilder(Rainbow.Lines[i]);
 
-            for (var j = line.Length - 1; j >= 0; j--)
+            for (int j = line.Length - 1; j >= 0; j--)
             {
-                if (line.Length <= windowWidth) break;
+                if (line.Length <= windowWidth)
+                {
+                    break;
+                }
 
-                var pair = j - 1 > 0 && char.IsSurrogatePair(line[j - 1], line[j]);
+                bool pair = j - 1 > 0 && char.IsSurrogatePair(line[j - 1], line[j]);
 
-                if (pair) j--;
+                if (pair)
+                {
+                    j--;
+                }
 
                 line.Remove(j, pair ? 2 : 1);
             }

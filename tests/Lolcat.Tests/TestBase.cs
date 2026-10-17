@@ -11,9 +11,9 @@ public abstract class TestBase
 
     protected static int CountSurrogatePairs(string text)
     {
-        var chars = text.ToCharArray();
+        char[] chars = text.ToCharArray();
 
-        var pairs = chars
+        int pairs = chars
             .Where((c, i) => i + 1 < chars.Length &&
                 char.IsSurrogatePair(c, chars[i + 1]))
             .Count();
