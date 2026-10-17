@@ -3,75 +3,113 @@ namespace Lolcat.Tests;
 public class AnimationTests : TestBase
 {
     [Fact]
-    public void Animate_DurationMatchesSpecifiedValue_WithinMarginOfError()
+    public async Task AnimateAsync_DurationElapses_StopsAfterFrameThatReachesDuration()
     {
-        TimeSpan duration = 1_000.Milliseconds();
-        var style = new AnimationStyle(Duration: duration);
-        var rainbow = new Rainbow(MockConsole);
-        var animation = new Animation(rainbow, style);
+        // Arrange
+        var time = new FakeTimeProvider(Start);
+        var style = new AnimationStyle(Duration: TimeSpan.FromSeconds(1), Speed: 20);
+        TimeSpan frame = FrameOf(style);
+        var animation = new Animation(time, new Rainbow(MockConsole), style);
+        // One frame at the start, and one after each frame interval up to and including Duration
+        int frames = (int)(style.Duration!.Value / frame) + 1;
 
-        Should.CompleteIn(
-            action: () => { animation.Animate(Resources.AnsiText); },
-            timeout: duration.Add(100.Milliseconds()));
+        // Act
+        await AnimateToEndAsync(animation, Resources.AnsiText, time, style);
+
+        // Assert
+        time.GetUtcNow().ShouldBe(time.Start + (frames * frame));
+        MockConsole.LinesWritten.ShouldBe(frames * MockConsole.GetWindowHeight());
     }
 
     [Fact]
-    public void Animate_WhenTextHeightIsGreaterThanWindowHeight_TextHeightDecreasesToFitWindowHeight()
+    public async Task AnimateAsync_Cancelled_ThrowsAndRestoresCursorVisibility()
     {
+        // Arrange
+        var time = new FakeTimeProvider(Start);
+        var animation = new Animation(time, new Rainbow(MockConsole), new AnimationStyle());
+        using var cancellation = CancellationTokenSource.CreateLinkedTokenSource(
+            TestContext.Current.CancellationToken);
+        Task animate = animation.AnimateAsync(Resources.AnsiText, cancellation.Token);
+
+        // Act
+        await cancellation.CancelAsync();
+
+        // Assert: the real-time limit only stops a hang if the token isn't honoured
+        await Should.ThrowAsync<TaskCanceledException>(animate.WaitAsync(
+            TimeSpan.FromSeconds(5), TimeProvider.System, TestContext.Current.CancellationToken));
+        MockConsole.GetCursorVisibility().ShouldBeTrue();
+    }
+
+    [Fact]
+    public async Task AnimateAsync_TextTallerThanWindow_TrimsLinesToWindowHeight()
+    {
+        // Arrange
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowHeight: 1);
-        var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        TimeSpan duration = 10.Milliseconds();
-        var style = new AnimationStyle(Duration: duration);
-        var animation = new Animation(rainbow, style);
 
-        animation.Animate(Resources.EmojiMultilineText);
+        // Act
+        Animation animation = await AnimateOneFrameAsync();
 
+        // Assert
         animation.Rainbow.Lines.Count.ShouldBe(MockConsole.GetWindowHeight());
     }
 
     [Fact]
-    public void Animate_WhenTextHeightIsLessThanWindowHeight_TextHeightIncreasesToFitWindowHeight()
+    public async Task AnimateAsync_TextShorterThanWindow_PadsLinesToWindowHeight()
     {
+        // Arrange
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowHeight: 10);
-        var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        TimeSpan duration = 10.Milliseconds();
-        var style = new AnimationStyle(Duration: duration);
-        var animation = new Animation(rainbow, style);
 
-        animation.Animate(Resources.EmojiMultilineText);
+        // Act
+        Animation animation = await AnimateOneFrameAsync();
 
+        // Assert
         animation.Rainbow.Lines.Count.ShouldBe(MockConsole.GetWindowHeight());
     }
 
     [Fact]
-    public void Animate_WhenTextWidthIsGreaterThanWindowWidth_TextWidthDecreasesToFitWindowWidth()
+    public async Task AnimateAsync_TextWiderThanWindow_TrimsLinesToWindowWidth()
     {
+        // Arrange
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowWidth: 4);
-        var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        TimeSpan duration = 10.Milliseconds();
-        var style = new AnimationStyle(Duration: duration);
-        var animation = new Animation(rainbow, style);
         int windowWidth = MockConsole.GetWindowWidth();
 
-        animation.Animate(Resources.EmojiMultilineText);
+        // Act
+        Animation animation = await AnimateOneFrameAsync();
 
+        // Assert
         animation.Rainbow.Lines
             .ShouldAllBe(line => line.RemoveMarkupAndPadRight(windowWidth).Length == windowWidth);
     }
 
     [Fact]
-    public void Animate_WhenTextWidthIsLessThanWindowWidth_TextWidthIncreasesToFitWindowWidth()
+    public async Task AnimateAsync_TextNarrowerThanWindow_PadsLinesToWindowWidth()
     {
+        // Arrange
         MockConsole = new MockConsole(EscapeSequence.Spectre, windowWidth: 100);
-        var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
-        var duration = TimeSpan.FromMilliseconds(10);
-        var style = new AnimationStyle(Duration: duration);
-        var animation = new Animation(rainbow, style);
         int windowWidth = MockConsole.GetWindowWidth();
 
-        animation.Animate(Resources.EmojiMultilineText);
+        // Act
+        Animation animation = await AnimateOneFrameAsync();
 
+        // Assert
         animation.Rainbow.Lines
             .ShouldAllBe(line => line.RemoveMarkupAndPadRight(windowWidth).Length == windowWidth);
+    }
+
+    /// <summary>
+    /// Animates multiline emoji text on <see cref="TestBase.MockConsole"/> for a duration
+    /// shorter than one frame, so exactly one frame is drawn
+    /// </summary>
+    private async Task<Animation> AnimateOneFrameAsync()
+    {
+        var time = new FakeTimeProvider(Start);
+        var style = new AnimationStyle(Duration: TimeSpan.FromMilliseconds(10));
+        var rainbow = new Rainbow(MockConsole, new RainbowStyle(Seed: Seed));
+        var animation = new Animation(time, rainbow, style);
+
+        await AnimateToEndAsync(animation, Resources.EmojiMultilineText, time, style)
+            .ConfigureAwait(false);
+
+        return animation;
     }
 }

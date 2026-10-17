@@ -2,37 +2,38 @@ namespace Lolcat.Tests;
 
 public class AnimationStyleTests : TestBase
 {
-    [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedIsZero()
+    [Theory]
+    [InlineData(0)]
+    [InlineData(-1)]
+    public void Ctor_SpeedLessThanOne_ThrowsArgumentOutOfRangeException(int speed)
     {
-        Func<AnimationStyle> ctor = () => new AnimationStyle(Speed: 0);
-        string message = $"Less than 1 (Parameter 'Speed'){NL}Actual value was 0.{NL}";
+        // Act
+        ArgumentOutOfRangeException exception = Should.Throw<ArgumentOutOfRangeException>(
+            () => new AnimationStyle(Speed: speed));
 
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
+        // Assert
+        exception.ParamName.ShouldBe(nameof(AnimationStyle.Speed));
+        exception.ActualValue.ShouldBe(speed);
+        exception.Message.ShouldStartWith("Less than 1");
     }
 
     [Fact]
-    public void Ctor_ThrowsArgumentOutOfRangeException_WhenSpeedIsLessThanOne()
+    public void Ctor_NoDuration_DefaultsToTwelveSeconds()
     {
-        Func<AnimationStyle> ctor = () => new AnimationStyle(Speed: -1);
-        string message = $"Less than 1 (Parameter 'Speed'){NL}Actual value was -1.{NL}";
-
-        ctor.ShouldThrow<ArgumentOutOfRangeException>(message);
-    }
-
-    [Fact]
-    public void Ctor_SetsDurationToTwelveSeconds_WhenNoDurationSpecified()
-    {
+        // Arrange and act
         var style = new AnimationStyle();
 
+        // Assert
         style.Duration.ShouldBe(TimeSpan.FromSeconds(12));
     }
 
     [Fact]
-    public void Ctor_SetsSpeedToTwenty_WhenNoSpeedSpecified()
+    public void Ctor_NoSpeed_DefaultsToTwenty()
     {
+        // Arrange and act
         var style = new AnimationStyle();
 
+        // Assert
         style.Speed.ShouldBe(20);
     }
 }
