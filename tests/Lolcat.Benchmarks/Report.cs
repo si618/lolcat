@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Benchmarks;
+namespace Lolcat.Benchmarks;
 
 public static class Report
 {

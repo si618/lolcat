@@ -1,4 +1,4 @@
-﻿namespace Lolcat;
+namespace Lolcat;
 
 /// <summary>
 /// Convert plain text to a rainbow

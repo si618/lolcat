@@ -1,4 +1,4 @@
-﻿namespace Lolcat;
+namespace Lolcat;
 
 public enum EscapeSequence
 {

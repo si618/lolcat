@@ -1,4 +1,4 @@
-﻿var random = new Random();
+var random = new Random();
 
 var rainbowStyle = new RainbowStyle(
     EscapeSequence.Spectre,

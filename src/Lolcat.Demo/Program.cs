@@ -1,4 +1,4 @@
-﻿using Lolcat;
+using Lolcat;
 using Spectre.Console;
 
 AnsiConsole.Clear();

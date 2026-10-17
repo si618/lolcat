@@ -1,4 +1,4 @@
-﻿*.DotSettings.user
+*.DotSettings.user
 .vs
 bin
 obj

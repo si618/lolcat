@@ -1,4 +1,4 @@
-﻿namespace Lolcat;
+namespace Lolcat;
 
 /// <summary>Rainbow style options</summary>
 /// <param name="EscapeSequence">Escape sequence used to generate colours (default: Ansi)</param>

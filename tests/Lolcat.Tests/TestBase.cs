@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Tests;
+namespace Lolcat.Tests;
 
 public abstract class TestBase
 {

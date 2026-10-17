@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Tests;
+namespace Lolcat.Tests;
 
 /// <summary>
 /// Mock console used for tests and benchmarks, as a console is not typically available

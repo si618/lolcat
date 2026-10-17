@@ -1,4 +1,4 @@
-﻿namespace Lolcat;
+namespace Lolcat;
 
 /// <summary>Animation style options</summary>
 /// <param name="Duration">Animation duration (default: 12s)</param>

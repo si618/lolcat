@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Tests;
+namespace Lolcat.Tests;
 
 public static class Extensions
 {

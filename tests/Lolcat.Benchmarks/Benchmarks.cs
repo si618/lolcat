@@ -1,4 +1,4 @@
-﻿namespace Lolcat.Benchmarks;
+namespace Lolcat.Benchmarks;
 
 [Config(typeof(BenchmarkConfig))]
 public class Benchmarks
