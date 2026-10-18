@@ -3,15 +3,56 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes" />
+    <script>
+      // Apply the saved theme before first paint to avoid a flash of the wrong theme
+      (function() {
+        let theme = 'system';
+        try { theme = localStorage.getItem('bench-theme') || 'system'; } catch (e) {}
+        if (theme !== 'system') document.documentElement.dataset.theme = theme;
+      })();
+    </script>
     <style>
+      :root {
+        color-scheme: light;
+        --bg: #fff;
+        --fg: #4a4a4a;
+        --link: #3273dc;
+        --link-hover: #000;
+        --grid: rgba(0, 0, 0, 0.1);
+        --control-bg: #fff;
+        --control-border: #dbdbdb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          color-scheme: dark;
+          --bg: #0d1117;
+          --fg: #c9d1d9;
+          --link: #58a6ff;
+          --link-hover: #fff;
+          --grid: rgba(255, 255, 255, 0.12);
+          --control-bg: #161b22;
+          --control-border: #30363d;
+        }
+      }
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #0d1117;
+        --fg: #c9d1d9;
+        --link: #58a6ff;
+        --link-hover: #fff;
+        --grid: rgba(255, 255, 255, 0.12);
+        --control-bg: #161b22;
+        --control-border: #30363d;
+      }
       html {
         font-family: BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
         -webkit-font-smoothing: antialiased;
-        background-color: #bbb;
+        background-color: var(--bg);
         font-size: 16px;
       }
       body {
-        color: #bbb;
+        background-color: var(--bg);
+        color: var(--fg);
         margin: 8px;
         font-size: 1em;
         font-weight: 400;
@@ -27,12 +68,20 @@
         flex-direction: column;
       }
       a {
-        color: #3273dc;
+        color: var(--link);
         cursor: pointer;
         text-decoration: none;
       }
       a:hover {
-        color: #000;
+        color: var(--link-hover);
+      }
+      select {
+        color: var(--fg);
+        background-color: var(--control-bg);
+        border: 1px solid var(--control-border);
+        border-radius: 4px;
+        padding: 2px 4px;
+        font: inherit;
       }
       button {
         color: #fff;
@@ -96,6 +145,14 @@
         <strong class="header-label">Repository:</strong>
         <a id="repository-link" rel="noopener"></a>
       </div>
+      <div class="header-item">
+        <label class="header-label" for="theme-select"><strong>Theme:</strong></label>
+        <select id="theme-select">
+          <option value="system">System</option>
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
+      </div>
     </header>
     <main id="main"></main>
     <footer>
@@ -124,6 +181,52 @@
           customSmallerIsBetter: '#ff3838',
           _: '#333333'
         };
+
+        const charts = [];
+
+        function themeColors() {
+          const style = getComputedStyle(document.documentElement);
+          return {
+            fg: style.getPropertyValue('--fg').trim(),
+            grid: style.getPropertyValue('--grid').trim(),
+          };
+        }
+
+        function applyChartTheme(options) {
+          const {fg, grid} = themeColors();
+          options.legend = options.legend || {};
+          options.legend.labels = Object.assign(options.legend.labels || {}, { fontColor: fg });
+          for (const axis of [...options.scales.xAxes, ...options.scales.yAxes]) {
+            axis.gridLines = Object.assign(axis.gridLines || {}, { color: grid, zeroLineColor: grid });
+            axis.ticks = Object.assign(axis.ticks || {}, { fontColor: fg });
+            axis.scaleLabel = Object.assign(axis.scaleLabel || {}, { fontColor: fg });
+          }
+        }
+
+        function setupThemeSelect() {
+          const select = document.getElementById('theme-select');
+          try { select.value = localStorage.getItem('bench-theme') || 'system'; } catch (e) {}
+
+          const refreshCharts = () => {
+            for (const chart of charts) {
+              applyChartTheme(chart.options);
+              chart.update();
+            }
+          };
+
+          select.onchange = () => {
+            const theme = select.value;
+            if (theme === 'system') {
+              delete document.documentElement.dataset.theme;
+            } else {
+              document.documentElement.dataset.theme = theme;
+            }
+            try { localStorage.setItem('bench-theme', theme); } catch (e) {}
+            refreshCharts();
+          };
+
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', refreshCharts);
+        }
 
         function init() {
           function collectBenchesPerTestCase(entries) {
@@ -241,11 +344,12 @@
               },
             };
 
-            new Chart(canvas, {
+            applyChartTheme(options);
+            charts.push(new Chart(canvas, {
               type: 'line',
               data,
               options,
-            });
+            }));
           }
 
           function renderBenchSet(name, benchSet, main) {
@@ -273,6 +377,7 @@
           }
         }
 
+        setupThemeSelect();
         renderAllChars(init()); // Start
       })();
     </script>
