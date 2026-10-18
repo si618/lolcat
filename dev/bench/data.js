@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792199299389,
+  "lastUpdate": 1792287801249,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -12996,6 +12996,66 @@ window.BENCHMARK_DATA = {
             "value": 1424382.0067708334,
             "unit": "ns",
             "range": "± 18297.29539218379"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sshnug.si+github@gmail.com",
+            "name": "Simon McKenna",
+            "username": "si618"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4c52509d7a1bd3e0c48c7e646a0b1b3e8791c3c8",
+          "message": "Stop tracking the JetBrains .idea directory (#184)\n\n.gitignore already ignores .idea/, so the files stay local from now on.\n\nCo-authored-by: Claude Opus 5.5 <noreply@anthropic.com>",
+          "timestamp": "2026-10-18T12:10:04+10:30",
+          "tree_id": "312cc4a2813250a1c370c6db0058590a15a1d6be",
+          "url": "https://github.com/si618/lolcat/commit/4c52509d7a1bd3e0c48c7e646a0b1b3e8791c3c8"
+        },
+        "date": 1792287800658,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 7741.376036580404,
+            "unit": "ns",
+            "range": "± 89.16934783355795"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 63505.26201171875,
+            "unit": "ns",
+            "range": "± 440.18748783576024"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 743406.7318638393,
+            "unit": "ns",
+            "range": "± 2186.2459618343337"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 8335.502500261578,
+            "unit": "ns",
+            "range": "± 45.215048245915625"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 68224.1373453776,
+            "unit": "ns",
+            "range": "± 1049.7496885493777"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 798144.0972377232,
+            "unit": "ns",
+            "range": "± 2352.7689487401644"
           }
         ]
       }
