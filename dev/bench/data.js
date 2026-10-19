@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792287801249,
+  "lastUpdate": 1792401389177,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -13056,6 +13056,66 @@ window.BENCHMARK_DATA = {
             "value": 798144.0972377232,
             "unit": "ns",
             "range": "± 2352.7689487401644"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "29139614+renovate[bot]@users.noreply.github.com",
+            "name": "renovate[bot]",
+            "username": "renovate[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f368da6d022019138f6979fd51cd2b96603eb2de",
+          "message": "Update dependency Meziantou.Analyzer to 3.0.312 (#186)\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+          "timestamp": "2026-10-19T19:43:05+10:30",
+          "tree_id": "b2698ff3e0a762d6775604d92aaff81c8bf6fc1a",
+          "url": "https://github.com/si618/lolcat/commit/f368da6d022019138f6979fd51cd2b96603eb2de"
+        },
+        "date": 1792401388600,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 10575.349784851074,
+            "unit": "ns",
+            "range": "± 44.560858765756414"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 85735.79155085637,
+            "unit": "ns",
+            "range": "± 375.31186972786577"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1117111.0841145834,
+            "unit": "ns",
+            "range": "± 19809.602652347756"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 11501.446037879357,
+            "unit": "ns",
+            "range": "± 19.656501590747034"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 93923.73964146206,
+            "unit": "ns",
+            "range": "± 127.23036793666914"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1338559.837109375,
+            "unit": "ns",
+            "range": "± 21807.17322487378"
           }
         ]
       }
