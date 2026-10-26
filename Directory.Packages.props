@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup Label="Build tooling">
-    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.312" />
+    <PackageVersion Include="Meziantou.Analyzer" Version="3.0.317" />
     <PackageVersion Include="Nerdbank.GitVersioning" Version="3.10.94" />
   </ItemGroup>
 
