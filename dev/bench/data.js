@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1792401389177,
+  "lastUpdate": 1793051335261,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -13116,6 +13116,66 @@ window.BENCHMARK_DATA = {
             "value": 1338559.837109375,
             "unit": "ns",
             "range": "± 21807.17322487378"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "29139614+renovate[bot]@users.noreply.github.com",
+            "name": "renovate[bot]",
+            "username": "renovate[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e302cf60af59af620c2cbed9dafeb028afa8b573",
+          "message": "Update dependency Meziantou.Analyzer to 3.0.317 (#187)\n\nThis PR contains the following updates:\n\n| Package | Change |\n[Age](https://docs.renovatebot.com/merge-confidence/) |\n[Confidence](https://docs.renovatebot.com/merge-confidence/) |\n|---|---|---|---|\n|\n[Meziantou.Analyzer](https://redirect.github.com/meziantou/Meziantou.Analyzer)\n| `3.0.312` → `3.0.317` |\n![age](https://developer.mend.io/api/mc/badges/age/nuget/Meziantou.Analyzer/3.0.317?slim=true)\n|\n![confidence](https://developer.mend.io/api/mc/badges/confidence/nuget/Meziantou.Analyzer/3.0.312/3.0.317?slim=true)\n|\n\n---\n\n### Release Notes\n\n<details>\n<summary>meziantou/Meziantou.Analyzer (Meziantou.Analyzer)</summary>\n\n###\n[`v3.0.317`](https://redirect.github.com/meziantou/Meziantou.Analyzer/releases/tag/3.0.317)\n\n[Compare\nSource](https://redirect.github.com/meziantou/Meziantou.Analyzer/compare/3.0.316...3.0.317)\n\nNuGet package:\n<https://www.nuget.org/packages/Meziantou.Analyzer/3.0.317>\n\n#### What's Changed\n\n- Do not register code fixes that do not change the code (MA0146,\nMA0177, MA0204) by\n[@&#8203;meziantou](https://redirect.github.com/meziantou) in\n[#&#8203;1744](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1744)\n\n**Full Changelog**:\n<https://github.com/meziantou/Meziantou.Analyzer/compare/3.0.316...3.0.317>\n\n###\n[`v3.0.316`](https://redirect.github.com/meziantou/Meziantou.Analyzer/releases/tag/3.0.316)\n\n[Compare\nSource](https://redirect.github.com/meziantou/Meziantou.Analyzer/compare/3.0.315...3.0.316)\n\nNuGet package:\n<https://www.nuget.org/packages/Meziantou.Analyzer/3.0.316>\n\n#### What's Changed\n\n- chore(deps): update dependency meziantou.framework.roslyn to 1.2.2 by\n[@&#8203;renovate](https://redirect.github.com/renovate)\\[bot] in\n[#&#8203;1740](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1740)\n\n**Full Changelog**:\n<https://github.com/meziantou/Meziantou.Analyzer/compare/3.0.315...3.0.316>\n\n###\n[`v3.0.315`](https://redirect.github.com/meziantou/Meziantou.Analyzer/releases/tag/3.0.315)\n\n[Compare\nSource](https://redirect.github.com/meziantou/Meziantou.Analyzer/compare/3.0.314...3.0.315)\n\nNuGet package:\n<https://www.nuget.org/packages/Meziantou.Analyzer/3.0.315>\n\n#### What's Changed\n\n- Use two generations in BoundedCache instead of sorting the entries by\nlast usage by [@&#8203;meziantou](https://redirect.github.com/meziantou)\nin\n[#&#8203;1739](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1739)\n\n**Full Changelog**:\n<https://github.com/meziantou/Meziantou.Analyzer/compare/3.0.314...3.0.315>\n\n###\n[`v3.0.314`](https://redirect.github.com/meziantou/Meziantou.Analyzer/releases/tag/3.0.314)\n\n[Compare\nSource](https://redirect.github.com/meziantou/Meziantou.Analyzer/compare/3.0.313...3.0.314)\n\nNuGet package:\n<https://www.nuget.org/packages/Meziantou.Analyzer/3.0.314>\n\n#### What's Changed\n\n- MA0011: find the overload before computing the culture sensitivity by\n[@&#8203;meziantou](https://redirect.github.com/meziantou) in\n[#&#8203;1738](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1738)\n\n**Full Changelog**:\n<https://github.com/meziantou/Meziantou.Analyzer/compare/3.0.313...3.0.314>\n\n###\n[`v3.0.313`](https://redirect.github.com/meziantou/Meziantou.Analyzer/releases/tag/3.0.313)\n\n[Compare\nSource](https://redirect.github.com/meziantou/Meziantou.Analyzer/compare/3.0.312...3.0.313)\n\nNuGet package:\n<https://www.nuget.org/packages/Meziantou.Analyzer/3.0.313>\n\n##### What's Changed\n\n- Fix the CA5394 build error in BoundedCacheTests by\n[@&#8203;meziantou](https://redirect.github.com/meziantou) in\n[#&#8203;1735](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1735)\n- MA0243: Use an escape sequence for invisible characters by\n[@&#8203;meziantou](https://redirect.github.com/meziantou) in\n[#&#8203;1737](https://redirect.github.com/meziantou/Meziantou.Analyzer/pull/1737)\n\n**Full Changelog**:\n<https://github.com/meziantou/Meziantou.Analyzer/compare/3.0.312...3.0.313>\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: (UTC)\n\n- Branch creation\n  - \"before 6am on monday\"\n- Automerge\n  - At any time (no schedule defined)\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you\nare satisfied.\n\n♻ **Rebasing**: Whenever PR becomes conflicted, or you tick the\nrebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update\nagain.\n\n---\n\n- [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check\nthis box\n\n---\n\nThis PR was generated by [Mend Renovate](https://mend.io/renovate/).\nView the [repository job\nlog](https://developer.mend.io/github/si618/lolcat).\n\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0NC4xODAuMCIsInVwZGF0ZWRJblZlciI6IjQ0LjE4NC4xIiwidGFyZ2V0QnJhbmNoIjoibWFpbiIsImxhYmVscyI6W119-->\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+          "timestamp": "2026-10-27T08:15:39+10:30",
+          "tree_id": "8d2b83df2fa1e7dc3bb033837d71e861444dc63d",
+          "url": "https://github.com/si618/lolcat/commit/e302cf60af59af620c2cbed9dafeb028afa8b573"
+        },
+        "date": 1793051334810,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 10641.712479909262,
+            "unit": "ns",
+            "range": "± 41.91619111109337"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 84828.21263834635,
+            "unit": "ns",
+            "range": "± 383.4762861715119"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 1082050.4286534926,
+            "unit": "ns",
+            "range": "± 21580.006123011597"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 11517.356220499674,
+            "unit": "ns",
+            "range": "± 21.288372694169308"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 92723.83726283482,
+            "unit": "ns",
+            "range": "± 202.80611523587632"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 1185794.078971354,
+            "unit": "ns",
+            "range": "± 21033.011383773075"
           }
         ]
       }
