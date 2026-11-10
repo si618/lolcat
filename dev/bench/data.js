@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1794327020618,
+  "lastUpdate": 1794327109567,
   "repoUrl": "https://github.com/si618/lolcat",
   "entries": {
     "Benchmarks": [
@@ -13356,6 +13356,66 @@ window.BENCHMARK_DATA = {
             "value": 1439985.6772135417,
             "unit": "ns",
             "range": "± 13581.655130537394"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "29139614+renovate[bot]@users.noreply.github.com",
+            "name": "renovate[bot]",
+            "username": "renovate[bot]"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "fe6dc48781f0395c7176f8f01d5e55da6039decf",
+          "message": "Update actions/setup-dotnet action to v6.1.0 (#190)\n\nThis PR contains the following updates:\n\n| Package | Type | Update | Change |\n|---|---|---|---|\n|\n[actions/setup-dotnet](https://redirect.github.com/actions/setup-dotnet)\n| action | minor | `v6.0.0` → `v6.1.0` |\n\n---\n\n### Release Notes\n\n<details>\n<summary>actions/setup-dotnet</summary>\n\n###\n[`v6.1.0`](https://redirect.github.com/actions/setup-dotnet/releases/tag/v6.1.0)\n\n[Compare\nSource](https://redirect.github.com/actions/setup-dotnet/compare/v6.0.0...v6.1.0)\n\n#### What's Changed\n\n##### Enhancements\n\n- Add check-latest input to reuse a locally installed .NET SDK and skip\nnetwork calls by\n[@&#8203;v-mahabaleshwars](https://redirect.github.com/v-mahabaleshwars)\nin\n[#&#8203;774](https://redirect.github.com/actions/setup-dotnet/pull/774)\n- Add skip-lts-prepass input to optimize .NET SDK installation process\nby\n[@&#8203;v-chiranjib-swain](https://redirect.github.com/v-chiranjib-swain)\nin\n[#&#8203;791](https://redirect.github.com/actions/setup-dotnet/pull/791)\n- Add fallback install directory when default is not writable by\n[@&#8203;v-priyagupta108](https://redirect.github.com/v-priyagupta108)\nin\n[#&#8203;785](https://redirect.github.com/actions/setup-dotnet/pull/785)\n\n##### Documentation\n\n- Document sdk.version validation for rollForward in global.json by\n[@&#8203;v-priyagupta108](https://redirect.github.com/v-priyagupta108)\nin\n[#&#8203;763](https://redirect.github.com/actions/setup-dotnet/pull/763)\n- Docs: Add Microsoft docs link for dotnet-quality options by\n[@&#8203;v-priyagupta108](https://redirect.github.com/v-priyagupta108)\nin\n[#&#8203;773](https://redirect.github.com/actions/setup-dotnet/pull/773)\n- Docs: Updating Documentation in README by\n[@&#8203;v-lmvysakh](https://redirect.github.com/v-lmvysakh) in\n[#&#8203;776](https://redirect.github.com/actions/setup-dotnet/pull/776)\n- Clarify dotnet-quality behavior for multiple SDK versions by\n[@&#8203;v-mahabaleshwars](https://redirect.github.com/v-mahabaleshwars)\nin\n[#&#8203;780](https://redirect.github.com/actions/setup-dotnet/pull/780)\n\n##### Dependency Updates\n\n- Fix security vulnerabilities by\n[@&#8203;v-HarithaVattikuti](https://redirect.github.com/v-HarithaVattikuti)\nin\n[#&#8203;767](https://redirect.github.com/actions/setup-dotnet/pull/767)\n- ci: make validation caches read-only by\n[@&#8203;philip-gai](https://redirect.github.com/philip-gai) in\n[#&#8203;777](https://redirect.github.com/actions/setup-dotnet/pull/777)\n- Bump actions/checkout from 7.0.0 to 7.0.1 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;764](https://redirect.github.com/actions/setup-dotnet/pull/764)\n- Bump browserslist from 4.28.2 to 4.28.8 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;781](https://redirect.github.com/actions/setup-dotnet/pull/781)\n- Bump eslint from 10.5.0 to 10.11.0 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;772](https://redirect.github.com/actions/setup-dotnet/pull/772)\n- Bump eslint-plugin-jest from 29.15.2 to 29.16.6 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;771](https://redirect.github.com/actions/setup-dotnet/pull/771)\n- Bump undici from 6.28.0 to 6.29.1 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;784](https://redirect.github.com/actions/setup-dotnet/pull/784)\n- Bump actions/checkout from 7.0.0 to 7.0.1 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;788](https://redirect.github.com/actions/setup-dotnet/pull/788)\n- Bump handlebars from 4.7.9 to 4.7.10 by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;792](https://redirect.github.com/actions/setup-dotnet/pull/792)\n- Bump brace-expansion by\n[@&#8203;dependabot](https://redirect.github.com/dependabot) in\n[#&#8203;790](https://redirect.github.com/actions/setup-dotnet/pull/790)\n- Prepare v6.1.0 release with updated cache dependency by\n[@&#8203;v-HarithaVattikuti](https://redirect.github.com/v-HarithaVattikuti)\nin\n[#&#8203;798](https://redirect.github.com/actions/setup-dotnet/pull/798)\n\n#### New Contributors\n\n- [@&#8203;v-lmvysakh](https://redirect.github.com/v-lmvysakh) made\ntheir first contribution in\n[#&#8203;776](https://redirect.github.com/actions/setup-dotnet/pull/776)\n-\n[@&#8203;v-chiranjib-swain](https://redirect.github.com/v-chiranjib-swain)\nmade their first contribution in\n[#&#8203;791](https://redirect.github.com/actions/setup-dotnet/pull/791)\n\n**Full Changelog**:\n<https://github.com/actions/setup-dotnet/compare/v6.0.0...v6.1.0>\n\n</details>\n\n---\n\n### Configuration\n\n📅 **Schedule**: (UTC)\n\n- Branch creation\n  - \"before 6am on monday\"\n- Automerge\n  - At any time (no schedule defined)\n\n🚦 **Automerge**: Disabled by config. Please merge this manually once you\nare satisfied.\n\n♻ **Rebasing**: Whenever PR is behind base branch, or you tick the\nrebase/retry checkbox.\n\n🔕 **Ignore**: Close this PR and you won't be reminded about this update\nagain.\n\n---\n\n- [ ] <!-- rebase-check -->If you want to rebase/retry this PR, check\nthis box\n\n---\n\nThis PR was generated by [Mend Renovate](https://mend.io/renovate/).\nView the [repository job\nlog](https://developer.mend.io/github/si618/lolcat).\n\n<!--renovate-debug:eyJjcmVhdGVkSW5WZXIiOiI0NC4yMjAuMCIsInVwZGF0ZWRJblZlciI6IjQ0LjIyMC4wIiwidGFyZ2V0QnJhbmNoIjoibWFpbiIsImxhYmVscyI6W119-->\n\nCo-authored-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
+          "timestamp": "2026-11-11T02:36:49+10:30",
+          "tree_id": "385ef7871f8b9fe4614665799fbcd7302f58f125",
+          "url": "https://github.com/si618/lolcat/commit/fe6dc48781f0395c7176f8f01d5e55da6039decf"
+        },
+        "date": 1794327109039,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "MarkupAsAnsi_Small",
+            "value": 7021.646278381348,
+            "unit": "ns",
+            "range": "± 156.54567865949346"
+          },
+          {
+            "name": "MarkupAsAnsi_Medium",
+            "value": 60810.43898831881,
+            "unit": "ns",
+            "range": "± 769.8727134965548"
+          },
+          {
+            "name": "MarkupAsAnsi_Large",
+            "value": 633348.8843098958,
+            "unit": "ns",
+            "range": "± 3984.8715031404067"
+          },
+          {
+            "name": "MarkupAsSpectre_Small",
+            "value": 7521.562051430727,
+            "unit": "ns",
+            "range": "± 258.17422767119353"
+          },
+          {
+            "name": "MarkupAsSpectre_Medium",
+            "value": 62536.02501502404,
+            "unit": "ns",
+            "range": "± 525.5372263387336"
+          },
+          {
+            "name": "MarkupAsSpectre_Large",
+            "value": 732096.6452674279,
+            "unit": "ns",
+            "range": "± 34147.46495985695"
           }
         ]
       }
